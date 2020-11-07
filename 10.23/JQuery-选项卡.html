@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <script src="JS/jquery-3.5.1.js"></script>
+    <style>
+        body,ul,li{
+            margin: 0;padding: 0;
+            list-style: none;
+        }
+        .btn{
+            width: 300px;
+            height: 30px;
+        }
+        .btnList{
+            float: left;
+            width: 100px;
+            height: 30px;
+            background-color: #e6e6e6;
+            font-size: 20px;line-height: 30px;text-align: center;
+            cursor: pointer;
+        }
+        .activeBtn{
+            background-color: red;
+            color: #fff;
+        }
+        .content{
+            width: 300px;
+            height: 300px;
+            border: 2px solid pink;
+            box-sizing: border-box;
+        }
+        .contentList{
+            width: 100%;
+            height: 100%;
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+            background-color: pink;
+            color: #fff;
+            display: none;
+        }
+        .activeCon{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul class="btn">
+    <li class="btnList activeBtn">按钮一</li>
+    <li class="btnList">按钮二</li>
+    <li class="btnList">按钮三</li>
+</ul>
+<ul class="content">
+    <li class="contentList activeCon">11111</li>
+    <li class="contentList">22222</li>
+    <li class="contentList">33333</li>
+</ul>
+<script>
+    $(function () {
+        $('.btnList').click(function () {
+            //获取所有兄弟元素 siblings()
+            $(this).addClass('activeBtn').siblings().removeClass('activeBtn');
+            //存下标
+            var num = $(this).index();
+            //控制相对应的内容显示 其余隐藏
+            $('.contentList').eq(num).show().siblings().hide();
+        })
+
+
+
+
+    })
+</script>
+</body>
+</html>

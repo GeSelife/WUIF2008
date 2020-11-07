@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+    <script>
+        /*
+
+        console.dir()  列出所有功能
+        *   类 是对象的抽象
+        *   对象 是类的实例
+        *   对象是一个结果 面向对象是一种思想
+        *
+        *   面向过程---面向对象---面向服务---面向数据
+        *
+        *   在JS中如何创建类;如何进行实例化?
+        *
+        *   JS函数 具有三个用法
+        *       1.将某一特定功能的代码集合起来,重复调用
+        *       2.可以作为一个类去使用(构造函数)
+        *       3.可以作为一个对象使用
+        *
+        *   函数式编程语言
+        *
+        *   属性:作为一个对象来说,本身应该具有的特征  this指定 new实例化---new 类名();   除了函数以外的值
+        *       调用对象的属性:对象.属性名;/对象['属性名‘]
+        *   方法:作为一个对象应该具有的能力     函数,属性的值是函数则称为方法
+        *       调用对象的方法:对象.函数名();/ 对象['函数名‘]()
+        *
+        *   遍历对象属性   for(var 存储数值的变量名 in 类名)
+        *
+        *
+        * */
+
+        //null 类型是复杂类型   typeof的结果是object    变量为空,但是要赋予它复杂类型的数据,就将它的值赋值为null;
+            // 可以让程序及时的回收,清空对象
+
+        // function person(name){  //自己创建的对象类型是复杂类型 typeof的结果是Object
+        //     this.name=name;
+        //     this.sex=function () {
+        //         alert('男');
+        //     };
+        //
+        // }
+        // var zhangsan=new person('zhangsan');  //复杂类型 Object
+
+        // zhangsan.sex();
+        // console.log(zhangsan.name);
+        //
+        // zhangsan=null; //用完不用了,及时释放
+
+        //遍历对象属性   for(in)
+        // for(var i in zhangsan ){
+        //     // console.log(i);  //i是属性 是字符串类型;
+        //     // console.log(zhangsan[i]); //每个属性值
+        //
+        //     //如果属性值是函数则调用,否则输出;
+        //     if(typeof zhangsan[i]=='function'){
+        //         zhangsan[i]();
+        //     }else{
+        //         console.log(zhangsan[i]);
+        //     }
+        // }
+
+        /*
+        *   arr.push() 放值
+        *   arr.sort(functino (a,b){return a-b;}) 排序 从小到大
+        *   console.dir(arr);    列出数组自带的所有的方法
+        *
+        *   创建数组的方式  arr=new Array(1,2,3,4);   Array是JS自带的构造函数;
+        *
+        *
+        * */
+
+        //创建一个类似于数组的对象
+        function MyArray() {
+            //this代表当前实例化对象的地址,也就是说谁实例化它this就指向谁.
+            this.Mylength=arguments.length;
+            for(var i=0;i<arguments.length;i++){
+                this[i]=arguments[i];
+            }
+            //排序
+            this.sort=function (value) {
+                for(var i=0;i<this.Mylength;i++){
+                    for(var j=i+1;j<this.Mylength;j++){
+                        if(value==value||value=='min'){
+                            if(this[i]>this[j]){
+                                var temp=this[i];
+                                this[i]=this[j];
+                                this[j]=temp;
+                            }
+                        } if(value=='max') {
+                            if(this[i]<this[j]){
+                                var temp=this[i];
+                                this[i]=this[j];
+                                this[j]=temp;
+                            }
+                        }
+                    }
+                }
+                return arr;
+            }
+
+            //取最大值或最小值
+            this.MinOrMax=function (type) {
+                    var num=this[0];
+                    for(var i=1;i<this.Mylength;i++){
+                        if(type==''||type=='min') {
+                            if (num > this[i]) {
+                                num = this[i];
+                            }
+                        } if(type=='max'){
+                            if(num<this[i]){
+                                num=this[i];
+                            }
+                        }
+                    }
+                    return num;
+                }
+
+            //去重
+            this.delRepeat=function () {
+                var newarr=[];
+                var index=0;
+                for(var i=0;i<this.Mylength;i++){
+                    var flag=true;
+                    for(var j=i+1;j<this.Mylength;j++){
+                        if(this[i]==this[j]){
+                            flag=false;
+                            break;
+                        }
+
+                    }
+                    if(flag){
+                        newarr[index++]=this[i];
+                    }
+
+                }
+                return newarr;
+            }
+
+        }
+        //原型 函数.prototype={} -----> 将相同的代码放到静态区,能够节省实例化对象的空间
+        /*json格式 --- 很多语言为了能够和JavaScript交换数据，都实现了Json格式
+        *
+        *   json的存在就是为了通过极简的语法，对数据进行存储、传递和处理
+        *   格式:类名.prototype={"属性":"值","属性":"值"} //值可以是任意类型
+        *   调用:类名.属性;
+        *   遍历对象 for(var i 类名 ){}
+        *
+        *
+        *
+        *
+        * */
+        // MyArray.prototype={
+        //
+        // }
+        var arr=new MyArray(4,3,8,7,69,7,69);
+        // arr.sort();
+        console.log( arr.sort('max'));
+        console.log(arr.MinOrMax(''));
+        console.log(arr.delRepeat());
+
+
+        /*
+        *   对象的三大特性
+        *       封装 继承 多态
+        *   1.封装:保证代码的一致性和完整性,安全性
+        *   2.继承:(通过原型继承):
+        *           要继承的类名.prototype=new 被继承的类名()  继承所有的东西
+        *           要继承的类名.prototype=被继承的类名.prototype  只继承原型上的方法和属性
+        *   3.多态:
+        *
+        *
+        * */
+
+        function people(name='zhangsan') {
+            this.name=name;
+        }
+
+        /*
+        * 1.创建一个数组，new Array();()内只有一个number类型的值，则默认为指定长度的数组
+        * 创建一个对象
+        *   1.var json={} --- 不能实现继承 --- 为了存储、处理、传递数据
+        *   2.通过类/构造函数  function 类名(){不共有的特性}  类名.prototype={共有的特性}---可以实现面向对象的三大特性
+        *   3.继承 --- 原型继承 ---- 原型链(继承链)
+        *   ecmascript ----- Object顶层类
+        *
+        *   4.如何遍历对象的属性
+        *     for(var i in 类名){console.log(i) //遍历属性
+        *                           console.log(l类名[i]) // 遍历值
+        *                       }
+        *   5.class 类名{name='值';函数的方法名(){};}  是最新的语法
+        *
+        *
+        *
+        *
+        * */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

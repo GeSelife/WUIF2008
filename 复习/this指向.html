@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .aa{
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+<div class="box" onclick="aa()"></div>
+<div class="aa"></div>
+
+<script>
+    console.log(this);//Window
+
+    //通过事件绑定的方式
+    //通过标签方式绑定事件
+    function aa() {
+        console.log(this);//Window
+    }
+    //通过DOM对象绑定
+    var aa=document.querySelector('.aa');
+    aa.onclick=function () {
+        console.log(this);//事件源aa
+    }
+</script>
+</body>
+</html>

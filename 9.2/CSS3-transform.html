@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D中最基本图形变换</title>
+    <style>
+        /* 
+        图形变换 --> 位移
+        
+        
+        */
+        div{
+            width: 100px;
+            height: 100px;
+            background: darkgreen;
+            transform: translate(200px , 100px) scale(1.5,2.5);
+
+
+            /* transform 位移:
+              translate() 平移
+              scale()  缩放
+              rotate( deg)   旋转
+              skew(Xdeg , Ydeg) 斜切
+            
+            */
+            /* transform: translate(200px, 100px); */
+            /* transform: translateX(200px) translateY(200px); */
+
+            /* 缩放 */
+            /* transform: scale(0.5,.5); */
+
+            /* 变换的参照原点
+                先X再Y top left
+                center 默认值 中心点
+            */
+            /* transform-origin: right bottom; */
+
+            /* 旋转 deg角度 */
+            /* transform: rotate(10deg); */
+
+            /* 斜切 */
+            transform: skew(10deg , 20deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

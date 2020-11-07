@@ -1,0 +1,78 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型自带的方法</title>
+    <script>
+
+        /*    string的方法
+
+            length 获取字符串的长度
+            slice(开始位置,结束位置) 字符串的截取 包含开始位置不包含结束位置,结束位置支持负数
+            substr(开始的位置,个数)
+            substring(开始位置,结束位置) 不支持负数
+            charAt() 取某位置的字符,不常用
+            toLowerCase()大写转为小写
+            toUpperCase()小写转大写
+            split("")将字符串转为数组
+            trim() 去字符串中的空格
+            concat()拼接  str.concat(str1);
+            replace("要替换的字符","替换的字符")   正则 /a/g  所有的a
+            repeat("重复的次数")
+            indexOf("要查询的字符",开始位置(可以不写)) 查找特定字符串的索引值  没有则返回-1
+        */
+
+        /* 数组对象的方法
+
+        *   1.push() 在末尾添加并改变数组长度 返回值为新数组的长度 可以是任意数量  会影响原数组
+        *   2.unshift() 在最前面加元素 返回值为新数组的长度 可以是任意数量  会影响原数组
+        *   3.pop()  删除最后一项 返回删除的元素
+        *   4.shift() 删除第一项 返回删除元素的值
+        *   5.splice(删除的开始位置,个数) 删除指定位置的元素 返回删除的元素构成的数组
+        *   6.splice(开始下标,个数,替换值)返回删除的元素构成的数组
+        *   6.1.splice(开始下标,0,添加值) 返回空数组  在任意位置添加值
+        *   7.join() 转为字符串
+        *   8.concat()拼接数组    不会影响原数组
+        *   9.slice(开始位置,结束位置)不包含结束位置 截取数组  不影响原数组
+        *   10.sort() 默认升序 小的在前, 可以接受比较函数作为参数 会对原数组产生影响
+        *   11.forEach(function(i,index){})  遍历数组
+        *   12.reverse()  数组转置
+        *   13.filter(function(val,index){})   数组过滤
+        *   14.map(function(val,index){})  数组映射,对数组中所有元素进行批量处理
+        *   15.some(function(val,index){})  只要数组里面有一个元素返回真,那么这个结果就是真  同||
+        *   15.1.every(function(val,index){})  数组中全部都是真,才会返回真    同&&
+        *
+        * */
+
+        /*
+           * 相似数 数学函数
+           *
+           *   Math.round(变量名)
+           *   Math.random()    0--1之间的随机值;不包含0和1
+           *   Math.floor()  向下取整
+           *    Math.ceil()  向上取整
+           *   Math.min()   取最小值
+           *   Math.max()   取最大值
+           *   Math.sin/cos/tan(弧度)  弧度=角度*Math.PI/180
+
+         */
+
+        // const num=10;//定义一个常量  不可变的量
+        // num=20;//Assignment to constant variable.
+
+        /*
+        * Number
+        *   对象.isInfinite()  有限
+        *   实例化.toFixed() 保留几位小数
+        *
+        *
+        * */
+</script>
+</head>
+<body>
+
+</body>
+</html>

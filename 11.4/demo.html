@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // ajax提交方式：  --- 异步
+    // 上课 -- 忘记带转接头 -- 戈艺淼去帮我拿 -- 告诉去哪里拿/用什么方式拿 -- 出发 -- 监视着 -- 回来（成功 、 失败）
+
+    // ajax使用方式：
+    // 1、创建ajax对象
+    var xhr = new XMLHttpRequest();
+    // 2、去哪里拿/用什么方式拿
+    // xhr.open("请求方式", '请求地址', 同步 false / 异步 true)
+    /*
+    请求方式：
+    1、get 获取/查询
+    2、post  提交/添加
+    3、put  修改
+    4、delete  删除
+    5、options  等待
+
+    请求地址：
+    1、服务器提供地址url
+    2、可以用json来代替
+    */
+    xhr.open("get", "./demo.json", true);
+    // console.log(xhr)
+
+    // 3、出发
+    xhr.send();
+
+    // 4、监视
+    xhr.onreadystatechange = function(){
+        // xhr.readyState
+        // 0 没有调用send
+        // 1 调用send
+        // 2 send执行完成，等待解析
+        // 3 正在解析响应内容
+        // 4 响应成功
+        if(xhr.readyState == 4){
+            // xhr.status 响应成功 / 失败
+            /*
+            http状态码 status：
+            200 成功
+            404 找不到资源
+            500 服务器内部错误 5xx
+            304
+            401
+            ....
+            */
+            if(xhr.status == 200){
+                console.log("响应成功");
+            } else {
+                console.log("响应失败");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

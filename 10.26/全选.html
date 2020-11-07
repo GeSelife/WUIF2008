@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全选/反选</title>
+    <script src="JS/jquery-1.7.1.js"></script>
+</head>
+<body>
+<label for="all">
+    <input type="checkbox" id="all">全选
+</label>
+<div class="con">
+    <label for="bj">
+        <input type="checkbox" id="bj" name="city" >北京
+    </label>
+    <label for="sh">
+        <input type="checkbox" id="sh" name="city">上海
+    </label>
+    <label for="gz">
+        <input type="checkbox" id="gz" name="city">广州
+    </label>
+    <label for="hz">
+        <input type="checkbox" id="hz" name="city">杭州
+    </label>
+</div>
+
+<script>
+    $(function () {
+        $('#all').click(function () {
+            $(".con input").prop('checked',this.checked);
+        })
+        let flag=true;
+        $('.con input').on('click',function () {
+            flag = true;
+            // console.log(this.checked)
+            if(!this.checked){
+                $('#all').prop('checked',false);
+            }else {
+                $('.con input').each(function (index,item) {
+                    // console.log($(item).prop('checked'))
+                    if(!$(item).prop('checked')){
+                        flag=false;
+                    }
+                })
+
+                if(!flag){
+                    $('#all').prop('checked',false);
+                }else {
+                    $('#all').prop('checked',true);
+
+                }
+            }
+
+        })
+    })
+</script>
+</body>
+</html>

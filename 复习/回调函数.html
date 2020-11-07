@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回调函数</title>
+</head>
+<script>
+    // 一个函数作为另一个函数的参数，并且在另一个函数里调用这个函数的情况叫做回调函数
+
+
+
+    // function each(num,callback) {
+    //     for(var i=0;i<num;i++){
+    //         callback(i);
+    //     }
+    // }
+    // each(10,function (index) {
+    //     var color='';
+    //     if(index==3){
+    //         color='color:red';
+    //     }
+    //     document.write('<span style="'+color+'">'+index+'</span>');
+    // })
+
+    function each(num,callback) {
+        for(var i=0;i<num;i++){
+            callback(i);
+        }
+    }
+    each(10,function (index) {
+        if(index==2){
+            var col='color:red';
+        }
+        document.write('<span style="'+col+'">'+index+'</span>')
+    })
+
+</script>
+<body>
+
+</body>
+</html>

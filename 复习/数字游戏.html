@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math.random</title>
+</head>
+<script>
+    var arr=[1,5,9,6,5,4]
+    var newarr=[];
+
+    function check(val,arr) {
+        for(var i=0;i<arr.length;i++){
+            if(val==arr[i]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    for(var i=0;i<4;i++) {
+        var rand=arr[Math.floor(arr.length * Math.random())]
+        while (check(rand,newarr)){
+            rand=arr[Math.floor(arr.length * Math.random())]
+        }
+        newarr.push(rand)
+    }
+    console.log(newarr);
+</script>
+<body>
+
+</body>
+</html>

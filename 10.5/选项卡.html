@@ -1,0 +1,116 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡效果实现</title>
+    <script src="../封装/JS/checkCard.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .opts{
+            width: 100%;
+            height: 30px;
+        }
+        .opts div{
+            float: left;
+            width: 25%;
+            height: 100%;
+            background-color: #666666;
+
+            color:#ffffff;
+            text-align: center;
+        }
+        .cons{
+            width: 100%;
+            height: 270px;
+            overflow: hidden;
+        }
+        .cons div{
+            width: 100%;
+            height: 100%;
+            background-color: #e6e6e6;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="opts">
+        <div style="background-color: #55a532">
+            选项一
+        </div>
+        <div>
+            选项二
+        </div>
+        <div>
+            选项三
+        </div>
+        <div>
+            选项四
+        </div>
+    </div>
+    <div class="cons">
+        <div>
+            111111
+        </div>
+        <div>
+            22222
+        </div>
+        <div>
+            33333
+        </div>
+        <div>
+            44444
+        </div>
+    </div>
+</div>
+<script>
+    var opts=document.querySelectorAll('.opts div');
+    var cons=document.querySelectorAll('.cons div');
+
+    check(opts,cons,'onmouseover','green');//(选项卡,内容)
+
+    // function check(opts,cons,type='onclick',style='red') {
+    //     for(var i=0;i<opts.length;i++){
+    //         opts[i].index=i;
+    //         opts[i][type]=function() {
+    //             for(var j=0;j<cons.length;j++){
+    //                 opts[j].style.background='#666666';
+    //                 cons[j].style.display='none';
+    //             }
+    //             this.style.background = style;
+    //             cons[this.index].style.display = 'block';
+    //         }
+    //     }
+    //     //鼠标离开自动轮播
+    //     function change(num) {
+    //         setInterval(function () {
+    //             for(var j=0;j<cons.length;j++){
+    //                 opts[j].style.background='#666666';
+    //                 cons[j].style.display='none';
+    //             }
+    //             opts[num].style.background = style;
+    //             cons[num].style.display = 'block';
+    //         })
+    //     }
+    //
+    // }
+/*
+*onmouseover  鼠标悬停
+* onmouseout  鼠标离开
+* onclick    单击
+* ondbclick  双击
+*
+*
+*
+*
+* */
+</script>
+</body>
+</html>

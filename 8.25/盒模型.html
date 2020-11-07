@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxOne{
+            width: 200px;
+            height: 200px;
+            background: darkcyan;
+            /* 从上开始顺时针对称 */
+            padding: 20px 10px;
+        }
+        .boxTwo{
+            width: 200px;
+            height: 200px;
+            background: darkgoldenrod;
+            margin: 30px;
+        }
+        .boxThree{
+            width: 200px;
+            height: 200px;
+            background: darkgreen;
+            /* border: darkmagenta 10px solid; */
+            border-top-style: double;
+            border-top-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        盒模型
+         内容 
+         内填充padding:盒子里的内容到盒子边框之间的距离   
+         边框border      宽度,风格(solid实线 dashed虚线 dotted点线 double双实线),颜色
+         外边距margin
+         1.干什么
+         2.怎么用
+         3.额外的影响
+     -->
+     <div class="boxOne">
+         内填充padding
+     </div>
+     <div class="boxTwo">
+        外边距margin
+     </div>
+     <div class="boxThree">
+         边框border
+     </div>
+
+    </body>
+</html>

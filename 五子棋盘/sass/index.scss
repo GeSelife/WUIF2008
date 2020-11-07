@@ -1,0 +1,72 @@
+//棋盘格子数
+$num:20;
+//棋盘格子半径
+$r:10px;
+
+//棋盘宽高
+@function boxWidth(){
+  @return ($r * 2) * ($num + 1);
+}
+//线条宽度
+@function listWidth(){
+  @return $r * 2 * 20;
+}
+
+//居中
+@mixin posCenter(){
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.box{
+  width: boxWidth();
+  height: boxWidth();
+  background-color: #D69200;
+  @include posCenter;
+
+  //横线
+  .heng{
+    width: boxWidth();
+    height: boxWidth();
+    &-list{
+      width: listWidth();
+      height: 1px;
+      background-color: black;
+      position: absolute;
+      left: $r;
+    }
+    //线条高度
+    @for $i from 1 to $num+2{
+      &-list:nth-child(#{$i}){
+        top: $r * (2 * $i - 1);
+      }
+    }
+  }
+
+  //竖线
+  .shu{
+    width: boxWidth();
+    height: boxWidth();
+    position: absolute;
+    top: 0;
+    left: 0;
+    &-list{
+      height: listWidth();
+      width: 1px;
+      background-color: black;
+      position: absolute;
+      top: $r;
+    }
+    //线条距离左边的距离
+    @for $j from 1 to $num+2{
+      &-list:nth-child(#{$j}){
+        left: $r * (2 * $j - 1);
+      }
+    }
+  }
+
+}

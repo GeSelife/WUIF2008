@@ -1,0 +1,217 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../封装/JS/runStyle.js"></script>
+    <title>轮播图</title>
+    <style>
+        body,ul,li
+        {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            height: 300px;
+            border: 1px solid #00B262;
+            overflow: hidden;
+            position: relative;
+        }
+        .boxImg{
+            width:500%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .boxImg::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .boxImg div{
+            width: 20%;
+            height: 100%;
+            background-color: #55a532;
+            color: #fff;
+            text-align: center;
+            float: left;
+            line-height: 300px;
+            cursor: pointer;
+        }
+        .btn{
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        .btn li{
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 100%;
+            border: 1px solid #000;
+            cursor: pointer;
+
+        }
+        .left{
+            width: 10px;height: 10px;position: absolute;
+            top: 0;bottom: 0;margin: auto;
+            cursor: pointer;
+        }
+        .right{
+            width: 10px;height: 10px;position: absolute;
+            top: 0;bottom: 0;margin: auto;
+            right: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<script>
+    /*
+    * 1.在有限的空间内展示更多的内容
+    * 2.动画吸引眼球
+    * 3.赚钱
+    *
+    *
+    *
+    * onblur   失去焦点事件
+    * onfocus  获取焦点事件
+    *
+    * */
+</script>
+<body>
+
+<div class="box">
+    <div class="boxImg">
+        <div>1color</div>
+        <div>2color</div>
+        <div>3color</div>
+        <div>4color</div>
+        <div>1color</div>
+    </div>
+    <ul class="btn">
+        <li style="background-color: #fff"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="left">&lt;</div>
+    <div class="right">&gt;</div>
+</div>
+<script>
+    var img=document.querySelector('.boxImg');
+    var box=document.querySelector('.box');
+    var btn=document.querySelector('.btn');
+    var numN=document.querySelectorAll('.boxImg div').length;
+    var btnN=document.querySelectorAll('.btn li');
+    //轮播图自动运行
+    var num=0;
+    var width=parseInt(getComputedStyle(box,null).width);
+    var left=document.getElementsByClassName('left')[0];
+    var right=document.getElementsByClassName('right')[0];
+    var flag=true;
+
+    right.onclick=function(){
+        if(!flag){
+            return;
+        }
+        flag=false;
+        move();
+    }
+
+    left.onclick=function(){
+        if(!flag){
+            return;
+        }
+        flag=false;
+        num--;
+        if(num<0){
+            num=0;
+        }
+        animation(img,{
+            left:-num*width
+        },500,Tween.Linear,function () {
+            flag=true;
+        })
+
+        for(var i=0;i<btnN.length;i++){
+            btnN[i].style.background='none';
+        }
+        btnN[num].style.background='#fff';
+
+    }
+
+    //基于事件
+    window.onfocus=window.onmouseout =function(){
+        t=setInterval(move,3000);
+    }
+
+    window.onblur=window.onmouseover=function () {
+        clearInterval(t);
+    }
+
+    function move() {
+        num++;
+        if(num==numN-1){
+            animation(img,{
+                left:-num*width
+            },500,Tween.Linear,function () {
+                flag=true;
+                img.style.left=0;
+            })
+            num=0;
+        }else{
+            animation(img,{
+                left:-num*width
+            },500,Tween.Linear,function () {
+                flag=true;
+            })
+        }
+        //按钮事件
+        for(var i=0;i<btnN.length;i++){
+            btnN[i].style.background='none';
+        }
+        btnN[num].style.background='#fff';
+
+
+    }
+
+    var t=setInterval(move,3000);
+
+    //点击按钮
+    for(var i=0;i<btnN.length;i++){
+        btnN[i].index=i;
+        btnN[i].onclick=function () {
+            num=this.index;
+            animation(img,{
+                left:-num*width
+            },500,Tween.Linear)
+
+            //按钮事件
+            for(var j=0;j<btnN.length;j++){
+                btnN[j].style.background='none';
+            }
+            btnN[num].style.background='#fff';
+        }
+    }
+
+
+    /*
+    * 无缝轮播
+    * 1.过渡:  a--b的变化
+    * 2及时完成:变化是瞬间完成的
+    *
+    * */
+</script>
+
+
+</body>
+</html>

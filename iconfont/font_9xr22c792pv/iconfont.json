@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16942338",
+      "name": "菜单-通用",
+      "font_class": "caidan-tongyong",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    }
+  ]
+}

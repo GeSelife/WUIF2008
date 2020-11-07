@@ -1,0 +1,55 @@
+/* 选择器：自定义规则。选择页面中指定元素
+        区别：语法（分类）不一样    范围不一样  
+*/
+
+/* 通用选择器 针对页面中所有的标签 */
+/* *{
+    background: ;
+} */
+
+/* 标签选择器
+   HTML中所有这个标签名的标签
+   只针对名字 不针对层级*/
+div{
+    width: 300px;
+    height: 300px;
+    background: indianred;
+}
+h1{
+    width: 200px;
+    height: 200px;
+    background: lawngreen;
+}
+
+/* 类名选择器  .classname
+   HTML中所有具有指定classname的标签
+   与结构 标签种类无关 */
+.boxOne{
+    width: 300px;
+    height: 300px;
+    background: lemonchiffon;
+}
+
+/* id选择器 #idname 页面中指定id名的元素 id是唯一的 js原因 */
+#boxOne{
+    width: 100px;
+    height: 100px;
+    background: slategray;
+}
+
+/* 群组选择器  不限数量 选择器的类型不限制 */
+.boxTwo , .boxThree , p{
+    width: 500px;
+    height: 500px;
+    background: sienna;
+}
+
+/* 交叉选择器  */
+div.boxTwo{
+    background: violet;
+}
+
+/* 后代选择器 */
+.parent .son{
+    background: tomato;
+}

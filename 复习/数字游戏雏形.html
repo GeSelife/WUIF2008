@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+
+     var arr=[18,9,6,7,18,8,85,75,62,75,12,17];
+     var newarr=[];
+    function check(val,arr1) {
+        for(var i=0;i<arr1.length;i++){
+            if(val==arr1[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    for(var i=0;i<4;i++){
+        var num=arr[Math.floor(Math.random()*arr.length)];
+        while(!(check(num,newarr))){
+            num=arr[Math.floor(Math.random()*arr.length)];
+        }
+        newarr.push(num);
+    }
+    console.log(newarr);
+
+    // function check(val,arr) {
+    //     for(i=0;i<arr.length;i++){
+    //         if(val==arr[i]){
+    //             return false;
+    //         }
+    //
+    //     }
+    //     return true;
+    // }
+    //
+    // for(var i=0;i<4;i++){
+    //     var num=arr[Math.floor(arr.length*Math.random())]
+    //     while(!(check(num,newarr))){
+    //         num=arr[Math.floor(arr.length*Math.random())];
+    //     }
+    //     newarr.push(num);
+    //
+    // }
+    // console.log(newarr);
+
+    // var arr=[1,8,6,9,5,4,5];
+    // var newarr=[];
+
+
+
+
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table</title>
+</head>
+<body>
+<table border="1" cellpadding="0" cellspacing="0">
+    <thead>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>操作</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<script src="ajax.js"></script>
+
+<script>
+    ajax({
+        url:"./table.json",
+        success:function (val) {
+            let str="";
+            val.data.forEach((item,index) => {
+                str+=`
+                     <tr>
+                        <td>${index+1}</td>
+                        <td>${item.name}</td>
+                        <td>${item.age}</td>
+                        <td>${item.sex==0?'女':'男'}</td>
+                        <td>
+                            <input type="button" value="删除">
+                        </td>
+                    </tr>
+                `;
+
+
+
+
+                document.querySelector("tbody").innerHTML=str;
+            })
+
+        }
+    })
+</script>
+</body>
+</html>

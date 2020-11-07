@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table</title>
+</head>
+<body>
+<script>
+    let _table=document.createElement('table');
+    _table.setAttribute('border', '1')
+    _table.setAttribute('cellspacing', "0")
+    _table.setAttribute("cellpadding", "0")
+
+    let xhr=new XMLHttpRequest();
+    xhr.open("get","./table.json",true);
+    xhr.responseType="json";
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState == 4){
+            if(xhr.status == 200){
+                xhr.response.data.forEach((item,index) => {
+                    let _tr=document.createElement('tr');  //行
+                    let _td='';
+                    // console.dir(item.constructor.length)
+                    // console.log(item.length)
+                    for (let i in item) {
+                        for(let j=0;j <= item.constructor.assign.length;j++){
+                            _td=document.createElement('td');
+                            _td.style.cssText=`width:100px;height:20px;text-align:center;`;
+
+                            _td.innerText=item[i];
+
+                        }
+
+                        _tr.appendChild(_td);
+
+                    }
+                    _table.appendChild(_tr);
+                })
+            }
+        }
+    }
+
+    document.body.insertBefore(_table,document.body.firstElementChild);
+</script>
+</body>
+</html>

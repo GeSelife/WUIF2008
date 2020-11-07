@@ -1,0 +1,258 @@
+/* 购物车样式表 */
+body{
+    background: #fcfcfc;
+}
+/* 列表 */
+.lists{
+    /* width: 100%; */
+    padding: 0.24rem;
+}
+.lists li{
+    border-bottom: 0.01rem solid #f2f2f2;
+    padding:0.22rem  0.18rem 0.46rem;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+}
+.lists li .round{
+    width: 0.23rem;
+    height: 0.23rem;
+    border: 0.02rem solid #ffcb3f;
+    border-radius: 50%;
+    float: left;
+    margin-top: 0.58rem;
+    margin-right: 0.2rem;
+}
+.lists li .round div{
+    width: 0.15rem;
+    height: 0.15rem;
+    background: #ffcb3f;
+    border-radius: 50%;
+    margin: 0.04rem;
+}
+.lists li img{
+    width: 1.99rem;
+    height: 1.4rem;
+    float: left;
+    margin-right: 0.18rem;
+}
+.lists li .text{
+    float: left;
+}
+.lists li .text span:first-child{
+    font-size: 0.18rem;
+    /* margin-top: 0.1rem; */
+}
+.lists li .text .sofa{
+    font-size: 0.24rem;
+    margin-top:0.04rem;
+}
+.lists li .text .green{
+    font-size: 0.18rem;
+    margin-top: 0.06rem;
+}
+.lists li .text .rmb{
+    font-size: 0.18rem;
+    margin-top: 0.1rem;
+
+}
+.lists li .text .rmb strong{
+    font-size: 0.24rem;
+}
+.lists li .add{
+    float:right;
+    width: 1.65rem;
+    height: 0.38rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.48rem
+}
+.lists li .add .add-cut{
+    width: 0.38rem;
+    height: 0.38rem;
+    border:0.02rem solid #e5e5e5;
+    text-align: center;
+    line-height: 0.36rem;
+    box-sizing: border-box;
+    font-size: 0.18rem;
+}
+.lists li .add span{
+    align-self: center;
+    font-size: 0.18rem;
+}
+.lists li .add .add-add{
+    width: 0.38rem;
+    height: 0.38rem;
+    border:0.02rem solid #e5e5e5;
+    text-align: center;
+    line-height: 0.36rem;
+    box-sizing: border-box;
+    font-size: 0.18rem;
+}
+.lists li .linear{
+    width: 0.47rem;
+    height: 0.02rem;
+    background: #ffcb3f;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+/* 推荐商品*/
+.goods{
+    margin-top: 0.69rem;
+    padding:0 0.24rem;
+    margin-bottom: 1.8rem;
+    box-sizing: border-box;
+}
+.goods .goods-p{
+    font-size: 0.3rem;
+    position: relative;
+    margin-left: 0.11rem;
+}
+.goods .goods-p::after{
+    content: '';
+    width: 0.03rem;
+    height: 0.21rem;
+    background: #ffcb3f;
+    position: absolute;
+    left:-0.09rem;
+    top: 0.1rem;
+
+}
+.goods ul{
+    margin-top: 0.45rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.09rem;
+}
+.goods ul li{
+    background: #fff;
+    margin-bottom: 0.24rem;
+
+}
+.goods ul li img{
+    width:3.26rem;
+    height: 2.89rem;
+}
+.goods ul li .img-bottom{
+    width:3.09rem;
+    height: 2.22rem;
+    padding: 0.2rem 0 0 0.17rem;
+    box-sizing: border-box;
+}
+.img-bottom .bt-linear{
+    height: 0.01rem;
+    width: 0.27rem;
+    background: #000;
+    margin-bottom: 0.09rem;
+}
+.img-bottom .img-bottom-t{
+    font-size: 0.18rem;
+}
+.img-bottom div:nth-child(3){
+    font-size: 0.24rem;
+}
+.img-bottom div:nth-child(4){
+    margin-top: 0.6rem;
+}
+.img-bottom span{
+    line-height: 0.43rem;
+    float: left;
+    font-size: 0.12rem;
+}
+.img-bottom span strong{
+    font-size: 0.26rem;
+}
+.img-bottom .button{
+    width: 1.52rem;
+    height: 0.43rem;
+    font-size: 0.22rem;
+    background: #ffcb3f;
+    border-radius: 0.04rem;
+    text-align: right;
+    line-height: 0.43rem;
+    float: right;
+    color: #fff;
+    margin-right: 0.23rem;
+    padding-right: 0.19rem;
+    box-sizing: border-box;
+
+}
+.img-bottom .btm{
+    position: relative;
+}
+.img-bottom .btn-add{
+    width: 0.16rem;
+    height: 0.16rem;
+    border:0.01rem solid #fff;
+    border-radius: 50%;
+    line-height: 0.12rem;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 1.35rem;
+    top: 0.12rem;
+}
+/* 结算 */
+.pay{
+    width: 100%;
+    height: 0.9rem;
+    border-top: 0.01rem solid #ccc;
+    position: fixed;
+    bottom: 0.98rem;
+    background: #fff;
+}
+.b-round{
+    width: 0.23rem;
+    height: 0.23rem;
+    border: 0.02rem solid #ffcb3f;
+    border-radius: 50%;
+    float: left;
+    margin: 0.34rem 0 0 0.42rem;
+}
+.pay .p-one{
+    font-size: 0.24rem;
+    float: left;
+    margin:0.33rem 0 0 0.31rem;
+}
+.pay .b-text{
+    float: left;
+    margin-left: 0.27rem;
+    margin-top: 0.16rem;
+}
+.pay .b-text p{
+    font-size: 0.24rem;
+}
+.pay .b-text p strong{
+    color: #ffcb3f;
+    font-size: 0.26rem;
+}
+.pay .b-text div{
+    font-size: 0.18rem;
+}
+.pay .b-text span{
+    font-size: 0.18rem;
+}
+.jiesuan{
+    float:right;
+    width: 2.12rem;
+    height: 100%;
+    background: #ffcb3f;
+    color: #fff;
+    line-height: 0.9rem;
+    text-align: center;
+    font-size: 0.28rem;
+    border-radius: 0.04rem;
+}
+/*footer*/
+footer ul li:nth-child(3) a{
+    color: #ffcb3f;
+}
+footer ul li:nth-child(3){
+    color: #ffcb3f;
+}
+.icon-gouwuche{
+    font-weight: bold;
+}
+

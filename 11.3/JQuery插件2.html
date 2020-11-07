@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>输出地址内容信息</title>
+</head>
+<body>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    // $.getLink("https://www.ss.com?username=aaaa&password=123456");
+
+    // 输出的结果
+    // {
+    //     username: "aaaaa",
+    //     password: "123456"
+    // }
+
+
+    //箭头函数  arr.forEach((item,index) => {})
+
+    $.extend({
+        getLink:function (url) {
+            let arr=url.split('?');
+            let arr2=arr[1].split('&');
+            let json={};
+            for(let i=0;i<arr2.length;i++){
+                let val=arr2[i].split('=');
+                json[val[0]]=val[1];
+            }
+            return json;
+        }
+    })
+
+    console.log($.getLink("https://www.ss.com?username=aaaa&password=123456"));
+
+</script>
+</body>
+</html>

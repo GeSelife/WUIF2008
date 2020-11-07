@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>案例</title>
+</head>
+<body>
+<input type="button"value="获取验证码">
+<script>
+    // 倒计时10s
+    var seconds=document.createElement('div');
+    seconds.style.cssText="width:100px;height:100px;border-radius:50%;background-color:rgba(0,0,0,0.5);font-size:20px;line-height:100px;text-align:center;color:#fff;";
+    var num=10;
+    function jian() {
+        seconds.innerText=num--;
+        if(num<0){
+            num=0;
+            clearInterval(t);
+        }
+    }
+    var t=setInterval(jian,1000);
+
+    document.body.appendChild(seconds);
+
+    //获取验证码
+    var btn=document.querySelector('input');
+    btn.style.width='100px';
+    btn.style.height='30px';
+    var wait=60;
+    var flag=true;
+    var t=null;
+    btn.onclick=function () {
+        if(!flag){
+            return;
+        }
+        flag=false;
+
+        t=setInterval(function () {
+            btn.value=wait--+'s';
+            if(wait<0){
+                wait=0;
+                clearInterval(t);
+                flag=true;
+                btn.value='重新获取验证码';
+            }
+        },1000)
+    }
+
+    //活动结束时间
+    var div=document.createElement('div');
+    div.style.cssText="line-height:30px;font-size:20px;color:red;";
+
+    function move() {
+        //获取活动结束时间的时间戳
+        var endTime=new Date("2020-11-11 00:00:00").getTime();
+        //获取当前时间的时间戳
+        var nowTime=new Date().getTime();
+        //距离活动结束的时间戳
+        var time=endTime-nowTime;
+
+        var timeD= Math.floor(time/(24*60*60*1000));
+        var timeH= Math.floor(time % (24*60*60*1000) / (60*60*1000));
+        var timeM= Math.floor((time % (24*60*60*1000) % (60*60*1000)) / (60*1000));
+        var timeS= Math.floor((((time % (24*60*60*1000) % (60*60*1000)) % (60*1000)) / 1000));
+
+        timeD=timeD<10?'0'+timeD:timeD;
+        timeH=timeH<10?'0'+timeH:timeH;
+        timeM=timeM<10?'0'+timeM:timeM;
+        timeS=timeS<10?'0'+timeS:timeS;
+
+        div.innerText="距离活动结束还有"+timeD+'天'+timeH+'时'+timeM+'分'+timeS+'秒';
+        if(timeD==0&&timeH==0&&timeM==0&&timeS==0){
+            clearInterval(t);
+        }
+    }
+
+    var t=setInterval(move,1000);
+    document.body.appendChild(div);
+
+
+
+
+
+
+</script>
+</body>
+</html>

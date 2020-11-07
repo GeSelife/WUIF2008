@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚动条位置</title>
+    <style>
+        body{
+            margin: 0;padding: 0;
+        }
+        div{
+            width: 100%;
+            height: 100px;
+            background-color: red;
+            position: fixed;
+            top: -100px;
+            left: 0;
+            transition: top 1s linear;
+        }
+    </style>
+</head>
+<body style="height: 3000px">
+<div></div>
+<script src="../封装/JS/runStyle.js"></script>
+<script>
+    /*
+    *
+    * 窗口高度装不下内容时出现滚动条
+    *
+    * 设置滚动条位置  scrollBy(x,y)  scrollTo(x,y)   只能设置值,不能获取值
+    *
+    *
+    * overflow:scroll(出现滚动条横向、纵向都有)/auto(未超出不出现,超出出现滚动条)
+    *
+    *
+    * onscroll滑动滚动条时触发事件
+    *
+    * 针对窗口的滚动条的位置,如何获取(获取元素滚动内容滚动的距离): document.documentElement.scrollTop /  left 不加单位
+    * 获取元素滚动内容滚动的距离:属性.scrollTop
+    * 滚动内容的高度:scrollHeight
+    * scrollTop=scrollHeight-clientHeight
+    *
+    * 设置滚动条位置:document.documentElement.scrollTop=num;  不加单位
+    *
+    *
+    * */
+
+    var div=document.querySelector('div');
+    document.onscroll=function () {
+        if(document.documentElement.scrollTop<1000){
+            div.style.top='-100px';
+        }else {
+            div.style.top=0;
+        }
+    }
+
+</script>
+
+</body>
+</html>

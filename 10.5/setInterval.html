@@ -1,0 +1,66 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时器-setInterval</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮">
+<div></div>
+<script>
+    //回调地狱
+    var ipt=document.querySelector('input');
+    var box=document.querySelector('div');
+    // var t;
+    var flag=true;
+    var step=10;
+    ipt.onclick=function(){
+        var startW=parseInt(getComputedStyle(box,null).width);
+        var startH=parseInt(getComputedStyle(box,null).height);
+        if(!flag){
+            return;
+        }
+        var t=setInterval(function () {
+            flag=false;
+            startW+=step;
+            startH+=step;
+            if(startW>400){
+                startW=400;
+            }
+            if(startH>400){
+                startH=400;
+                clearInterval(t);
+                t=setInterval(function () {
+                    startW-=step;
+                    startH-=step;
+                    if(startW<200){
+                        startW=200;
+                    }
+                    if(startH<200){
+                        startH=200;
+                        clearInterval(t);
+                        flag=true;
+                    }
+                    box.style.width=startW+'px';
+                    box.style.height=startH+'px';
+                },50)
+            }
+            box.style.width=startW+'px';
+            box.style.height=startH+'px';
+
+         },50)
+    }
+
+</script>
+</body>
+</html>

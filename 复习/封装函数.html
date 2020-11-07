@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数封装</title>
+</head>
+<script>
+    //规定范围内的质数
+    function primeNumber(num) {
+        for(var i=2;i<=num;i++){
+            var flag=true;
+            for(var j=2;j<i;j++){
+                if(i%j==0){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                document.write(i+'&nbsp');
+            }
+        }
+        document.write('<br>');
+    }
+    primeNumber(100);
+
+    primeNumber(200);
+
+    //n行n列的表格
+    function tab(row,col) {
+        var str='<table>';
+
+        for(i=0;i<row;i++){
+            str+='<tr>';
+            for(var j=0;j<col;j++){
+                str+='<td>'+j+'</td>';
+            }
+            str+='</tr>';
+        }
+        str+='</table>';
+        document.write(str)
+    }
+    tab(10,9);
+</script>
+<body>
+
+</body>
+</html>

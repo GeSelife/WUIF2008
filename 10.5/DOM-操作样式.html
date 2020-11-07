@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作样式</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<div></div>
+<script>
+    /*
+    * 获取行内元素的样式:对象.style.属性
+    *
+    * 获取html的样式: getComputedStyle(对象,null/可以不写).属性
+    *
+    * 设置html的样式: 对象.style.属性='属性值'+'单位';
+    *
+    *
+    * 1.class属性:JS中更改类名的方法: 对象.className='';
+    * 2.style属性:属性名中出现-的用驼峰命名法或者['属性名']
+    *
+    *
+    * */
+    
+    var div=document.getElementsByTagName('div')[0];
+    console.log(getComputedStyle(div,null).width);
+    div.style.width=200+'px';
+    div.style['margin-left']=200+'px';
+    div.style.marginLeft=100+'px';
+</script>
+</body>
+</html>

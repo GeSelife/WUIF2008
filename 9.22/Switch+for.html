@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<script>
+    //switch 结果是确定的  条件控制  分支控制
+    // var num=10;
+    /*var num=prompt('请输入成绩');
+    switch(num){
+        case '优秀':
+            console.log(10);
+            break;
+        case '良好':
+            console.log(12);
+            break;                //结束判断
+        case '中等':
+            console.log(13);
+            break;
+        case '差级':
+            console.log(14);
+            break;
+        default:                  //不满足上面条件执行
+            console.log("其他");
+    }*/
+
+    //循环结构 循环控制
+    //for(初始值;结束值;步进值){}  确定循环次数
+    /*for(var i=0;i<10;i++){
+        for(var j=0;j<10;j++){
+            console.log(j);
+        }   
+    }*/
+    //100行100列
+    /*document.write('<table>');
+        for(var i=0;i<100;i++){
+            document.write('<tr>');
+                for(var j=0;j<100;j++){
+                    document.write('<td>');
+                    document.write('</td>');
+                }
+            document.write('</tr>');
+        }
+    document.write('</table>');*/
+    
+    //10行10列 隔行变色
+    /*var str="<table>";
+    for(var i=0;i<10;i++){
+        if(i%2==0){
+            var sty='background:pink';
+        }else{
+            sty='background:yellow';
+        }
+        str+='<tr style="'+sty+'">';
+            for(var j=0;j<10;j++){
+                if(j%2==0){
+                    sty='color:white';
+                }else{
+                    sty='color:black';
+                }
+                str+='<td style="'+sty+'">'+j+'</td>';
+            }
+       str+='</tr>';
+    }
+    str+='</table>';
+
+    document.write(str);*/
+
+    //隔行变色
+    // window.onload=function(){
+    //     var Tr=document.getElementsByTagName('tr');
+    //     var Td=document.getElementsByTagName('td');
+    //     for(var i=0;i<Tr.length;i++){
+    //         if(i%2==0){
+    //             Tr[i].style.height='10px';
+    //             Tr[i].style.border='1px solid red';
+    //             Tr[i].style.background='#000';
+    //             Td[i].style.width='20px';
+    //         }else{
+    //             Tr[i].style.height='10px';
+    //             Tr[i].style.border='1px solid red';
+    //             Tr[i].style.background='red';
+    //             Td[i].style.width='20px';
+    //         }
+    //     }
+    // }
+
+
+
+    //跳转语句
+    //continue 跳出当前循环，继续执行下一次  只针对当前循环
+    //break    从当前循环直接退出  只针对当前循环
+    // 退出到某个循环  变量名:循环{break 变量名;}
+
+
+    //100-200人  3人一排 。。。1  4一排。。。2  5一排...3 问多少人
+
+    /*for(var i=100;i<=200;i++){
+        if(i%3==1&&i%4==2&&i%5==3){
+            document.write(i+"&nbsp&nbsp&nbsp");
+        }  
+    }*/
+    // document.write('<br>');
+    //  14个头 38腿 鸡兔各多少只
+    /*for(var j=0;j<14;j++){
+        for(var z=0;z<14;z++){
+            if(j+z==14&&j*2+z*4==38){
+                document.write("鸡有"+j+'只'+"&nbsp&nbsp&nbsp"+"兔有"+z+'只')
+            }   
+        }
+    }*/
+    // document.write('<br>');
+    //100以内的质数
+    // for(var i=2;i<=100;i++){
+    //     var flag=true;
+    //     for(var j=2;j<i;j++){
+    //         if(i%j==0){
+    //             flag=false;
+    //             break;
+    //         }
+    //     }
+    //     if(flag){
+    //         document.write(i+',');
+    //     }
+    // }
+    var num=2;
+    while (num<100){
+        var n=2;
+        var flag=true;
+        while (n<num){
+            if(num%n==0){
+                flag=false;
+                break;
+            }
+            n++;
+        }
+        if(flag){
+            document.write(num+'&nbsp')
+        }
+
+
+        num++;
+    }
+
+
+
+    //while循环 不确定循环次数 while(条件){}  要知道退出循环的条件
+    //n行n列
+    var num=0;
+    var row=20;
+    var col=10;
+
+    var str='<table>';
+    while(num<row){
+        var un=0;
+        str+='<tr>';
+        while(un<col){
+            str+='<td>'+un+'</td>';
+            un++;
+        }
+        str+='</tr>';
+        num++;
+    }
+    str+='</table>';
+    document.write(str);
+
+
+    //100以内的质数
+    // var num=2;
+    // while(num<=100){
+    //     var n=2;
+    //     var flag=true;
+    //     while(n<num){
+    //         if(num%n==0){
+    //             flag=false;
+    //             break;
+    //         }
+    //         n++;
+    //     }
+    //     if(flag){
+    //         document.write(num+'&nbsp');
+    //     }
+    //     num++;
+    // }
+        // var num=2;
+        // while(num<100){
+        //     var n=2;
+        //     var flag=true;
+        //     while(n<num){
+        //         if(num%n==0){
+        //             flag=false;
+        //             break;
+        //         }
+        //         n++;
+        //     }
+        //     if(flag){
+        //         document.write(num+'&nbsp');
+        //     }
+        //     num++;
+        // }
+
+    //14个头 38腿 鸡兔各多少只
+
+    var ji=0;
+    while(ji<14){
+        ji++;
+        var tu=14-ji;
+        if(2*ji+4*tu==38){
+            document.write("鸡有"+ji+"只,兔有"+tu+"只");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+    
+</body>
+</html>

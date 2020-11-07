@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数Function</title>
+    <script>
+        /*
+            函数就是将完成(某一特定功能的代码(规则))封装起来，并且可以重复利用
+
+            通过传入不同的参数，可以让同一个函数体(规则)，产生不同的结果
+        
+        ()优先级  执行函数
+        JavaScript是一个弱类型的、解释型的、基于事件驱动型的、单线程的、异步机制的 函数式编程语言 
+
+            语法  javascript里面函数
+
+            定义函数的方式
+            1.关键字的方式定义函数
+                function 函数名(形参){函数体} //形参 定义函数的时候的参数
+
+                调用函数  
+                函数名(实参)  //实参 调用函数时传入的参数
+            
+            2.直接量的方式  变量的方式  ---  匿名函数1
+                var 变量名=function(){}
+                变量名();
+            
+            3. 匿名函数②    ****常用****
+                (function(){})();
+
+            4.对象函数
+                var fn=new Function(形参,函数体);
+                fn(实参);
+
+            形参和实参是一一对应的
+            参数可以接收任何数据类型
+
+            
+
+        */ 
+
+        //1.关键字
+        // function table(row,col){    //形参
+        //     var str='<table>';
+        //         for(var i=0;i<row;i++){
+        //             str+='<tr>';
+        //             for(var j=0;j<col;j++){
+        //                 str+='<td>'+j+'</td>';
+        //             }
+        //             str+='</tr>';
+        //         }
+
+        //     str+='</table>';
+        //     document.write(str);
+        // }
+
+        // table(5,5);  //实参
+
+        //2.变量 --- 匿名函数①
+        // var fn=function (){
+        //     alert(1);
+        // }
+        // fn();
+
+        //3.匿名函数
+        // (function(){
+        //     alert(1);
+        // })();
+        
+        //4.对象函数
+        // var fn=new Function('a','alert(a)');
+        // fn('123');
+    
+
+
+        /*
+            调用函数的三种方式
+            1.通过函数或者变量名进行调用   函数名()/变量名()
+            2.自调用函数     (function(){})()
+            3.通过事件的方式   函数是可以通过触发事件来调用的
+        */
+
+
+        //实参的数量多于形参怎么办？
+        // 通过arguments来获取到相应的实参
+        //     arguments   包含实参的所有信息   放在函数里面 
+        //     arguments[下标]  下标表示偏移量  从0开始
+
+
+        //形参的数量多于实参,多余的形参的值是undefined
+
+
+        /*
+            复杂数据类型  数组  对象  函数
+            函数的返回值
+            1.任何的数据类型都应该有值
+            2.如何让函数运行完之后有返回值  
+              return 给函数运行完返回值  返回值可以进行运算 并不是说一个函数一定得有返回值
+                     ①.终止函数并且返回相应的值
+                     ②.终止函数执行
+        */
+
+        // function aa(){
+        //     return 1;
+        // }
+        // console.log(typeof aa); //function类型
+        // console.log(aa());
+
+
+        //十行十列
+        // function table(row,col){ 
+        //     var str='<table>';
+        //         for(var i=0;i<row;i++){
+        //             str+='<tr>';
+        //             for(var j=0;j<col;j++){
+        //                 str+='<td>'+j+'</td>';
+        //             }
+        //             str+='</tr>';
+        //         }
+
+        //     str+='</table>';
+        //     return str;
+        // }
+
+        // table(10,10);
+
+
+
+        /*
+            函数的使用场景
+            1.回调函数
+            2.递归函数
+            3.嵌套函数
+        */
+
+        /*
+            1.回调函数
+              a.使用意义  能够让我们在一个函数里调用另一个函数
+              b.语法      将一个函数作为另外一函数的参数，并且在另外一个函数里面执行
+        */
+        
+        function each(num,callback){
+           for(var i=0;i<num;i++){
+               callback(i);
+           }
+        }
+        // each(10,function(index){
+        //     console.log(index);
+        // })
+        each(100,function(index){
+            var sty='';
+            if(index==3){
+                sty='color:red';
+            }
+            document.write('<div style="'+sty+'">'+index+'</div>')
+        })
+
+        
+        /*
+            2.递归函数
+              a.使用意义  充分挖掘自己的能力
+              b.语法      一个函数自己调用自己
+              c.退出机制
+        */
+
+        //0 0 1 2
+        function demo(num){           
+            if(num>0){
+                console.log(demo(--num));
+            }
+            return num;
+        }
+        document.write(demo(4));
+
+        //阶乘  1*2*3*4*5*6*7
+        
+        // function jc(num){
+        //     return num>0?num*=(jc(--num)):1;
+        // }
+        // document.write(jc(5));
+        
+    </script>
+</head>
+<body>
+</body>
+</html>

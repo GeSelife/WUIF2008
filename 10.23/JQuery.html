@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <style>
+        /*
+            radial-gradient(color1,color2)  镜像渐变
+        */
+    </style>
+    <script src="JS/myJquery.js"></script>
+</head>
+<body>
+<div class="box" style="width: 100px;height: 100px;background-color: black"></div>
+<div class="demo"></div>
+<script>
+    //获取页面中的元素
+    // $('.box');
+    // console.log($('div'))
+    //添加内容 html
+    // $('div').html('<p>这是p标签</p>');
+    // //添加内容 text
+    // $('div').text('这是内容');
+    // //添加类名
+    // $('.demo').addClass('tianjia');
+    // //移出类名
+    // $('.demo').removeClass('add');
+    //添加属性
+    // console.log($('div').prop('class'));
+    //点击
+    $('.box').addEvent('mouseover',function () {
+        console.log('进去了');
+    }).addClass('name').addEvent('mouseout',function () {
+        console.log('出来了');
+    })
+
+
+    /*
+    *
+    * JQuery获取选择器的方法:
+    *   $("选择器") 获取到的是类数组
+    *
+    *
+    * 特点:
+    *    查询、隐式循环、链式调用
+    *
+    *
+    * 版本
+    *   1.7.1
+    *   或最新版本
+    *
+    * */
+
+</script>
+</body>
+</html>

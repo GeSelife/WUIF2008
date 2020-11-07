@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包</title>
+</head>
+<body>
+
+<script>
+    // function fn(num){
+    //     return function (num2) {
+    //         return num+num2;
+    //     }
+    // }
+    // console.log(fn(6)(7));
+
+
+
+    //fn(5)(6)(8)
+    function fn(num) {
+        return function (num1) {
+            return function (num2) {
+                return num*num1*num2;
+            }
+        }
+    }
+    console.log(fn(5)(6)(8));
+</script>
+</body>
+</html>

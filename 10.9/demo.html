@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;margin: 0;
+        }
+        .box{
+            height: 50px;width: 100%;background-color: #FE0C40;box-shadow: 0 0 4px #eaeaea;
+            position: fixed;top: -50px;
+            transition: top 1s linear;
+        }
+        .box-nav{
+            width: 1230px;
+            padding-right: 30px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+        .logo{
+            float: left;
+            height: 30px;width: 160px;margin-top: 12px;
+        }
+        .small-search{
+            float: none;
+            width: 740px;
+            padding-top: 12px;
+            position: relative;
+            z-index: 10;
+            height: 30px;
+            margin:0 auto;
+        }
+        .small-search input{
+            background: none;
+            outline: none;
+            border: none;
+        }
+        .small-search input:nth-child(1){
+            width: 640px;height: 20px;padding: 5px 3px 5px 5px;
+            outline: transparent dotted 0;
+            opacity: 1;
+            color: #000;
+            height: 20px;
+            line-height: 20px;
+            font-width: 900;
+            box-sizing: content-box;
+            background-color: #fff;
+        }
+        .small-search input:nth-child(2){
+            padding: 0;
+            width: 86px;height: 32px;color: #fff;background-color: #FF0036;line-height: 32px;text-align: center;
+            font-size: 16px;
+            letter-spacing: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="height: 5000px;">
+<div class="box">
+    <div class="box-nav">
+        <span class="logo">
+            <img src="../tianmao/img/nav-logo.jpg" alt="" dizhi="">
+        </span>
+        <div class="small-search">
+            <input type="text" value="搜索 天猫 商品/品牌/店铺" style="color: #999" onfocus="if(value=='搜索 天猫 商品/品牌/店铺'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='搜索 天猫 商品/品牌/店铺'}">
+            <input type="button" value="搜索">
+        </div>
+    </div>
+</div>
+
+<script>
+    var box=document.querySelector('.box')
+    document.onscroll=function () {
+        if(document.documentElement.scrollTop<1000){
+            box.style.top='-50px';
+        }else {
+            box.style.top=0;
+
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="caidan-tongyong" unicode="&#58894;" d="M847 131c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32H167c-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32h680z m0 284c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32H167c-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32h680z m0 284c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32H167c-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32h680z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

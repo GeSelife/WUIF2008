@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>解决mouseover mouseout造成的事件流问题</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .one{
+            width: 500px;height: 500px;background-color: darkblue;
+        }
+        .two{
+            width: 200px;height: 200px;background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+<div class="one">
+    <div class="two"></div>
+</div>
+<script>
+    var one=document.querySelector('.one');
+    onmouseenter(one,function () {
+        console.log(1)
+    })
+    onmouseleave(one,function () {
+        console.log('123')
+    })
+
+    //自己写一个移入移出函数 传入要移入的元素和移入时要做的事
+
+    //移入
+    function onmouseenter(obj,callback) {
+        //鼠标移入的时候
+        obj.onmouseover=function (ev) {
+            //判断移入的元素是否包含被移入元素
+            if(check(ev,obj)){
+                callback();
+            }
+        }
+    }
+    //移出
+    function onmouseleave(obj,callback) {
+        //鼠标的时候
+        obj.onmouseout=function (ev) {
+            //判断移入的元素是否包含被移入元素
+            if(check(ev,obj)){
+                callback();
+            }
+        }
+    }
+
+    function check(ev,obj) {
+        if (ev.type == "mouseover"){
+            return !obj.contains(ev.fromElement);
+        }else if (ev.type == "mouseout"){
+            return !obj.contains(ev.toElement);
+        }
+    }
+
+</script>
+
+</body>
+</html>

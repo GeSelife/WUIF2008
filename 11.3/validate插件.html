@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>validate 插件</title>
+    <style>
+        label.error{
+            color: #ff0000;
+        }
+        input.error{
+            border: 2px solid palevioletred;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<!--form表单阻止浏览器默认行为-->
+<!--<form onsubmit="return false;">-->
+<form onsubmit="event.preventDefault();">
+    <input type="text" name="user" placeholder="请输入用户名" required><br>
+    <input type="password" name="pwd" placeholder="请输入密码"><br>
+    <input type="submit">
+</form>
+
+<script src="js/jquery-3.5.1.js"></script>
+<script src="https://cdn.bootcss.com/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-validate/1.19.0/localization/messages_zh.min.js"></script>
+
+<script>
+    $("form").validate({
+        //只验证不提交
+        // debug:true,
+        //规则
+        rules:{
+            user:{
+                required:true,
+                minlength:2,
+                maxlength:12
+            },
+            pwd:{
+                required:true,
+                minlength:6,
+                maxlength:16
+            }
+
+        },
+        //提示文字
+        messages:{
+            user:{
+                required:'请输入用户名',
+                minlength:'请输入至少2位的用户名',
+                maxlength:'用户名长度不能超过16位'
+            },
+            pwd:{
+                required:'请输入密码',
+                minlength:'请输入至少6位的密码',
+                maxlength:'密码长度不能超过16位'
+            }
+        },
+        //
+        submitHandler: function (form) {
+            //序列化form表单
+            let arr = $(form).serializeArray();
+            let obj={};
+           arr.forEach((item,index)=>{
+               // obj[item.name]
+               obj[item.name]=item.value;
+           })
+            console.log(obj);
+        }
+    })
+
+//    arr.forEach(()=>{})
+//    serializeArray()  JQuery遍历方式
+
+</script>
+</body>
+</html>

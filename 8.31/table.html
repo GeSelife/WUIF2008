@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body>
+    <table border="1" cellspacing="0" cellpadding='10'>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <tr>
+                <td rowspan="2">张三</td>
+                <td>男</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <!-- <td colspan="2">李四</td> -->
+                <td colspan="2">男</td>
+                <!-- <td>20</td> -->
+            </tr>
+        </tr>
+    </table>
+
+    <style>
+        .two{
+            width: 500px;
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+    </style>
+    <table border="1" class="two">
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <tr height='100'>
+                <td>张三</td>
+                <td>男</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>25</td>
+            </tr>
+        </tr>
+    </table>
+
+
+
+    <!-- 完整表格形式 -->
+    <table>
+        <caption>标题</caption>
+        <thead>表头</thead>
+        <tfoot>底部</tfoot>
+        <tbody>身体分类</tbody>
+    </table>
+</body>
+</html>

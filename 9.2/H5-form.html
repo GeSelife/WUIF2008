@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 数据验证 -->
+    <!-- action 提交的地址 -->
+    <form action="aa.php">
+        <!-- 
+            readonly 只读
+            disabled 禁用
+            name=username 会提示之前填写过的用户名
+            autocomplete(自动完成功能):on(默认开启)/off(关)
+            required 不能为空 
+            autofocus 自动获得焦点
+            novalidate='true默认验证/false不验证'
+            multiple 多张上传
+            list属性 和datalist的id关联,获取其中间的列表信息
+        -->
+        <!-- 用户名:<input type="text" required> <br>
+        邮箱:<input type="email" required> <br> -->
+        <!-- url 能找到此跳转页面的唯一地址 -->
+        <!-- 路径:<input type="url" required> <br> -->
+        <!-- 调色板 -->
+        <!-- color:<input type="color" required> <br> -->
+        <!-- 日历 -->
+        <!-- 日期:<input type="date" required> <br> -->
+        <!-- datetime-local 本地时间 -->
+        <!-- 日期+时间:<input type="datetime-local" required> <br> -->
+        <!-- 时间 -->
+        <!-- 时间:<input type="time" required> <br> -->
+        <!-- min max设置最大最小值 step 每次增加或减少的数字 -->
+    <!-- 
+        数字:<input type="number" min="0" max="10" step="2" required> <br>
+        范围: <input type="range" min="20" max="30" value="0" step="" name="" id=""> <br>
+        搜索框: <input type="search" name="user_search" id=""> <br> 
+    -->
+        电话号码: <input type="tel"  > <br>
+        <!-- 默认单张上传  multiple 多张上传 -->
+        上传头像: <input type="file" mulitiple> <br>
+
+        <select name="" id="" multiple>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+        </select> <br>
+        修改: <form action="add.php" method="GET">
+                <!-- formaction 修改提交的地址   formethod 修改提交方式post/get 
+                    enctype 编码格式(multipart/form-data(上传)、text/plain(get格式上传编码) 
+                    formenctype 修改编码格式)
+                -->
+                <input type="submit" formaction='edf.html' formmethod="POST"  formenctype=''>
+            </form><br>
+
+        程序员预定选项: 
+        <input type="url" list="120">
+        <datalist id="120"> 
+            <option value="123" label="123"></option>
+            <option value="234" label="234"></option>
+            <option value="456" label="456"></option>
+            <option value="567" label="567"></option>
+
+        </datalist>
+
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

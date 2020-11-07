@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>取最大最小值</title>
+</head>
+<body>
+<div class="sanjiao"></div>
+<script>
+    var array=[2,4,58,5,6,7,2,1,4];
+    var num=array[0];
+    //取最小
+    // for(var i=0;i<array.length;i++){
+    //     if(num>array[i]){
+    //         num=array[i];
+    //     }
+    // }
+    // console.log(num);
+    // //取最大
+    // for(var i=1;i<array.length;i++){
+    //     if(num<array[i]){
+    //         num=array[i];
+    //     }
+    // }
+    // console.log(num)
+
+    function minORmax(arr,type) {
+        var type=type||'min';
+        var num=arr[0];
+        //取最小
+        for(var i=0;i<arr.length;i++){
+            if(type=='min') {
+                if (num > arr[i]) {
+                    num = arr[i];
+                }
+            }
+            if(type=='max'){
+                if(num<arr[i]){
+                    num=arr[i];
+                }
+            }
+        }
+        console.log(num)
+    }
+
+    minORmax(array)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+/*head*/
+.headCon-leftList:nth-child(2) a{
+    color: #1f8fee;
+}
+/*banner*/
+.bannerCon{
+    background: url("../Img/service_banner.png") no-repeat center;
+    background-size: contain;
+}
+/*product*/
+.productCon-lists{
+    width: 100%;
+    height: 334px;
+    padding: 0 64px;
+}
+.productCon-list{
+    float: left;
+    width: 100px;
+    height: auto;
+    margin-right: 74px;
+    margin-bottom: 20px;
+}
+.productCon-listImg{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.27);
+    margin-bottom: 13px;
+}
+.productCon-list p{
+    color: #3f3f3f;
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: "Source Han Sans CN";
+}
+.productCon-list1 .productCon-listImg{
+    background: url("../Img/service_product1.png") no-repeat center #fff;
+}
+.productCon-list2 .productCon-listImg{
+    background: url("../Img/service_product2.png") no-repeat center #fff;
+}
+.productCon-list3 .productCon-listImg{
+    background: url("../Img/service_product3.png") no-repeat center #fff;
+}
+.productCon-list4 .productCon-listImg{
+    background: url("../Img/service_product4.png") no-repeat center #fff;
+}
+.productCon-list5 .productCon-listImg{
+    background: url("../Img/service_product5.png") no-repeat center #fff;
+}
+.productCon-list6 .productCon-listImg{
+    background: url("../Img/service_product6.png") no-repeat center #fff;
+}
+.productCon-list7 .productCon-listImg{
+    background: url("../Img/service_product7.png") no-repeat center #fff;
+}
+.productCon-list8 .productCon-listImg{
+    background: url("../Img/service_product8.png") no-repeat center #fff;
+}
+.productCon-list9 .productCon-listImg{
+    background: url("../Img/service_product9.png") no-repeat center #fff;
+}
+.productCon-list10 .productCon-listImg{
+    background: url("../Img/service_product10.png") no-repeat center #fff;
+}
+.productCon-list11 .productCon-listImg{
+    background: url("../Img/service_product11.png") no-repeat center #fff;
+}
+.productCon-list12 .productCon-listImg{
+    background: url("../Img/service_product12.png") no-repeat center #fff;
+}
+
+/*Example*/
+.ExampleBox{
+    overflow: hidden;
+    background: url("../Img/Service_exampleBg.png") no-repeat center;
+    background-size: cover;
+}
+.ExampleCon-title i:after{
+    background: #fff;
+}
+.ExampleCon-title p{
+    color: #fff;
+}
+.ExampleCon-title span{
+    color: rgba(255,255,255,.65);
+}
+.ExampleCon-lists{
+    width: 100%;
+    height: auto;
+    padding: 0 30px;
+}
+.ExampleCon-list{
+    float: left;
+    width: 250px;
+    margin-right: 10px;
+    height: 330px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 29px 3px rgba(0,0,0,.06);
+}
+.ExampleCon-listImg{
+    width: 100%;
+    height: 120px;
+}
+.ExampleCon-list1 .ExampleCon-listImg{
+    background: url("../Img/service_example1.png") no-repeat center ;
+}
+.ExampleCon-list2 .ExampleCon-listImg{
+    background: url("../Img/service_example2.png") no-repeat center ;
+}
+.ExampleCon-list3 .ExampleCon-listImg{
+    background: url("../Img/service_example3.png") no-repeat center ;
+}
+.ExampleCon-list4 .ExampleCon-listImg{
+    background: url("../Img/service_example4.png") no-repeat center ;
+}
+.ExampleCon-list5 .ExampleCon-listImg{
+    background: url("../Img/service_example5.png") no-repeat center ;
+}
+.ExampleCon-list6 .ExampleCon-listImg{
+    background: url("../Img/service_example6.png") no-repeat center ;
+}
+.ExampleCon-list7 .ExampleCon-listImg{
+    background: url("../Img/service_example7.png") no-repeat center ;
+}
+.ExampleCon-list8 .ExampleCon-listImg{
+    background: url("../Img/service_example8.png") no-repeat center ;
+}
+.ExampleCon-listTitle{
+    font-size: 18px;
+    color: #333333;
+    padding: 10px;
+    height: 190px;
+}
+.ExampleCon-listTitle div{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.ExampleCon-listTitle i{
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    margin: 0 auto;
+}
+.ExampleCon-listTitle p{
+    width: 100%;
+    font-size: 12px;
+    color: #333;
+    line-height: 18px;
+    margin-top: 14px;
+    text-align: left;
+}
+.ExampleCon-list1 .ExampleCon-listTitle{
+    background-color: #2365d3;
+}
+.ExampleCon-list1 .ExampleCon-listTitle{
+    color: #fff;
+}
+.ExampleCon-list1 .ExampleCon-listTitle p{
+    color: #fff;
+}
+.ExampleCon-list1 .ExampleCon-listTitle i{
+    background-color: #fff;
+}
+
+/*Fillet*/
+.FilletBox{
+    height: 1100px;
+}
+.FilletCon-lists{
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 40px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px 0 rgba(206, 206, 206, 0.75);
+}
+.FilletCon-listLeft{
+    float: left;
+    width: 28%;
+}
+.listLeftImg{
+    width: 100%;
+    height: 534px;
+    background: url("../Img/service_fillet1.png") no-repeat center;
+    margin-bottom: 26px;
+}
+.listLeftTitle{
+    width: 100%;
+    height: 16px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #000;
+    text-align: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 14px;
+}
+.FilletCon-listLeft p{
+    width: 100%;
+    padding: 0 10px;
+    color: #646464;
+    font-size: 14px;
+    line-height: 20px;
+}
+.FilletCon-listRight{
+    float: left;
+    margin-left: 4%;
+    width: 68%;
+}
+.listRightList{
+    width: 28%;
+    height: 300px;
+    margin-left: 3%;
+    margin-bottom: 13%;
+    float: left;
+}
+.listRightListImg{
+    width: 100%;
+    height: 204px;
+    background-color: #000;
+}
+.listRightListTitle{
+    width: 100%;
+    height: 32px;
+    font-size: 16px;
+    line-height: 32px;
+    color: #000;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 14px;
+    text-align: center;
+}
+.listRightList p{
+    width: 100%;
+    line-height: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: #646464;
+}
+.listRightList1 .listRightListImg{
+    background: url("../Img/service_fillet2.png") no-repeat center;
+}
+.listRightList2 .listRightListImg{
+    background: url("../Img/service_fillet3.png") no-repeat center;
+}
+.listRightList3 .listRightListImg{
+    background: url("../Img/service_fillet4.png") no-repeat center;
+}
+.listRightList4 .listRightListImg{
+    background: url("../Img/service_fillet5.png") no-repeat center;
+}
+.listRightList5 .listRightListImg{
+    background: url("../Img/service_fillet6.png") no-repeat center;
+}
+.listRightList6 .listRightListImg{
+    background: url("../Img/service_fillet7.png") no-repeat center;
+}

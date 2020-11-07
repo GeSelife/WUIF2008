@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery方法</title>
+    <style>
+        .big{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<input type="button" value="点我">
+<div class="big"></div>
+
+<hr>
+
+<button>按钮</button>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $("<div></div>").css({width:'200px',height: "200px",backgroundColor: "red",border: '10px solid black',"box-sizing":"border-box"}).addClass("box").text("操作内容").attr("title", "标题").appendTo("body");
+
+
+    // console.log($(".box").innerWidth());
+
+    $(".box").hover(function(){
+        console.log("鼠标移入");
+    },function(){
+        console.log("鼠标移出");
+    })
+
+
+    $("button").click(function(){
+        $(".box").toggle();
+    })
+
+
+    // window.onload=function(){
+    // }
+    // $(document).ready(function(){
+    // })
+    // $(function(){
+    // })
+
+
+    // window.onresize=function(){
+    //     console.log(1);
+    // }
+    $(window).resize(function(){
+        $(".box").empty();
+    })
+
+
+    $("[type=button]").click(function(){
+        // $(".big").slideToggle();
+        // $(".big").fadeToggle('slow');
+        $(".big").slideDown().stop().animate({width:'500px'}, 3000)
+
+        let flag = $(this).next().hasClass("big");
+        $(".big").text(flag);
+    })
+
+    console.log($(".big").parent());
+    console.log($(".big").parents("html"));
+</script>
+</body>
+</html>

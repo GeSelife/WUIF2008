@@ -1,0 +1,156 @@
+//差值
+//$con:FirstChild1;
+//
+//.father#{$con}{
+//  width: 100px;
+//  height: 100px;
+//  background-color: red;
+//}
+
+//混合器
+@mixin rounded{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+@mixin rounded2($l,$w){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -$l/2;
+  margin-top: -$w/2;
+}
+@mixin rounded3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+@mixin rounded4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body,html{
+  width: 100%;
+  height: 100vh;
+  @include rounded4;
+}
+.father{
+  width: 400px ;
+  height: 400px;
+  background-color: salmon;
+  //@include rounded;
+  @include rounded4;
+  .son{
+    width: 200px;
+    height: 20px;
+    background-color: palegoldenrod;
+    //@include rounded;
+    //@include rounded2(200px,200px);
+    //@include rounded3;
+  }
+}
+
+
+//导入外部文件
+@import "public";
+
+//body{
+//  width: 100%;
+//  height: 100vh;
+//  background-color: $color;
+//}
+//
+//.father{
+//  //群组选择器
+//  .son,.girl{
+//    font-size: 100px;
+//    color: green;
+//  }
+//  //后代选择器
+//  .son{
+//    width: 100px;
+//    height: 100px;
+//    background-color: #0b7cc3;
+//  }
+//  //子包含选择器
+//  > .girl{
+//    width: 100px;
+//    height: 100px;
+//    background-color: $menuColor;
+//  }
+//  //代替父元素
+//  &-con{
+//    width: 200px;
+//    height: 200px;
+//    border-radius: 50%;
+//    background: radial-gradient(white,black);
+//    &-dem{
+//      width: 50px;
+//      height: 50px;
+//      background: linear-gradient(yellow,green);
+//    }
+//  }
+//  &-dem1{
+//    width: 100px;
+//    height: 100px;
+//    background-color: #00b262;
+//  }
+//
+//
+//}
+
+//继承
+//.girl{
+//  @extend .son
+//}
+
+//判断
+//.girl{
+//  width: 100px;
+//  height: 100px;
+//  @if $con == FirstChild{
+//    background-color: pink;
+//  }@else if $con == FirstChild1{
+//    background-color: #00b262;
+//  }@else {
+//    background-color: $color;
+//  }
+//}
+//
+////函数
+//@function list($i){
+//  @return 20px * $i;
+//}
+//
+////循环
+//@for $i from 1 to 11{
+//  li:nth-child(#{$i}){
+//    list-style: none;
+//    width: list($i);
+//    height: 20px;
+//    background-color: palegreen;
+//    border: $i+px solid black;
+//  }
+//}
+//
+//
+////函数
+//$b:pink;
+//$w:100px;
+//@function sty($h){
+//  @return $w*$h;
+//}
+//.girl{
+//  width: $w;
+//  height: sty(2);
+//  background-color: $b;
+//}
+
+
+

@@ -1,0 +1,104 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;padding: 0;list-style: none;
+        }
+        div{
+            width: 100px;height: 100px;
+            background-color: red;
+            position: absolute;top: 0;left: 0;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    /*
+    * 对象.addEvenListener("webkitTransitionEnd【可以填写任意事件】",function(){})   监控过渡【或者监控每次事件】,每次事件执行时运行的内容
+    *
+    *
+    * animate
+    *   优势:1.回调函数,检测到动画的结束  2.精准的指定属性的动画与否
+    *   劣势:1.运行效率没有transition高 2.如果浏览器失去焦点,画面不更新
+    *
+    * transition
+    *   优势:1.运行效率高 2.写法简单
+    *   劣势:1.检测到动画的结束比较复杂,并不能够精准的检测 2.不能够精准指定动画与否
+    *
+    *
+    *
+    * */
+
+    /*
+    * 如何操作尺寸
+    *   1.css设置的尺寸  window.getComputedStyle[属性,null].属性  有单位
+    *   2.内部宽度/边框以内的宽度  属性.clientWidth        数值类型
+    *   3.包含边框的宽度   属性.offsetWidth              数值类型
+    *
+    *
+    * 关于位置
+    *   1.属性.offsetLeft/offsetTop      获取该元素相对于具有定位属性的前辈元素的内边框的距离,如果没有具有定位属性的前辈元素,则获取距离body的距离
+    *   2.属性.getBoundingClientRect()   输出结果是类似数组的东西   能够获取一个元素在页面中真正的尺寸和绝对位置
+    *           属性.getBoundingClientRect().left
+    *
+    * document.documentElement.clicentWidth 获取浏览器宽度
+    *
+    * 如何注销事件  对象.事件=null;
+    *
+    * */
+    var div=document.querySelector('div');
+    var winHeight=window.innerHeight;
+    var winWidth=window.innerWidth;
+    var divTop;
+    var divHeight=div.offsetHeight;
+    var divWidth=div.offsetWidth;
+    var numx=0;
+    var numy=0;
+    var t;
+    t=setInterval(function () {
+        numx+=10;
+        numy+=10;
+        divTop = div.getBoundingClientRect().top;
+        if(numy<(winHeight-divHeight)){
+                div.style.left = numx + 'px';
+                div.style.top = numy + 'px';
+        }
+        if(numy<0){
+            numy=0;
+            setInterval(function () {
+                numy+=10;
+                numx+=10;
+                div.style.left = numx + 'px';
+                div.style.top = numy + 'px';
+            },100)
+        }
+        if(numy>(winHeight-divHeight)){
+            numy=winHeight-divHeight;
+            setInterval(function () {
+                numy-=10;
+                numx+=10;
+                div.style.left = numx + 'px';
+                div.style.top = numy + 'px';
+        },100)
+        }
+        if(numx>(winWidth-divWidth)){
+            numx=winWidth-divWidth;
+
+        }
+    },100)
+
+
+
+
+</script>
+
+
+</body>
+</html>

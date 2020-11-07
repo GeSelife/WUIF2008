@@ -1,0 +1,438 @@
+/* 菜单 */
+nav{
+    width: 100%;
+    height: 0.88rem;
+    border-bottom: 0.01rem solid #ffcb3f;
+    background: #fff;
+}
+nav ul{
+    overflow: hidden;
+}
+nav li{
+    float: left;
+    width: 25%;
+    height: 0.88rem;
+    font-size: 0.24rem;
+    color: rgba(0,0,0,.7);
+    line-height: 0.88rem;
+    text-align: center;
+}
+
+/* 轮播图 */
+section{
+    position: relative;
+}
+section ul{
+    width: 0.89rem;
+    height: 0.09rem;
+    /* background: red; */
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    bottom: 0.15rem;
+    margin-left: -0.445rem;
+}
+section li{
+    width: 0.09rem;
+    height: 0.09rem;
+    border: 0.01rem solid #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 0.31rem;
+}
+section li.active{
+    background: #fff;
+}
+section li:last-child{
+    margin-right: 0;
+}
+/* 新品首发 */
+.title{
+    width: 100%;
+    /* background: burlywood; */
+    margin-top: 0.79rem;
+    position: relative;
+    text-align: center;
+}
+.title .title-one{
+    width: 0.48rem;
+    height:0.02rem;
+    background: #ffcb3f;
+    margin-bottom: 0.08rem;
+    margin-left: 3.01rem;
+}
+.title .title-two{
+    width: 1.48rem;
+    height: 0.01rem;
+    background:#d7d7d7 ;
+    margin-left: 3.01rem;
+}
+.title p{
+    font-size: 0.18rem;
+    margin-left: 0.08rem;
+    margin-top: 0.05rem;
+    /* margin: auto; */
+    /* text-align: center; */
+}
+.title .title-text{
+    font-size: 0.36rem;
+    margin: auto;
+    
+}
+.title .title-text span{
+    color: #ffcb3f;
+}
+.title .title-three{
+    width: 0.34rem;
+    height: 0.02rem;
+    background: #000;
+    position: absolute;
+    left: 50%;
+    margin-left: -0.17rem;
+    bottom: 0;
+}
+
+.news .news-sec{
+    margin-top: 0.19rem;
+    width: 100%;
+    overflow: hidden;
+}
+.news .news-sec .num{
+    font-size:0.22rem;
+    float: right;
+    margin-right: 0.36rem;
+}
+.news .news-sec .num strong{
+    color: #ffcb3f;
+}
+.news .news-sec div:nth-child(3){
+    width: 100%;
+    margin-top: 0.22rem;
+    overflow: scroll;
+}
+.news .news-sec div:nth-child(3) ul{
+    width: 400%;
+    height: 5.11rem;
+}
+.news .news-sec div:nth-child(3) ul li{
+    width: 10%;
+    height: 5.11rem;
+    float: left;
+    margin-right:0.24rem;
+    padding-bottom: 0.3rem;
+    background: #fff;
+
+}
+.news .news-sec div:nth-child(3) ul li img{
+    width:100%;
+    /*height: 2.89rem;*/
+}
+.news .news-sec div:nth-child(3) ul li .img-bottom{
+    width:3.09rem;
+    height: 2.22rem;
+    padding: 0.2rem 0 0 0.17rem;
+    box-sizing: border-box;
+}
+.img-bottom div:first-child{
+    height: 0.01rem;
+    width: 0.27rem;
+    background: #000;
+    margin-bottom: 0.09rem;
+}
+.img-bottom p{
+    font-size: 0.18rem;
+}
+.img-bottom div:nth-child(3){
+    font-size: 0.24rem;
+}
+.img-bottom div:nth-child(4){
+    margin-top: 0.6rem;
+}
+.img-bottom span{
+    line-height: 0.43rem;
+    float: left;
+    font-size: 0.12rem;
+}
+.img-bottom span strong{
+    font-size: 0.26rem;
+}
+.img-bottom div:nth-child(2){
+    width: 1.52rem;
+    height: 0.43rem;
+    font-size: 0.22rem;
+    background: #ffcb3f;
+    border-radius: 0.04rem;
+    text-align: center;
+    line-height: 0.43rem;
+    float: right;
+    color: #fff;
+    margin-right: 0.23rem;
+}
+
+/* 热销产品 */
+.hot .title{
+    margin-bottom: 0.57rem;
+}
+.hot-secFirst{
+    width: 6.99rem;
+    height: 6.93rem;
+    margin:  0 auto;
+    background-color: #fff;
+    padding-top: 1.11rem;
+    box-sizing: border-box;
+}
+.hot-secFirst img{
+    display: block;
+    width: 6.29rem;
+    margin:  0 auto ;
+}
+.hot-secFirst .hotSecFirstFont{
+    margin-top: 0.58rem;
+    width: 100%;
+    padding-left: 0.6rem;
+    box-sizing: border-box;
+    position: relative;
+}
+.hot-secFirst .hotSecFirstFont p{
+    /* width: 263px; */
+	height: 0.31rem;
+	font-size: 0.31rem;
+	letter-spacing: 0.01rem;
+    color: #000;
+    margin-bottom: 0.14rem;
+}
+.hot-secFirst .hotSecFirstFont span {
+    display: block;
+	height: 0.21rem;
+	font-size: 0.2rem;
+	letter-spacing: 0.01rem;
+    color: #000;
+    margin-bottom: 1.09rem;
+}
+.hot-secFirst .hotSecFirstFont div:nth-child(4){
+	height: 0.22rem;
+	font-size: 0.3rem;
+	letter-spacing: 0.02rem;
+    color: #000;
+    margin-bottom: 0.13rem;
+}
+.hot-secFirst .hotSecFirstFont div:nth-child(4) i{
+    font-style: normal;
+    font-size: 0.18rem;
+    
+}
+.hot-secFirst .hotSecFirstFont div:nth-child(5){
+	height: 0.14rem;
+	font-size: 0.18rem;
+    color: #000;
+    float: left;
+    /* position: relative; */
+    /* color:red; */
+}
+.hot-secFirst .hotSecFirstFont div:last-child{
+    width: 0.28rem;
+    height: 0.07rem;
+    float: left;
+    margin-top: 0.05rem;
+    margin-left: 0.16rem;
+}
+.hot-secFirst .hotSecFirstFont div:last-child img{
+    width: 0.28rem;
+    height: 0.07rem;
+}
+.hot-secFirst .hotSecFirstFont div:nth-child(3){
+    width: 0.21rem;
+    height: 1.03rem;
+    position: absolute;
+    top: 0.48rem;
+    right: 0.41rem;
+
+    
+}
+.hot-secFirst .hotSecFirstFont div:nth-child(3) i:nth-child(1){
+    display: block;
+    width: 0.16rem;
+    height: 0.16rem;
+    border-radius: 50%;
+    background: #abe3e6;
+    margin: 0 auto;
+    margin-bottom: 0.26rem;
+}
+.hot-secFirst .hotSecFirstFont div:nth-child(3) i:nth-child(2){
+    display: block;
+    width: 0.21rem;
+    height: 0.21rem;
+    border-radius: 50%;
+    background: #cecdca;
+    margin: 0 auto;
+    margin-bottom: 0.26rem;
+}
+.hot-secFirst .hotSecFirstFont div:nth-child(3) i:nth-child(3){
+    display: block;
+    width: 0.16rem;
+    height: 0.16rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: #ffcb3f;
+}
+.hot-secLast{
+    width: 6.99rem;
+    margin: 0.22rem auto 0;
+    overflow: hidden;
+}
+.hot-secLast li{
+    width: 3.38rem;
+    float: left;
+    margin-right: 0.23rem;
+    padding: .19rem .23rem .36rem .45rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 0.24rem;
+}
+.hot-secLast li:nth-child(even){
+    margin-right: 0;
+}
+.hot-secLast li img{
+    display: block;
+    width: 1.8rem;
+    margin: 0 auto 0.43rem;
+}
+.hot-secLast li p{
+	height: 0.56rem;
+	font-size: 0.18rem;
+    color: #000;
+    margin-bottom: 0.48rem;
+}
+.hot-secLast li p span{
+    display: block;
+    width: 100%;
+	font-size: 0.26rem;
+	letter-spacing: 0.01rem;
+	color: #000000;
+}
+.hot-secLast li div:nth-last-child(2) {
+	height: 0.21rem;
+	font-size: 0.21rem;
+	letter-spacing: 0.01rem;
+	color: #000000;
+}
+
+.hot-secLast li div:nth-last-child(2) span {
+	font-size: 0.18rem;
+	letter-spacing: 0.01rem;
+	color: #000000;
+}
+.hot-secLast li div:last-child{
+    margin-top: 0.09rem;
+    height: 0.15rem;
+	font-size: 0.18rem;
+	letter-spacing: 0.01rem;
+	color: #000000;
+}
+.more{
+    width: 100%;
+    height: 0.19rem;
+	font-size: 0.18rem;
+    color: #a6a6a6;
+    text-align: center;
+    position: relative;
+}
+.more::before{
+    content: '';
+    width: 1.13rem;
+    height: 0.01rem;
+    background-color: #d9d9d9;
+    position: absolute;
+    left: 1.8rem;
+    top: 0.15rem;
+    
+}
+.more::after{
+    content: '';
+    width: 1.13rem;
+    height: 0.01rem;
+    background-color: #d9d9d9;
+    position: absolute;
+    right: 1.8rem;
+    top: 0.15rem;
+    
+}
+
+/* 案例展示 */
+.case img{
+    width: 7.02rem;
+    margin-top: 0.65rem;
+    margin-left: 0.24rem;
+}
+.case .case-sec{
+    width: 6.66rem;
+    height: 3.16rem;
+    margin: 0.41rem auto 0;
+    /* background: chartreuse; */
+    text-align: center;
+}
+.case-sec p{
+    font-size: 0.28rem;
+    margin-bottom: 0.28rem;
+}
+.case-sec div:nth-child(2){
+    font-size: 0.23rem;
+}
+.case-sec div:nth-child(3){
+    width: 1.4rem;
+    height: 0.6rem;
+    font-size: 0.18rem;
+    border: 0.01rem solid #ffcb3f;
+    line-height: 0.6rem;
+    text-align: center;
+    border-radius: 0.3rem;
+    margin:0.34rem 0 0 2.59rem;
+}
+/* 品牌故事 */
+.story-sec{
+    margin-top: 0.57rem;
+    width: 100%;
+    height: 3.34rem;
+    text-align: center;
+    position: relative;
+}
+.story-sec img{
+    width: 100%;
+    height: 3.34rem;
+}
+.positions{
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    left: 0; top: 0;
+}
+.positions p:nth-child(1){
+    margin-top: 0.83rem;
+    font-size: 0.3rem;
+}
+.positions i{
+    width: 0.78rem;
+    height: 0.02rem;
+    background: #fbca4a;
+    display: block;
+    margin-left: 3.36rem;
+    margin-top:0.12rem;
+}
+.positions p:nth-child(3){
+    margin-top: 0.15rem;
+    font-size: 0.24rem;
+}
+.positions p:nth-child(4){
+    margin-top: 0.15rem;
+    font-size: 0.18rem;
+    opacity: 0.8;
+}
+/*footer*/
+footer ul li:first-child a{
+    color: #ffcb3f;
+}
+footer ul li:first-child{
+    color: #ffcb3f;
+}
+

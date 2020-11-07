@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>100以内的质数</title>
+</head>
+<script>
+    //for
+    for(var i=2;i<=100;i++){
+        var flag=true;
+        for(var j=2;j<i;j++){
+            if(i%j==0){
+                flag=false;
+                break;
+            }
+        }
+        if(flag){
+            document.write(i+'&nbsp');
+        }
+    }
+
+    //while
+    var num=2;
+    while (num<=100){
+        var n=2;
+        var flag=true;
+        while (n<num){
+            if(num%n==0){
+                flag=false;
+                break;
+            }
+            n++;
+        }
+        if(flag){
+            console.log(num);
+        }
+        num++;
+    }
+</script>
+<body>
+
+</body>
+</html>

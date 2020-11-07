@@ -1,0 +1,130 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;height: 200px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮">
+<div></div>
+
+<script>
+    /*
+    *
+    *
+    *
+    *
+    *
+    * 动画持续时间  duration
+    * 当前动画运行时间 time
+    * 动画的初始值  begin
+    * 动画的变化值  change
+    *
+    * 匀速运动公式:t/d*c+b
+    *
+    * */
+
+    //
+    /*存在问题:
+        1.当前运动只能实现匀速运动
+        2.每一次调用函数,只能设置一个值
+        3.不能设置动画完成之后要执行的动作
+
+
+     */
+    // function animate(obj,attr,end,duration,callback) {
+    //     var start=parseInt(getComputedStyle(obj,null)[attr]);  //初始值
+    //     var change=end-start;   //变化值
+    //     var time=0;
+    //     var t=setInterval(function () {
+    //         time+=50;
+    //         if(time>duration){
+    //             time=duration;
+    //             clearInterval(t);
+    //             if(callback){
+    //                 callback();
+    //             }
+    //             console.log(time)
+    //         }
+    //         obj.style[attr]=(time/duration*change+start)+'px';
+    //     },50)
+    //
+    //
+    // }
+    // animate(document.querySelector('div'),'width',500,1000,function () {
+    //     animate(document.querySelector('div'),'width',200,1000);
+    // });
+    //匀速运动的公式=运动时间/总时间*变化的距离+初始值
+    // function animate(obj,attr,end,duration,callback) {
+    //     var start=parseInt(getComputedStyle(obj,null)[attr]);
+    //     var change=end-start;
+    //     var time=0;
+    //    var t= setInterval(function () {
+    //         time+=50;
+    //         if(time>duration){
+    //             time=duration;
+    //             clearInterval(t);
+    //             if(callback){
+    //                 callback();
+    //             }
+    //         }
+    //         obj.style[attr]=(time/duration*change+start)+'px';
+    //
+    //     },50)
+    // }
+    // animate(document.querySelector('div'),'width',500,1000,function () {
+    //     animate(document.querySelector('div'),'width',200,1000)
+    // });
+    var flag=true;
+    var ipt=document.querySelector('input');
+
+    ipt.onclick=function () {
+        if(!flag){
+            return;
+        }
+
+        animation(document.querySelector('div'),'width',500,1000,function () {
+            animation(document.querySelector('div'),'width',200,1000)
+        });
+    }
+
+    //匀速运动的公式=已经运动的时间/总时间*运动的距离+初始值
+    function animation(obj,attr,end,duration,callback) {
+        flag=false;
+
+        var start=parseInt(getComputedStyle(obj,null)[attr]);
+        var change=end-start;
+        var time=0;
+        var t=setInterval(function () {
+            time+=50;
+            console.log(time)
+            if(time>duration){
+                time=duration;
+                clearInterval(t);
+                obj.style[attr]=end+'px';
+                flag=true;
+
+                if(callback){
+                   callback();
+               }
+            }else{
+                obj.style[attr]=(time/duration*change+start)+'px';
+
+            }
+            // console.log(time)
+        },50)//21帧
+    }
+
+
+</script>
+</body>
+</html>

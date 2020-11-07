@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象拷贝</title>
+</head>
+<body>
+<script>
+    var obj={
+        name:"zhangsan",
+        sex:'nan',
+        say(){
+            return 1;
+        },
+        arr:[],
+        a:{
+            hobby:{
+                eat:"肉",
+                play:'ggg',
+                d:{
+                    work:'sleep'
+                }
+            }
+        }
+    }
+
+    //浅拷贝
+    //方法一:直接赋值
+    // var newObj=obj;
+    // obj.sex="男";
+    // console.log(newObj);
+    // //方法二:通过Object.assign()
+    // var newObject1=Object.assign(obj);
+    // obj.name="lisi";
+    // console.log(newObject1);
+
+
+    //深拷贝
+    //方法一:Object.assign({},要拷贝的对象)
+    var newObj1=Object.assign({},obj);
+    obj.name='lisi';
+    console.log(newObj1);//name='zhangsan';
+    //方法二:先将对象转为字符串再转为对象---还造成函数丢失
+    var newObj2=JSON.parse(JSON.stringify(obj));
+    obj.sex='nv';
+    console.log(newObj2);//say方法缺失
+    //方法三:递归逐层拷贝  遍历 逐层拷贝
+    function deepCopy(obj) {
+        var copyObj={};
+        //判断传进来是不是一个对象
+        if(typeof obj=="object"){//传进来的是对象
+            if(Array.isArray(obj)){
+                return obj;
+            }else {
+                //是一个对象
+                //遍历对象
+                for (let i in obj) {
+                    //判断对象里的每一项是不是对象
+                    if(typeof obj[i]=='object'){
+                        //是对象再次进行判断----递归
+                        copyObj[i]=deepCopy(obj[i]);
+                    }else{
+                        //不是对象直接输出
+                        copyObj[i]=obj[i];
+                    }
+                }
+                return copyObj;//没有返回值 函数默认返回undefined
+            }
+        }else{//传进来的不是对象
+            return obj;
+        }
+    }
+    var nweObj3=deepCopy(obj);
+    obj.a.hobby.d.work='eat';
+    console.log(nweObj3);
+
+
+</script>
+<script>
+    /*
+    * 将对象转为字符串
+    *   JSON.stringify(对象名)
+    * 将字符串转换为对象
+    *   JSON.parse()
+    *
+    * 检测数据类型是不是数组
+    *   Array.isArray(要检测的变量名)  数组为true,其余类型false
+    *   变量名 instanceof Array  数组是true;其余类型报错
+    *
+    *
+    *
+    * */
+</script>
+</body>
+</html>
