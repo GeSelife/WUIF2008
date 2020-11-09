@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom-操作属性</title>
+</head>
+
+<body>
+<img src="" alt="">
+
+<script>
+/*
+*
+*   1.谷歌浏览器中
+*       webkit  渲染HTML和CSS
+*       v8引擎  解析JavaScript
+*       net模块 解析网络
+*
+*
+*
+*
+*
+* 1.操作内存中的属性:所有默认的属性都可以通过(对象.属性)的方式进行获取和设置,同时也可以直接通过(对象.属性)的方式自定义相关的属性
+* 2.操作标签中的属性:对象.setAttribute('属性名','属性值'); 不可以直接通过(对象.属性)获取
+*                 对象.getAttribute('属性名'); 获取属性
+* 3.HTML中默认的属性既可以通过(对象.属性)的方式操作,也可以通过(setAttribute/getAttribute)进行设置和获取
+*
+* */
+
+
+    var img=document.getElementsByTagName('img')[0];
+    img.src='../WEB-植绒胶水/Img/contents-section1.webp';
+    img.setAttribute('aa','123');
+    img.aa='333';
+    console.log(img.aa);
+    console.log(img.src);
+    console.log(img.getAttribute('aa'));
+    img.setAttribute('src','https://www.baidu.com/img/dong_30a61f45c8d4634ca14da8829046271f.gif');
+    console.log(img.src);
+    console.log(img.getAttribute('src'));
+
+
+
+
+</script>
+</body>
+</html>

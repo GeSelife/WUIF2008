@@ -1,0 +1,411 @@
+/* 初始化 */
+body , h1 , h2 , h3 , h4 ,h5 , h6 , ol , ul , li , p ,
+pre , table , form , input , textarea{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+    font: 16px/1.5 微软雅黑,Simsum,Arial,;
+    /*overflow-x: hidden;*/
+}
+ul , ol , li{
+    /* 清除列表排序 */
+    list-style: none;
+}
+a{
+    color: #333;
+    /* 去掉下划线*/
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.bodyBox{
+    min-width: 500px;
+}
+.fixed {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    padding: 0 ;
+    top: 0;
+}
+
+/*xs*/
+.xs-nav{
+    /*padding-right: 20px;*/
+    width: 100%;
+    padding: 0 ;
+    height: 84px;
+    position: fixed;
+    top: 0;
+    z-index: 11111;
+}
+.xs-nav .nav-right{
+    float: right;
+    padding-top: 10px;
+    margin-right: 20px;
+}
+.xs-nav .nav-right a{
+    display: block;
+    width: 15px;
+    height: 14px;
+    padding: 14px 15px;
+    background-color: #252525;
+    text-align: center;
+    line-height: 14px;
+}
+.xs-nav .nav-right a .icon-caidan-tongyong{
+    color: #fff;
+    font-size: 20px;
+}
+.icon-ziyuanldpi{
+    color: #fff;
+    font-size: 20px;
+    visibility: hidden;
+}
+.xs-nav .nav-right a:hover .icon-caidan-tongyong{
+    display: none;
+}
+.xs-nav .nav-right a:hover .icon-ziyuanldpi{
+    visibility: visible;
+}
+.xs-nav-list{
+    visibility: hidden;
+    width: 100%;
+    height: 626px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1111111;
+    padding-top: 100px;
+}
+.xs-nav:hover +.xs-nav-list{
+    visibility: visible;
+}
+.xs-nav-list .list-top{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.xs-nav-list .list-top li{
+    width: 100%;
+}
+.xs-nav-list .list-top li a{
+    display: block;
+    height: 49px;
+    margin: 2px 0;
+    border-bottom: 1px solid #252525;
+    border-radius: 4px 4px 0 0;
+    color: #fff;
+    font-size: 15px;
+    line-height: 49px;
+    padding-left: 40px;
+    letter-spacing: 1px;
+}
+.nav{
+    visibility: hidden;
+}
+.nav-list{
+    display: none;
+}
+.callBox {
+    height: auto;
+    position: fixed;
+    right: 30px;
+    bottom: 0;
+    z-index: 222222;
+}
+.callUs {
+    width: 320px;
+    height: 40px;
+}
+.callUs-top {
+    display: block;
+    width: 253.2px;
+    height: 20px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    color: #ffffff;
+    background-color: #BF3723;
+    border-radius: 4px 4px 0 0;
+}
+
+.callUs-top span {
+    display: block;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.callUs-top .chat {
+    float: right;
+    width: 20px;
+    height: 14px;
+    background: url(//f.goodq.top/qfy-content/plugins/screets-chat/skins/basic/img/icons.png) no-repeat;
+    margin-top: -15px;
+}
+.callUs-content {
+    width: 242.2px;
+    height: 380px;
+    padding: 20px;
+    border-left: 1px solid #ebebeb;
+    background-color: #fff;
+    color: #222;
+    font-size: 14px;
+    overflow: auto;
+    margin-left: 18px;
+    display: none;
+}
+.callBox:hover .callUs-content {
+    display: block;
+}
+.callBox:hover {
+    bottom: 420px;
+}
+.callUs-content .callUs-content-hello {
+    font-size: 14px;
+    margin: 0 0 20px 0;
+    padding: 0;
+    line-height: 1.4;
+}
+.talk .callUs-content-hello a {
+    display: block;
+    width: 79px;
+    height: 25px;
+    margin-top: 5px;
+}
+.callUs-content-call {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.talk-ipt label {
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 4px;
+    line-height: 1.4;
+    font-size: 13px;
+    color: #878787;
+}
+.talk-ipt label span:nth-of-type(2) {
+    color: red;
+}
+.talk-ipt input {
+    width: 206px;
+    height: 17px;
+    padding: 7px 11px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+.talk-ipt textarea {
+    width: 206px;
+    height: 17px;
+    padding: 7px 11px;
+    border: 1px solid #cdcdcd;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: #222222;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.test:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.test input {
+    width: 100px;
+    float: left;
+}
+.test a {
+    display: block;
+    width: 88px;
+    height: 33px;
+    padding-left: 10px;
+    float: right;
+}
+.btn {
+    width: 241.2px;
+    height: 46px;
+    padding-top: 20px;
+}
+.btn a {
+    display: block;
+    width: 26px;
+    height: 12.8px;
+    margin: 0 auto;
+    padding: 7px 11px;
+    color: #ffffff;
+    background-color: #3a99d1;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+}
+
+@media screen and (min-width:993px) {
+    .bodyBox{
+        min-width: 993px;
+    }
+    .xs-nav{
+        display: none;
+    }
+    .nav-list{
+        display: block;
+    }
+    .nav {
+        width: 100%;
+        visibility: visible;
+        height: 84px;
+        position: fixed;
+        top: 0;
+        padding-top: 10px;
+        z-index: 11111;
+    }
+    .nav-list{
+        visibility: hidden;
+        width: 100%;
+        height: 626px;
+        background-color: #000;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 11;
+        padding-top: 100px;
+    }
+    .nav::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    .nav .nav-left {
+        float: left;
+        width: 230px;
+        height: 52px;
+        padding: 10px 30px;
+    }
+    .nav .nav-right {
+        float: right;
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+        margin-top: 10px;
+        position: relative;
+        z-index: 1111111;
+    }
+    .nav .nav-right-1 {
+        display: block;
+    }
+    .nav .nav-right-1::before {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 20px;
+        left: 15px;
+    }
+    .nav .nav-right-1::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 18px;
+        left: 15px;
+    }
+    .nav .nav-right:hover .nav-right-1::before {
+        transform: rotate(-45deg);
+        top: 25px;
+        left: 15px;
+        transition: all 0.3s ease-out 0s;
+    }
+    .nav .nav-right:hover .nav-right-1::after {
+        transform: rotate(45deg);
+        bottom: 23px;
+        left: 15px;
+        transition: all 0.3s ease-out 0s;
+    }
+    .nav-list {
+        width: 350px;
+    }
+    .list-top {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .list-top li {
+        width: 100%;
+    }
+    .list-top li a {
+        display: block;
+        height: 49px;
+        margin: 2px 0;
+        border-top: 1px solid #252525;
+        border-radius: 4px 4px 0 0;
+        background-color: #1E1E1E;
+        color: #fff;
+        font-size: 15px;
+        line-height: 49px;
+        padding-left: 40px;
+        letter-spacing: 1px;
+    }
+    .list-top li:nth-of-type(1) a {
+        background-color: #F9B700;
+        color: #333;
+    }
+    .nav:hover +.nav-list{
+        visibility: visible;
+    }
+    .nav-list-details {
+        width: 350px;
+        margin-top: 50px;
+    }
+
+    .nav-list-details ul {
+        width: 100%;
+        height: auto;
+    }
+
+    .nav-list-details ul li {
+        width: 100%;
+        height: 40.4px;
+        padding: 20px 0 10px 30px;
+    }
+
+    .nav-list-details ul li span {
+        float: left;
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-list-details ul li div h3 {
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        color: #ffffff;
+        display: block;
+        vertical-align: bottom;
+        padding-left: 70px;
+    }
+    .nav-list-details ul li div p {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        color: #939393;
+        display: block;
+        padding: 2px;
+        vertical-align: bottom;
+        padding-left: 70px;
+        letter-spacing: 1px;
+    }
+
+}

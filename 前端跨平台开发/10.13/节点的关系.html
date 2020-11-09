@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点的关系</title>
+</head>
+<body>
+<div class="parent">
+    <span></span>
+    <ul>
+        <li>000001</li>
+        <li>000002</li>
+        <li>000003</li>
+        <li>000004</li>
+        <li>000005</li>
+        <li>000006</li>
+        <li>000007</li>
+        <li>000008</li>
+        <li>000009</li>
+        <li>000010</li>
+    </ul>
+    <div></div>
+</div>
+<script>
+    /*
+    * 父元素:
+    *     子元素.parentNode
+    *     子元素.parentElement
+    *
+    * 子元素:
+    *   父元素.childNodes------不经常用/会将空格当做文本节点获取到/会找到所有类型的节点
+    *   父元素.children        只找到元素节点
+    *   父元素.firstChild       获取第一个节点(所有的节点类型)
+    *   父元素.firstElementChild  获取第一个元素节点
+    *   父元素.lastChild       获取最后一个节点(所有的节点类型)
+    *   父元素.lastElementChild  获取最后一个元素节点
+    *
+    * 兄弟元素:
+    *  本元素.previousSibling    找任意类型的上一个兄弟节点
+    *  本元素.previousElementSibling    找元素节点类型的上一个兄弟节点
+    *  本元素.nextSibling    找任意类型的下一个兄弟节点
+    *  本元素.nextElementSibling    找元素节点类型的下一个兄弟节点
+    *
+    *
+    * */
+    var ul=document.querySelector('ul');
+    //获取父节点
+    console.log(ul.parentNode);
+    console.log(ul.parentElement);
+    //获取子节点
+    console.log(ul.childNodes);//所有的节点类型
+    console.log(ul.children);//元素节点
+    console.log(ul.firstChild);//所有的节点类型的第一个节点
+    console.log(ul.firstElementChild);//元素节点的第一个节点
+    console.log(ul.lastChild);//所有的节点类型的最后一个节点
+    console.log(ul.lastElementChild);//元素节点的最后一个节点
+    //兄弟节点
+    console.log(ul.previousSibling);//任意类型的上一个节点
+    console.log(ul.previousElementSibling);//元素节点类型的上一个节点
+    console.log(ul.nextSibling);//任意类型的下一个节点
+    console.log(ul.nextElementSibling);//元素节点类型的下一个节点
+
+    //创建
+    var i=document.createElement('i');
+    var div=document.querySelector('.parent');
+    //追加
+    document.body.appendChild(i);
+    //插入
+    document.body.insertBefore(i,ul.parentElement);
+    //删除
+    document.body.removeChild(i);
+    //替换
+    // document.body.replaceChild(i,div);
+    //克隆
+    var ddiv=div.cloneNode(true);
+    document.body.appendChild(ddiv);
+
+
+
+
+</script>
+</body>
+</html>

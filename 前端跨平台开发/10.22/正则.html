@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+    *严格区分大小写
+    * 创建正则的方法:
+    * ①.var reg=new RegExp('要检测的字符');
+    * ②.var reg=/ /;
+    *
+    * 检测的方法:
+    * 正则对象.test(在哪一个变量中检测存不存在字符);//布尔类型 有返回true
+    *
+    *模式修正符
+    *   ①.var reg=new RegExp('要检测的字符','模式修正符');
+    *   ②.var reg=/ /模式修正符;
+    *  i(对大小写不敏感)  / /i   ******************
+    *  g(全局查找)    ****************
+    *  m(多行匹配)
+    *
+    * **********************************************************************
+    * 正则名.exec(要检测的变量)  数组,返回第一次出现的下标,找不到返回null
+    * 检测多个值  /[1,2]/
+    * /[a-z]/   a-z所有的字母
+    * /[a-zA-Z]/   检测大小写的所有字母
+    * /\d/  查找数字
+    * /\D/  除了数字以外的
+    * /\w/  查找单词字符
+    * /\W/  查找非单词字符
+    *
+    * 用处：
+    *   search()  使用表达式用来搜索匹配,然后返回匹配的位置
+    *   replace()  返回模式被替换处修改后的字符串
+    *   split()   返回分割后的字符 按照指定字符分割字符
+    *
+    *
+    * */
+    // var a='12dfsrdf8er65g4h8y5u1m32hg1x8dfe';
+    // // var reg=/d/;
+    // //对大小写不敏感
+    // // var reg=/D/i;
+    // //全局查找
+    // var reg=/D/g;
+    // console.log(reg);
+    // console.log(reg.test(a));
+
+
+    //元字符
+    // var str='2c8d5a3W3f8fG_?';
+    // var reg=/c/;  //"c" 1
+    // var reg=/[a,c]/; //"c" 1  返回第一个出现的下标  查找a,c字符
+    // var reg=/[a-z]/; //"c" 1  查找a-z之间所有的字符
+    // var reg=/[a-zA-Z]/; //"c" 1  查找a-zA-Z所有的字符  谁在前先找谁
+    // var reg=/\d/;  //"2" 0 查找数字
+    // var reg=/\D/;  //"c" 1 查找非数字
+    // var reg=/\w/;  //"2" 0 查找数字字母下划线
+    // var reg=/\W/;  //"?" 14 查找非数字字母下划线
+    // var reg=/\s/;  //" " 15 查找空格
+    // var reg=/\S/;  //"2" 0 查找非空格
+    // var reg=/\b/;  //"" 0 单词边界
+    // var reg=/\B/;  //"" 1 非单词边界
+    //
+    // console.log(reg.exec(str))//返回一个数组，返回第一次出现的下标，找不到就返回null
+
+
+    var str='df125gffsdhs54897561ft';
+    str=str.replace(/\d/g,'*')
+    console.log(str)
+
+</script>
+
+</body>
+</html>

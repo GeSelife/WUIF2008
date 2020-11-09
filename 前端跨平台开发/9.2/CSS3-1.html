@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3</title>
+    <style>
+        div{
+            width: 100px;
+            height: 300px;
+            border: 10px solid rgba(255, 0, 0, 0.3);
+            padding: 20px;
+            /* border-radius: 10px 50px 10px 200px; */
+            /* 阴影  box-shadow: 阴影偏移量x轴 y轴 阴影的扩散程度 颜色 inset阴影在内部;*/
+            /* box-shadow: 10px 20px 10px darkblue inset; */
+            /* background: 颜色 url(背景图) ; */
+            /* linear-gradient() 线性渐变 */
+            /* background: linear-gradient(角度deg(默认180deg) ,颜色 开始比例,颜色 开始比例); */
+            /* background: linear-gradient(pink 0%, yellow 30%, green 60%); */
+
+            /* 镜像渐变 */
+            /* at 中心点x轴 y轴位置 改变渐变的形状: circle 默认正圆 半径 / ellipse 椭圆 x方向半径 Y方向半径*/
+            /* background: radial-gradient(at 20px 20px , yellow 20%, pink 80%); */
+             /* background: radial-gradient(ellipse 20px 30px at 10px 10px , yellow 20%, pink 80%);   */
+             /* background: radial-gradient(100px at 0 0, red , black 20%); */
+
+             /* 背景 */
+             background: url('../Web/image/banner3.webp') no-repeat;
+             /* background-size: 像素值/contain(默认以容器宽高最小的值为标准)/cover(以大的为标准); */
+             background-size: 200px 200px;
+
+             /* 默认起始位置 
+                padding-box 默认从边框里面开始填充 
+                border-box 边框开始填充
+                content-box 从内容开始填充
+             */
+             /* background-origin: padding-box; */
+             
+            /* 把所有的东西都算为盒子模型的宽度border-box
+               以内容为主 默认  content-box
+            */
+             /* box-sizing: content-box; */
+
+            /* 裁剪 clip
+               border-box 默认 从边框外不显示   只有边框内显示图片
+               padding-box  padding外不显示    只有内填充以内显示图片
+               content-box  内容以外部分全不显示   只有内容部分显示图片
+            */
+             background-clip: padding-box;
+
+             /* 指定背景图的定位方式 background-attachment
+                默认 scroll
+                fixed  固定定位
+             
+             */
+             background-attachment: fixed;
+             background-position-x: 10px;
+             background-position-y: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- CSS3提供了更多样式的可能性 -->
+    <div> 哈</div>
+</body>
+</html>

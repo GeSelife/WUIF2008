@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <!--    utf-8 万国码-->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    /*ecmascript语言
+    * 内置 顶层 函数
+    * 目的
+    *   1.熟悉 ecmascript 提供的功能
+    *   2.了解 数据类型变换的规则
+    *
+    *内置顶层函数
+    *   1.Number()可以将一些数据类型转换为数值类型
+    *       a.数值->数值
+    *       b.字符串类型的合法数字->数值  其他类型字符串->NaN
+    *       c.空字符串->数值->0
+    *       d.boolean->数值-> true--1; false--0
+    *       e.undefined->NaN
+    *   2.String()可以将任何的数据类型转换为字符串类型
+    *       a.string->string
+    *       b.number->string
+    *       c.undefined->string--'undefined'
+    *       e.true->string--'true';false->string--'false'
+    *   3.Boolean()
+    *       a.boolean->boolean
+    *       b.非空String->boolean--true;空String->boolean--false
+    *       c.非0数字->boolean--true; 0->boolean--false
+    *       d.undefined->false
+    *   4.isNaN()判断是否 不是一个数字
+    *       数字->false    不是数字->true
+    *   5.就是要将字符串转换为数值类型的两个方法:
+    *       a.parseInt(string,进制)  解析字符串转为整型数字  String必须是以合法数字开头的才可以解析;否则为NaN
+    *       b.parseFloat()    解析为浮点型数字
+    *
+    *
+    * Javascript中隐式类型转换的规则:
+    *       a.参考boolean类型:if(会发生隐式转换)  while(会发生隐式转换)
+    *       b.参考number类型: - * / % > < ==
+    *       c. ASCII码:a--97  A--65
+    *
+    *
+    *
+    * Javascript 预解析规则
+    *   变量作用域:一个变量能够作用的范围
+    *   作用域:为了提高程序运行速度以及垃圾回收的速度;
+    *   为什么作用域能够提高程序运行速度以及垃圾回收的速度
+    *
+    *   作用域分为三种:
+    *       a.全局作用域(全局变量):变量的作用范围能够在全局生效 定义在函数最外层的变量就是全局的变量  //尽量少用
+    *           缺点:1.导致内存不能及时的释放掉;2.会造成变量名污染
+    *       b.局部作用域(局部变量):只能在函数内部生效  定义在函数里面的变量就是局部变量   局部变量在它内部运行完就在内存中销毁了
+    *       c.块作用域(块变量):ecmascript6.0之前没有块变量,6.0之后加入了块变量  一个{}就是一个块作用域 ``let``定义的变量是块变量,只在{}内起作用
+    *
+    *   作用域链:
+    *       变量访问的顺序是由里向外程链条形式层层访问,直到访问到变量;若找不到相应的变量,则会报错is not defined
+    *
+    *   定义变量:
+    *       若直接通过变量名进行赋值-->num=10,无论在哪里定义,都是全局变量;会导致污染;
+    *
+    */
+
+
+    //JavaScript闭包 会引起内存的泄露 根本释放不掉内存---少用、慎用
+    //必考***********
+    //形成闭包的条件:在一个函数里面嵌套另外一个函数,并且在里层函数运用了外层函数的变量,并且当调用里层函数时闭包形成.
+    //形成闭包的条件:在一个函数里面嵌套另外一个函数,并且在里层函数运用了外层函数的变量,并且当调用里层函数时闭包形成.
+    //闭包的需求:当想让一个局部变量的变化值保留下来的时候,就用到闭包;
+    function fn() {
+        var num=10;
+        return function () {
+            num++;
+            console.log(num);
+        }
+    }
+    var a=fn();
+    a();
+    a();
+    a();
+    a();
+
+    /*
+    *   预解析:程序真正执行之前的一个顺序
+    *
+    *   1.按顺序解析script标签对
+    *   2.词法分析
+    *   3.变量的预解析
+    *   4.function关键字定义的函数 预解析
+    *
+    *
+    *
+    *
+    */
+
+</script>
+<body>
+
+</body>
+</html>

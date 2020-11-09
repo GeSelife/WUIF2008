@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位 SEO搜索引擎优化</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            background: blueviolet;
+            margin: 20px;
+            border: 20px solid darkcyan;
+            padding: 20px;
+            position: relative;
+        }
+        .first{
+            width: 150px;
+            height: 150px;
+            background: beige;
+            /* 会影响别的元素的位置 */
+            /* margin: 10px; */
+
+            /* 定位 position */
+            /* 1. static 静态的,默认的 */
+            /* position: static; */
+            /* 2. relative 会脱离文档流 相对于自己原来左上角的位置移动 */
+            /* position: relative;
+            left: 20px;
+            top: 30px; */
+            /* 3. absolute 绝对定位 相对于具有定位属性的父辈来定位*/
+            /* position: absolute;
+            left: 0;
+            top: 0; */
+            /* 4. fixed 固定定位 */
+            position: fixed;
+            top: 300px;
+        }
+        .first::before{
+            content: 'hahahah';
+        }
+        .seconed{
+            width: 500px;
+            height: 500px;
+            background: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="first">
+            <!-- ::before -->
+            <span>123</span>
+            <span>123</span>
+            <span>123</span>
+            <span>123</span>
+            <span>123</span>
+        </div>
+    </div>
+    <div class="seconed"></div>
+</body>
+</html>

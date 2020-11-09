@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件流</title>
+    <style>
+        body{
+            margin: 0;padding: 0;
+        }
+        .one{
+            width: 200px;height: 200px;border: 1px solid saddlebrown;
+        }
+        .two{
+            width: 100px;height: 100px;border: 1px solid darkblue;
+        }
+    </style>
+</head>
+<body>
+<div class="one">
+    <div class="two"></div>
+</div>
+<script>
+    /*
+    //类是对象的抽象 对象是类的实例/实现
+     * 事件流
+     *   js事件执行的流程 --- 事件由里向外依次执行的流程称为冒泡型事件流---是浏览器里面默认的事件流
+     * ------- 只要子元素触发了某一个事件,那么它所有的前辈元素都能捕获到---------由最确定的元素向外层最不确定的元素扩散
+     *
+     *  由外向里事件流:捕获型事件流-----由不确定的元素向最确定的元素传播--------由最外层向最里层传播
+     *          通过addEventListener方式添加事件,第三个参数写为true
+     *
+     *  哪一类事件及其容易触发事件流:over out move
+     *      1.改变html结构  --- 多的用于mousemove事件
+     *      2.解决mouseover mouseout事件:
+                ev.fromElement---检测鼠标从哪来  over上
+                ev.toElement----检测鼠标到哪去   out上
+                元素1.contains(元素2)---检测元素1是否包含元素2 --- 包含是true 不包含是false
+                ev.type 判断事件类型
+     *
+     *  有动作的事件不容易触发:click dbclick down up
+     *       解决方法:---组织事件流的传播 ev.stopPropagation();
+     *
+     *
+     */
+
+    var one=document.querySelector('.one');
+    var two=document.querySelector('.two');
+    hover(one,function () {
+        console.log('over');
+    },function () {
+        console.log('out')
+    })
+
+    function hover(obj,overfn,outfn) {
+
+        //移入
+        obj.onmouseover=function (ev) {
+            if(check(ev,obj)){
+                if(overfn){
+                    overfn();
+                }
+            }
+        }
+        //移出
+        obj.onmouseout=function (ev) {
+            if(check(ev,obj)){
+                if(outfn){
+                    outfn();
+                }
+            }
+        }
+
+    }
+
+    // function mouseenter(obj,callback) {
+    //     obj.onmouseover=function (ev) {
+    //         if(check(ev,obj)){
+    //             callback();
+    //         }
+    //     }
+    // }
+    // function mouseleave(obj,callback) {
+    //     obj.onmouseout=function (ev) {
+    //         if(check(ev,obj)){
+    //             callback();
+    //         }
+    //     }
+    // }
+    function check(ev,obj) {
+        if(ev.type=="mouseover") {
+            return !obj.contains(ev.fromElement); //判断obj中是否包含来的地方的元素
+        }else if(ev.type=="mouseout"){
+            return !obj.contains(ev.toElement); //判断obj中是否包含去的地方的元素
+
+        }
+    }
+</script>
+</body>
+</html>

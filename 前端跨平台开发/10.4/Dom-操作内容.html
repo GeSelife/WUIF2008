@@ -1,0 +1,307 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom</title>
+    <style>
+        /*div{*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*    border: 1px solid darkred;*/
+        /*}*/
+        .box{
+            width: 300px;
+            height: 600px;
+            border: 1px solid black;
+        }
+        .show{
+            width: 100%;
+            height: 10%;
+            background: rgba(0,0,0,.5);
+            color: #fff;
+            text-align: right;
+        }
+        .box::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        ul,li{
+            list-style: none;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+        .ul::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        ul{
+            width: 75%;
+        }
+        li{
+            width: 24%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid #000;
+        }
+        .btn{
+            height: 306px;
+        }
+        input{
+            width: 25%;
+            margin: 0;
+            height: 50%;
+        }
+        li:hover,input:hover{
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<script>
+    /*
+    * JavaScript利用ecmascript的语法对document文档的内容、标签、内容、样式进行操作。
+    * eval()  将符合JS规范的内容当做真正的代码执行
+    *
+    *   Dom  document object model  文档对象模型
+    *   文档=html+css 构成的
+    *   html文档 -> 树文档
+    *
+    *   如何通过JS操作HTML
+    *       将HTML标签转换为js里面的对象----通过js获取HTML运行时在内存中的地址
+    *
+    *   JS获取HTML标签对象的方法  (document上的方法)  将HTML转换成JS对象的方式
+    *       1.通过标签名获取对象(是一个类似于数组的集合):document.getElementsByTagName()
+    *           类数组
+    *           //流程控制
+    *       2.通过类名获取对象:document.getElementsByClassName()
+    *       3.通过ID名获取对象:document.getElementById()    只能获取一个
+    *       4.通过各种选择器获取:document.querySelector('#one'/".one"/"div")   获取的是单个元素
+    *                        document.querySelectorAll('#one'/".one"/"div") 获取所有符合条件的元素集合 包括id
+    *
+    *   Js对象HTML+css进行操作:对document文档的内容、标签、属性、样式进行操作
+    *
+    *   事件:对象.事件=function(){}
+    *
+    *   对内容进行操作
+    *       html对象.innerHTML   既能获取内容,又能设置内容,可以识别HTML标签
+    *       html对象.innerText   获取纯内容,也可以进行设置内容,但是不识别HTML标签
+    *    如何让设置和获取表单的内容:
+    *       表单对象.value       可以设置,也可以获取
+    *
+    * */
+
+</script>
+
+<body>
+<!--111111
+    <div>
+        <div class="one">
+            <div id="er">
+                <span class="one">
+
+                </span>
+            </div>
+        </div>
+    </div>
+    <span class="one">
+
+    </span>
+-->
+
+<!--222222
+    <input type="button" value="切换">
+    <div>
+        我是内容一
+    </div>
+    <div></div>
+
+-->
+<div class="box">
+    <div class="show">
+
+    </div>
+    <div class="count">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>+</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>-</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>0</li>
+        </ul>
+        <div class="btn">
+            <input type="button" value="=">
+            <input type="button" value="清除">
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    /*111111
+    var divs=document.getElementsByTagName('div');
+    var spans=divs[0].getElementsByTagName('span');
+    var spanAll=document.getElementsByTagName('span');
+    var Id=document.getElementById('er');
+    Id.innerHTML='123';
+    var d=document.querySelector('.one');
+    console.log(d);
+    var da=document.querySelectorAll('.one');
+    console.log(da);*/
+
+    /*222222
+    var divs=document.getElementsByTagName('div');
+    var input=document.getElementsByTagName('input');
+    var flag=true;
+    input[0].onclick=function () {
+        if(flag){
+            divs[0].innerHTML="";
+            divs[1].innerHTML="我是内容二";
+            flag=false;
+        }else{
+            divs[0].innerHTML="我是内容一";
+            divs[1].innerHTML="";
+            flag=true;
+        }
+    }*/
+
+    // var box=document.getElementsByClassName('box');  //通过类选择器获取类名为box的对象 获取结果是集合
+    // var show=document.getElementsByClassName('show'); //通过类选择器获取类名为show的对象 获取结果是集合
+    // var count=document.getElementsByClassName('count');//通过类选择器获取类名为count的对象 获取结果是集合
+    // var lis=document.getElementsByTagName('ul')[0].getElementsByTagName('li'); //通过标签选择器获取标签名为ul的对象 获取结果是集合 在获取第一个ul下的所有li
+    // var input=document.getElementsByTagName('input');//通过标签选择器获取标签名为input的对象 获取结果是集合
+    // var str='';//用来存储每一步点击的结果
+
+    //点击哪个按钮就在显示区域显示什么内容
+    // for(var i=0;i<lis.length;i++){//循环批量处理每一个数字按钮
+    //     lis[i].onclick=function () {
+    //         str+=this.innerHTML;//循环时,对每个按钮的内容进行累加,并存储在变量str中
+    //         show[0].innerHTML=str;//累加完后及时赋值给显示区
+    //     }
+    // }
+    // //点击清空按钮
+    // input[1].onclick=function () {
+    //     show[0].innerHTML='';// 点击后将显示的内容清空 -- 在视觉上清空
+    //     str='';  //将点击后存储的值也清空 -- 在内存上清空
+    // }
+    // //点击计算按钮
+    // input[0].onclick=function () {
+    //     //定义一个初始值为0的变量用来存储每一步运算的结果
+    //     var result=0;
+    //     //将保存的字符串按照指定内容进行拆分
+    //     var arr=str.split('+');
+    //     for(var i=0;i<arr.length;i++){
+    //         if(arr[i].indexOf('-')<0){
+    //             //不包含-
+    //             result+=parseInt(arr[i]);
+    //         }else{
+    //             //包含-
+    //             var arr1=arr[i].split('-');
+    //             for(var j=0;j<arr1.length;j++){
+    //                 if(j==0){
+    //                     result+=parseInt(arr1[j]);
+    //                 }else{
+    //                     result-=arr1[j]
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     str+='='+result;
+    //     show[0].innerHTML=str;
+    //
+    // }
+
+    // var box=document.getElementsByClassName('box');  //通过类选择器获取类名为box的对象 获取结果是集合
+    // var show=document.getElementsByClassName('show'); //通过类选择器获取类名为show的对象 获取结果是集合
+    // var count=document.getElementsByClassName('count');//通过类选择器获取类名为count的对象 获取结果是集合
+    // var lis=document.getElementsByTagName('ul')[0].getElementsByTagName('li'); //通过标签选择器获取标签名为ul的对象 获取结果是集合 在获取第一个ul下的所有li
+    // var input=document.getElementsByTagName('input');//通过标签选择器获取标签名为input的对象 获取结果是集合
+    // var str='';//用来存储每一步点击的结果
+    //
+    // for(var i=0;i<lis.length;i++){
+    //     lis[i].onclick=function () {
+    //         str+=this.innerHTML;
+    //         show[0].innerHTML=str;
+    //     }
+    // }
+    // input[1].onclick=function () {
+    //     show[0].innerHTML='';
+    //     str='';
+    // }
+    // input[0].onclick=function () {
+    //     var result=0;
+    //     var arr=str.split('+');
+    //     for(var i=0;i<arr.length;i++){
+    //         if(arr[i].indexOf('-')<0){
+    //             result+=parseInt(arr[i]);
+    //         }else{
+    //             var arr1=arr[i].split('-');
+    //             for(var j=0;j<arr1.length;j++){
+    //                 if(j==0){
+    //                     result+=parseInt(arr1[j]);
+    //                 }else{
+    //                     result-=arr1[j];
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     str+='='+result;
+    //     show[0].innerHTML=str;
+    // }
+
+    var box=document.getElementsByClassName('box');  //通过类选择器获取类名为box的对象 获取结果是集合
+    var show=document.getElementsByClassName('show'); //通过类选择器获取类名为show的对象 获取结果是集合
+    var count=document.getElementsByClassName('count');//通过类选择器获取类名为count的对象 获取结果是集合
+    var lis=document.getElementsByTagName('ul')[0].getElementsByTagName('li'); //通过标签选择器获取标签名为ul的对象 获取结果是集合 在获取第一个ul下的所有li
+    var input=document.getElementsByTagName('input');//通过标签选择器获取标签名为input的对象 获取结果是集合
+    var str='';//用来存储每一步点击的结果
+
+    for(var i=0;i<lis.length;i++){
+        lis[i].onclick=function () {
+            str+=this.innerHTML;
+            show[0].innerHTML=str;
+        }
+    }
+
+    input[1].onclick=function () {
+        show[0].innerHTML='';
+        str='';
+    }
+
+    input[0].onclick=function () {
+        var result=0;
+        var arr=str.split('+');
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].indexOf('-')<0){
+                //没找到-
+                result+=parseInt(arr[i]);
+            }else {
+                var arr1=arr[i].split('-');
+                for(var j=0;j<arr.length;j++){
+                    if(j==0){
+                        result+=parseInt(arr[j]);
+                    }else {
+                        result-=arr[j];
+                    }
+                }
+            }
+        }
+        str+='='+result;
+        show[0].innerHTML=str;
+    }
+
+</script>
+</html>

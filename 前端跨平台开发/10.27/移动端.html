@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<!--
+理想视口必须得设置 :
+width=device-width  自适应设备宽度
+user-scalable=no    不允许用户缩放
+initial-scale=1.0   缩放1倍
+maximum-scale=1.0   最大缩放值
+-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移动端</title>
+    <style>
+        html{
+            font-size: calc(100vw/750*100);/*100px=1rem*/
+        }
+        .box{
+            width: 2rem;
+            height: 2rem;
+            font-size: 0.5rem;
+            color: #fff;
+            background-color: plum;
+        }
+    </style>
+</head>
+<body>
+<!--
+REM布局原理   根据html元素等比例缩放font-size大小
+    rem 单位  1rem=1*html字体大小
+    实现的方式2中:
+        1.通过css实现  100px = 1rem
+            html{font-size:calc(100vw/750*100);}
+
+
+-->
+<div class="box">视口rem</div>
+
+</body>
+</html>

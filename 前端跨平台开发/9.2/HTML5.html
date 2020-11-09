@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <header>
+
+    </header>
+     <!-- 导航栏  -->
+    <nav>
+
+    </nav>
+      <!-- <通常用于写文章的主体部分,一般为文字集中显示区域 > -->
+    <article>
+         用于表示文章中的一节或一章内容 
+        <section></section>
+    </article>
+
+     <!-- footer  -->
+    <footer></footer>
+
+    <!--  用于和外部插件配合使用 表示一段代码块 不经过翻译  -->
+    <code>
+        class main{
+            int a=10;
+        }
+    </code> 
+
+    <!--  对话标签 搭配使用 加了open才显示
+        告诉搜索引擎是一段对话或提示的信息
+    -->
+    <dialog open="">
+        <dl>
+            <dt>
+                wo是谁
+            </dt>
+            <dd>
+                诗人
+            </dd>
+        </dl>
+    </dialog>
+    <!-- 进度条 -->
+    <meter min="2" max="10" value="5"></meter>
+    <!-- 进度条滑动 -->
+    <progress></progress>
+    <progress min='2' max="10" value="4"></progress>
+    <!-- 时间 -->
+    <time datetime=""></time>
+
+    <!-- 视频标签 controls控制按钮  autoplay自动播放  poster中放入广告图片,等待或加载时出现在视频上方的图片 (贴图方式)-->
+    <video src="" controls width="200" height="300" autoplay poster="">
+        <!-- type='video/视频格式(mp4.ogg.WebM)' 
+            解决浏览器兼容问题,将同一个视频的不同格式都放入后台中
+        -->
+        <source src="" type="video/mp4">
+        <source src="" type="video/ogg">
+            "你的浏览器不支持vedio"
+    </video>
+    <!-- 音频 同可以嵌套source标签放入不同的格式 -->
+    <audio src=""></audio>
+
+    <!--  -->
+
+</body>
+</html>

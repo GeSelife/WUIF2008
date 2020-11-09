@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,ul,li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .win{
+            width: 800px;height: 300px;margin: auto;position: relative;border: 1px solid #ffff00;
+            overflow: hidden;
+        }
+        .box{
+            width: 400%;height: 100%;
+        }
+        .box li{
+            width: 25%;height: 100%;text-align: center;line-height: 300px;font-size: 30px;color: #fff;float: left;
+        }
+        .one{
+            background-color: pink;
+        }
+        .two{
+            background-color: palegoldenrod;
+        }
+        .three{
+            background-color: palegreen;
+        }
+        .four{
+            background-color: paleturquoise;
+        }
+        .left{
+            position: absolute;
+            left: 20px;
+            width: 30px;height: 30px;
+            line-height: 30px;text-align: center;
+            top: 0;bottom: 0;margin: auto;
+            font-size: 30px;color: #fff;
+            cursor: pointer;
+        }
+        .right{
+            position: absolute;
+            right: 20px;
+            width: 30px;height: 30px;
+            line-height: 30px;text-align: center;
+            top: 0;bottom: 0;margin: auto;
+            font-size: 30px;color: #fff;
+            cursor: pointer;
+        }
+
+        /*三角*/
+        .sanjiao{
+            width: 0;height: 0;
+            border-bottom: 30px solid #000;
+            border-left: 15px solid #fff;
+            border-right: 15px solid #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="win">
+    <ul class="box">
+        <li class="one">1</li>
+        <li class="two">2</li>
+        <li class="three">3</li>
+        <li class="four">4</li>
+    </ul>
+    <div class="left">&lt;</div>
+    <div class="right">&gt;</div>
+</div>
+<div class="sanjiao"></div>
+<script src="../封装/JS/runStyle.js"></script>
+<script>
+    var win=document.querySelector('.win');
+    var step=parseInt(getComputedStyle(win,null).width);
+    var box=win.firstElementChild;
+    var leftBtn=box.nextElementSibling;
+    var rightBtn=leftBtn.nextElementSibling;
+    var flag=true;
+
+    window.onfocus=win.onmouseout=function () {
+        t=setInterval(move,2000);
+    }
+    window.onblur=win.onmouseover=function () {
+        clearInterval(t);
+    }
+    //自动轮播
+    function move() {
+        animation(box,{
+            marginLeft:-step
+        },1000,Tween.Linear,function () {
+            box.appendChild(box.firstElementChild);
+            box.style.marginLeft=0;
+        })
+    }
+    var t=setInterval(move,2000);
+
+    //点击按钮
+    leftBtn.onclick=function () {
+        if(!flag){
+            return;
+        }
+        flag=false;
+        animation(box,{
+            marginLeft:-step
+        },1000,Tween.Linear,function () {
+            box.appendChild(box.firstElementChild);
+            box.style.marginLeft=0;
+            flag=true;
+        })
+    }
+    rightBtn.onclick=function () {
+        if(!flag){
+            return;
+        }
+        flag=false;
+        box.insertBefore(box.lastElementChild,box.firstElementChild);
+        box.style.marginLeft=-step+'px';
+        animation(box,{
+            marginLeft:0
+        },1000,Tween.Linear,function () {
+            flag=true;
+        })
+    }
+</script>
+
+</body>
+</html>

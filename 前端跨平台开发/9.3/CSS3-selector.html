@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+    <style>
+        div:first-of-type{
+            color: red;
+        }
+        div:only-child{
+            color: cadetblue;
+        }
+        div:nth-of-type(1){
+            color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        每一个选择器代表的意义,指定的范围越小越具体，优先级越高
+        叠加性(会覆盖)
+
+
+        E:nth-child(1)/E:first-child  选中所有在它的父元素中排第一位的E元素  E要作为子元素存在
+
+        E:first-of-type  E元素为兄弟元素  同一级别中第一个E元素
+     -->
+
+     <!-- 
+         渐进增强
+        Chrome   谷歌     -webkit- 谷歌浏览器解析CSS的技术
+        IE       微软     -ms-
+        Firefox  MOZ生产  -moz-
+        Opera             -o-
+      -->
+      <p></p>
+      <div>div</div>
+      <ul>
+          <li>
+              <div>1</div>
+              <div>1</div>
+          </li>
+          <li>
+              <div>2</div>
+              <div>2</div>
+          </li>
+          <li>
+              <div>3</div>
+              <div>3</div>
+          </li>
+          <li>
+              <div>4</div>
+          </li>
+      </ul>
+</body>
+</html>

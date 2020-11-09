@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery插件的使用方法</title>
+    <style>
+        body,html,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    //1.$.extend()
+    $.extend({
+        play: function () {
+            console.log('将属性挂载到JQuery函数身上')
+        }
+    })
+    $.play();
+
+    //2.$.fn.extend()
+    $.fn.extend({
+        changeColor:function (even,odd) {
+            even = even || 'pink';
+            odd = odd || 'palegreen';
+            console.log('将属性挂载到JQuery对象身上');
+            //隔行变色
+            $(this).find('li:even').css({
+                width: '200px',
+                height: '50px',
+                background: even
+            })
+            $(this).find('li:odd').css({
+                width: '200px',
+                height: '50px',
+                background: odd
+            })
+        }
+    })
+
+    $('ul').changeColor('peachpuff','palevioletred');
+</script>
+
+</body>
+</html>

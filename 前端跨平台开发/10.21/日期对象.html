@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日期对象</title>
+</head>
+<body>
+<script>
+    /*
+    * Date日期对象
+    * 1970.1.1起的毫秒数
+    *
+    * new Date() 获取当前日期
+    * new Date("2000") 获取到2020年1月1日的时间  默认时间早上8点
+    * new Date("1998-10") 获取到1998年10月1日的时间  默认时间早上8点
+    * new Date("1999-12-12") 获取到1999年12月12日的时间  默认时间早上8点
+    *
+    * 时间戳:1998-09-04--今天的毫秒数
+    *     new Date("904888800")放时间对应的时间戳  获取到相对应的日期
+    *
+    * *******************************************************************
+    * 获取年月日
+    *
+    * new Date().getFullYear()  当前的年份
+    * new Date().getMonth()+1   当前的月份   JS中月份从0开始
+    * new Date().getDate()      当前的日
+    * new Date().getHours()     当前的小时
+    * new Date().getMinutes()   当前的分钟
+    * new Date().getSeconds()   当前的秒
+    * new Date().getDay()       星期   周日是0
+    * new Date().getTime()       1970-1-1到今天为止所有的毫秒数的时间戳
+    * new Date().getMilliseconds()       date对象的毫秒数
+    *
+    *
+    *
+    * ********************************************************************
+    * 设置
+    * date.set....
+    ***********************************************************************
+    *获取时间戳
+    * new Date().getTime()
+    * new Date().now()    //当前时间戳
+    * new Date().valueOf()
+    * Number(new Date())
+
+    *
+    * */
+
+    var date=new Date();
+    console.log(date.getFullYear());//当前年份 2020
+    console.log(date.getMonth()+1);//当前月份  10  月份从0开始
+    console.log(date.getDate());//那一天  21
+    console.log(date.getHours());//小时
+    console.log(date.getMinutes());//分钟
+    console.log(date.getSeconds());//毫秒数
+    console.log(date.getDay());//星期几  3
+    console.log(date.getTime());//当前时间所对应的时间戳  2020-10-21 14:48:32
+</script>
+</body>
+</html>

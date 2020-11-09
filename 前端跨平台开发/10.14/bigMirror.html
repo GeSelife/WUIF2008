@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜功能</title>
+    <style>
+        body{
+            margin: 0;padding: 0;
+        }
+        .box{
+            height: 500px;
+            position: absolute;
+            left: 100px;top: 100px;
+            width: 820px;
+        }
+        .box div{
+            width: 400px;
+            height: 500px;
+        }
+        .boxOne{
+            position: absolute;
+            top: 0;left: 0;
+        }
+        .boxOne img{
+            width: 100%;height: 100%;
+        }
+        .box .boxTwo{
+            position: absolute;
+            right: 0;top: 0;
+            overflow: hidden;
+            display: none;
+        }
+        .boxTwo img{
+            width: 200%;height: 200%;
+        }
+        .boxOne .big{
+            background-color: rgba(0,0,0,.1);
+            position: absolute;
+            cursor: pointer;
+            display: none;
+            width: 20%;height: 20%;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="boxOne">
+        <img src="./img/1.jpg" alt="">
+        <div class="big"></div>
+    </div>
+    <div class="boxTwo">
+        <img src="./img/1.jpg" alt="">
+    </div>
+</div>
+
+<script>
+    //1.鼠标移入boxOne 显示big 显示boxTwo
+    //2.big在.boxOne的框内跟着鼠标移动
+    //3.big移动时 boxTwo里面的img往左或往上移动相应的位置
+
+    var boxOne=document.querySelector('.boxOne');
+    var boxTwo=document.querySelector('.boxTwo');
+    var boxTwoImg=document.querySelector('.boxTwo img');
+    var big=document.querySelector('.big');
+    var box=document.querySelector('.box');
+
+    //鼠标移入移出事件
+    boxOne.onmouseover=function (ev) {
+        big.style.display='block';
+        boxTwo.style.display='block';
+        //big相对于具有定位属性的父辈属性的距离
+        var oX=big.offsetLeft;
+        var oY=big.offsetTop;
+        //鼠标相对于浏览器的位置
+        var startX=ev.clientX;
+        var startY=ev.clientY;
+
+        //不变的距离和
+        var downX=startX-oX;
+        var downY=startY-oY;
+
+        document.onmousemove=function (ev) {
+            //鼠标移入的位置
+            var moveX=ev.clientX;
+            var moveY=ev.clientY;
+
+            //变化的距离
+            var left=moveX-downX;
+            var top=moveY-downY;
+
+            //获取boxOne和big的宽高 用来判断边界
+            var boxOneW=boxOne.getBoundingClientRect().width;
+            var boxOneH=boxOne.getBoundingClientRect().height;
+            var bigW=big.getBoundingClientRect().width;
+            var bigH=big.getBoundingClientRect().height;
+
+            //固定big
+            var bigX=moveX-box.offsetLeft-bigW/2;
+            var bigY=moveY-box.offsetTop-bigH/2;
+
+            //边界判断
+            if(bigX<0){
+                bigX=0;
+            }
+            if(bigX>boxOneW-bigW){
+                bigX=boxOneW-bigW;
+            }
+            if(bigY<0){
+                bigY=0;
+            }
+            if(bigY>boxOneH-bigH){
+                bigY=boxOneH-bigH;
+            }
+
+            //赋值
+            big.style.left=bigX+'px';
+            big.style.top=bigY+'px';
+            boxTwoImg.style.marginTop=-2*top+'px';
+            boxTwoImg.style.marginLeft=-2*left+'px';
+
+            //放大的图片设置边界
+            // if(boxTwoImg.offsetLeft>0){
+            //     boxTwoImg.style.marginLeft=0;
+            // }
+            // if(boxTwoImg.offsetLeft<boxTwo.getBoundingClientRect().width-boxTwoImg.getBoundingClientRect().width){
+            //     boxTwoImg.style.marginLeft=boxTwo.getBoundingClientRect().width-boxTwoImg.getBoundingClientRect().width+'px';
+            // }
+            // if(boxTwoImg.offsetTop>0){
+            //     boxTwoImg.style.marginTop=0;
+            // }
+            // if(boxTwoImg.offsetTop<boxTwo.getBoundingClientRect().height-boxTwoImg.getBoundingClientRect().height){
+            //     boxTwoImg.style.marginTop=boxTwo.getBoundingClientRect().height-boxTwoImg.getBoundingClientRect().height+'px'
+            // }
+
+        }
+        ev.preventDefault();
+
+    }
+    boxOne.onmouseout=function () {
+        document.onmousemove=null;
+        big.style.display='none';
+        boxTwo.style.display='none';
+    }
+
+
+
+</script>
+
+</body>
+</html>

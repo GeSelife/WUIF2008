@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;height: 100px;background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    /*
+    *   事件 基于事件驱动
+    *
+    *   事件  就是通过某一个动作来驱动程序执行
+    *
+    *
+    *   1.鼠标事件
+    *       click dbclick mouseover mouseout mousedown鼠标按下 mouseup鼠标抬起 mousemove鼠标移动
+    *   2.键盘事件
+    *       keydown键盘按键按下 keyup键盘按键抬起 keypress键盘按键按下
+    *   3.自带事件
+    *       onload 页面加载完成之后执行
+    *
+    *   注册/添加一个事件/绑定事件
+    *       对象.on事件=function(){}  弊端:在同一个对象上不能重复添加同一个事件 --- 覆盖性
+    *       对象.addEventListener("事件",事件处理程序,布尔值)  --- 一般布尔值填写false默认值就是false --- 可以在同一个对象上添加多个同一个事件
+    *
+    *   注销事件/删除一个事件/解绑事件
+    *       对象.on事件=null;
+    *       对象.removeEventListener('解绑的事件',事件处理程序的函数名,false)  ----- 事件处理程序必须有名字
+    *
+    *   ***************************************************************************************************
+    *
+    *
+    *
+    * */
+    var div=document.querySelector('div');
+    function click1() {
+        console.log(1)
+    }
+    div.addEventListener('click',click1,false);
+    div.removeEventListener('click',click1,false);
+</script>
+
+</body>
+</html>

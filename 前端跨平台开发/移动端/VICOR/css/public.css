@@ -1,0 +1,69 @@
+html{
+    -webkit-text-size-adjust:none;
+}
+body{
+    background: #FCFCFC;
+}
+/* 头部 */
+header{
+    width: 100%;
+    height: 0.88rem;
+    border-bottom: 0.01rem solid #f2f2f2;
+    text-align: center;
+    position: relative;
+    background: #fff;
+}
+header i:first-child{
+    font-size: 0.3rem;
+    position: absolute;
+    left: 0.24rem;
+    top: 0.29rem;
+}
+header img{
+    width: 0.92rem;
+    margin-top: 0.29rem;
+}
+header i:last-child{
+    font-size: 0.3rem;
+    position: absolute;
+    right: 0.24rem;
+    top: 0.3rem;
+}
+/* 轮播图 */
+section{
+    width: 100%;
+}
+section img{
+    width: 100%;
+
+}
+/* 底部 */
+footer{
+    width: 100%;
+    height: 0.98rem;
+    background-color: #fafafa;
+    border-top: 0.01rem solid #bfbfbf;
+    position: fixed;
+    bottom: 0;
+}
+footer ul{
+    overflow: hidden;
+}
+footer ul li{
+    width: 25%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top:0.14rem;
+    box-sizing: border-box;
+}
+footer ul li a{
+    color: #000;
+}
+footer ul li .iconfont{
+    font-size: 0.4rem;
+}
+footer ul li p{
+    font-size: 0.2rem;
+}
+

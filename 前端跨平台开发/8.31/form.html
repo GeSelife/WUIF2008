@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 表单:web浏览器和web服务器通信的手段</title>
+</head>
+<body>
+    <!-- <form action="提交的地址" method="提交方式 get(地址栏显示输入的内容，提交的数据较少,最多4K) 
+        post(地址栏不显示内容，提交的数据不受限制)" enctype=""
+    -->
+
+    <form action="../官网-戈艺淼/image/phone1.jpg" method="GET" enctype="">
+        <ul>
+            <li>
+                <!-- 单标签 -->
+                <!-- 
+                    type不能改 value 自定义
+                    name 标识数据,数据代表的含义 name相同才可以为一组 value 提交的值,可写可不写,指定默认值 -->
+                <!-- 文本框 -->
+                用户名 <input type="text" name="username" value="dsh" maxlength="5" disabled>
+            </li>
+            <li>
+                <!-- 密码框 -->
+                密码 <input type="password" name="password" id="" readonly>
+            </li>
+            <li>
+                <!-- 单选 -->
+                性别 男<input type="radio" name="sex" value="nan">
+                    女<input type="radio" name="sex" value="nv">
+            </li> 
+            <li>
+                <!-- 多选 checked 默认选中 -->
+                爱好<br/>
+                前端<input type="checkbox" name="hobby[]" value="front-end" checked>
+                后端<input type="checkbox" name="hobby[]" value="back-end">
+                运动<input type="checkbox" name="hobby[]" value="sport">
+            </li>
+            <li>
+                <!-- 下拉菜单 selected默认 size显示行 multipe多选按住shift -->
+                院系专业
+                <select name="major" id="" size="2">
+                    <option value="jk">计算机科学</option>
+                    <option value="wd" selected>舞蹈</option>
+                    <option value="gc">工程</option>
+                    <option value="xg">信管</option>
+                </select>
+            </li>
+            <li>
+                <!-- 文本区域 -->
+                <textarea name="description" id="" cols="30" rows="10"></textarea>
+            </li>
+            <li>
+                <!-- 自动聚焦 -->
+                性别 
+                <label>
+                    男<input type="radio" name="sex" value="nan">
+                    女<input type="radio" name="sex" value="nv">
+                </label>
+            </li>
+            <li>
+                <!-- 提交 按钮 -->
+                <input type="submit" value="submit">
+                <!-- 重置 按钮 -->
+                <input type="reset" value="reset">
+                <!-- 按钮 -->
+                <input type="button" value="button">
+            </li>
+            <li>
+                <iframe src="http://baidu.com" frameborder="0"></iframe>
+            </li>
+
+        </ul>
+    </form>
+</body>
+</html>

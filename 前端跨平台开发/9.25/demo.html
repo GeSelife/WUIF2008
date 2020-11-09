@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    //插入排序
+    // var arr=[58,45,789,21,48,5];
+    // var len=arr.length;
+    // var pre,now;
+    // for(var i=1;i<len;i++){
+    //     pre=i-1;
+    //     now=arr[i];
+    //     while(pre>=0&&arr[pre]>now){
+    //         arr[pre+1]=arr[pre];
+    //         pre--;
+    //     }
+    //     arr[pre+1]=now;
+    // }
+    // console.log(arr);
+
+    //    二维数组  arr[][];
+    //     var arr=[[1,2,3],['a','b'],'c'];
+    //     for(var i=0;i<arr.length;i++){
+    //         if(typeof arr[i]=='object'){
+    //             for(var j=0;j<arr[i].length;j++){
+    //                 console.log(arr[i][j]);
+    //             }
+    //         }else{
+    //             console.log(arr[i]);
+    //         }
+    //     }
+//[0][0]+[1][0]
+//         var arr1=[[1,1,1],[2,2,2],[3,3,3],[4,4,4]];
+//         for(var i=0;i<arr1.length-1;i++){
+//             for(var j=0;j<arr1[i].length+1;j++){
+//                 document.write(arr1[j][i]);
+//             }
+//             document.write(',');
+//         }
+
+        //[0][0] [1][0]
+        // var arrName=['张三','李四','王麻子','赵六','平均分'];
+        // var arrS=['姓名','英语','数学','语文','总分'];
+        // var arr2=[[10,10,10],[30,20,20],[30,60,30],[50,50,40]];
+        // var str='<table>';
+        // var len=arrName.length;
+        // var sum=0;
+        //
+        //
+        // for(var i=0;i<len+1;i++){
+        //     str+='<tr>';
+        //     if(i==0){
+        //         for(var g=0;g<arrS.length;g++){
+        //             str+='<th>'+arrS[g]+'</th>';
+        //
+        //         }
+        //     }
+        //     for(var j=0;j<len;j++){
+        //        if(i>=1&&i<len+1&&j==0){
+        //                 str+='<th>'+arrName[i-1]+'</th>';
+        //         }else if(i>=1&&i<len&&j==1){
+        //             str+='<td>'+arr2[i-1][j-1]+'</td>';
+        //         }else if(i>=1&&i<len&&j==2){
+        //             str+='<td>'+arr2[i-1][j-1]+'</td>';
+        //         }else if(i>=1&&i<len&&j==3){
+        //             str+='<td>'+arr2[i-1][j-1]+'</td>';
+        //         }else if(i>=1&&i<len&&j==4){
+        //                 for(var x=0;x<arr2[i-1].length;x++){
+        //                     sum+=arr2[i-1][x];
+        //                 }
+        //                 str+='<td>'+sum+'</td>';
+        //                 sum=0;
+        //         } else if(i==len&&j<len-1){
+        //                 var sub=0;
+        //                 var num=0;
+        //                 for(var k=0;k<arr2.length;k++){
+        //                     num+=arr2[k][j-1];
+        //                     sub=num/arr2.length;
+        //                 }
+        //                 str+='<td>'+sub+'</td>';
+        //         }
+        //     }
+        //     str+='</tr>';
+        // }
+        // str+='</table>';
+        // document.write(str);
+
+    //老师
+
+    // var score=[[10,20,10],[25,20,25],[30,40,30],[15,25,15],[15,25,15]];
+    //
+    //
+    //
+    // var mean=[];
+    //
+    // for(var i=0;i<score[0].length;i++){
+    //     for(var j=0;j<score.length;j++){
+    //         mean[i]=mean[i]||0;
+    //         mean[i]+=score[j][i]
+    //     }
+    // }
+    //
+    //
+    // var str="<table>"; // table开始
+    //
+    // str+="<tr><th>姓名</th><th>语文</th><th>数学</th><th>英语</th><th>总分</th></tr>";// 表头
+    //
+    // var name="";
+    // for(var i=0;i<score.length;i++){
+    //
+    //     if(i==0){
+    //         name="李四";
+    //     }else if(i==1){
+    //         name="张三";
+    //     }else if(i==2){
+    //         name="王五";
+    //     }else if(i==3){
+    //         name="赵六";
+    //     }else{
+    //         name="未知";
+    //     }
+    //
+    //     var sum=0;
+    //     //循环行
+    //     str+="<tr>";
+    //     // 输出第一列（名字）
+    //     str+="<td>"+name+"</td>";
+    //     // 循环列
+    //     for(var j=0;j<score[i].length;j++){
+    //         str+="<td>"+score[i][j]+"</td>";
+    //         sum+=score[i][j];
+    //     }
+    //
+    //     // 输出最后一列
+    //     str+="<td>"+sum+"</td>";
+    //     str+="</tr>";
+    // }
+    //
+    // str+="<tr><td>平均分</td> "; // 平均分所在行的开始
+    //
+    // for(var i=0;i<mean.length;i++){
+    //     str+="<td>"+(mean[i]/score.length)+"</td>"
+    // }
+    // str+="</tr>" // 平均分所在行的结束
+    //
+    //
+    //
+    //
+    // str+="</table>";// table结束
+    //
+    //
+    // document.write(str);
+
+
+    var sorce=[[10,10,10],[30,20,20],[30,60,30],[50,50,40]];
+
+    var str='<table>';
+    str+='<tr><th>姓名</th><th>数学</th><th>英语</th><th>语文</th><th>总分</th></tr>';
+    var name='';
+    //平均值
+    var average=[];
+    for(var i=0;i<sorce.length;i++){
+        if(i==0){
+            name='张三';
+        }else if(i==1){
+            name='李四';
+        }else if(i==2){
+            name='王五';
+        }else if(i==3){
+            name='赵六';
+        }else{
+            name='未知';
+        }
+
+        var sum=0;
+
+        //行
+        str+='<tr>';
+        //姓名
+        str+='<td>'+name+'</td>';
+        //列
+        for(var j=0;j<sorce[i].length;j++){
+            str+='<td>'+sorce[i][j]+'</td>';
+            sum+=sorce[i][j];
+        }
+        //总分
+        str+='<td>'+sum+'</td>';
+
+
+        str+='</tr>';
+    }
+
+    //平均分
+    str+='<tr><td>平均分</td></tr>';
+    // for(var i=0;i<)
+
+
+
+
+
+    str+='</table>';
+    document.write(str);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

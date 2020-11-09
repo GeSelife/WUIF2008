@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="JS/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+<div class="box">6</div>
+<div class="box">7</div>
+<div class="box">8</div>
+<div class="box">9</div>
+<script>
+    //当页面加载完成之后加载
+    $(function () {
+        //获取到的是JQuery对象
+        // $('div');
+
+        //子集元素
+        // console.log($('body > div'))
+
+        //第一个子元素
+        // console.log($('body div:first'));
+
+        //最后一个子元素
+        // console.log($('.box:last'));
+
+        //even 偶数行 从0开始
+        // $('.box:even').css('color','red');
+
+        // //odd  基数行  从0开始
+        // $('.box:odd').css('color','yellow');
+
+        // //eq(index) 指定下标位置上的元素
+        // $('.box:eq(1)').css('color','pink');
+
+        //gt(index) 所有大于index位置的元素
+        // $('.box:gt(3)').css('color','blue');
+
+        //lt(index)  所有小于index位置的元素
+        // $('.box:lt(3)').css('color','pink');
+
+        //选择该文档的根元素 :root
+        $(':root').css('background-color','black');
+
+        //隔行变色
+        $('.box').css({'width':'100px','height':'30px','font-size':'20px','color':'#fff','line-height':'30px','text-align':'center'});
+        $('.box:even').css('background-color','red');
+        $('.box:odd').css('background-color','blue');
+    })
+</script>
+
+</body>
+</html>

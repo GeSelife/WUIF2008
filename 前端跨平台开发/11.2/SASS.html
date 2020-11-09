@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SASS  ---  CSS预编译</title>
+    <link rel="stylesheet" href="./css/SASS.css">
+</head>
+<body>
+<script>
+    /*
+    * 预编译语言
+    *    SASS   LESS
+    *
+    *可以再css中声明变量
+    * 1.SASS
+    *    又名SCSS  是css预处理器之一，是一个将脚本解析成CSS脚本语言，即SassScript
+    *    文件后缀：.scss
+    *    功能:可以在css中声明变量，编写函数、循环、条件、嵌套、导入等
+    *    安装:进入sass官网---如何安装
+    *
+    *
+    * 不可以直接在布局中进行编译
+    *  使用流程:sass文件----编译成css文件----页面中引入
+    *  声明变量: $变量名
+    *  导入sass文件: @important "文件路径"
+    *
+    *
+    * 后代选择器----嵌套布局
+    * 子包含选择器（只与第一层级的子元素有关）---- 在父元素中>子元素{}
+    * &用来代替父元素   例如: .father  .father-con ---->  .father{&-con{}}
+    * 群组选择器:样式嵌套放在最上面--优先级最低
+    *
+    *
+    * 一般在文件最上面声明变量
+    * 差值:#{$变量名}  涉及到动态获取时运用差值
+    *
+    * 混合器@mixin name{要取出的样式}    @include name 放在复用的位置
+    *       可以传参,可以不传    传参时形参用$变量名 定义
+    * 在sass中像素可以直接进行运算
+    *
+    * 继承   要继承的选择器{@extend 被继承样式的选择器}   按照群组选择器的方式进行继承
+    *
+    * 字符串拼接   加引号是拼接  不加引号是运算
+    *
+    * 判断语句  @if 条件 {} @else if 条件 {} @else {}
+    *
+    * 循环   for
+    *
+    * 函数  @function name(){@return 值}
+    *
+    *
+    * sass --watch 目录  实时编译  监听文件
+    * ctrl+c 不监听
+    *
+    *
+    * */
+</script>
+
+<div class="father">
+    <div class="son">son</div>
+    <div class="girl">girl</div>
+    <div class="father-con">
+        <div class="father-con-dem"></div>
+        <div class="father-dem1"></div>
+    </div>
+</div>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+</body>
+</html>

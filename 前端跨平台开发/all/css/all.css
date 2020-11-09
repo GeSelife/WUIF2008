@@ -1,0 +1,111 @@
+html,body{
+    width: 100%;
+}
+h3{
+    width: 100%;
+    padding-top: 0.1rem;
+    height: 0.3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    line-height: 0.3rem;
+    font-size: 0.25rem;
+}
+.swiper-container {
+    width: 100%;
+    height: 100vh;
+}
+.swiper-slide{
+    display: flex;
+    justify-content: space-around;
+}
+.swiper-slide a{
+    font-size: 0.3rem;
+    color: #fff;
+    align-self: center;
+}
+.swiper-slide div{
+    width: 20%;
+    align-self: center;
+    cursor: pointer;
+
+}
+.swiper-slide div img{
+    width: 1rem;
+    /*height: 1rem;*/
+    overflow: hidden;
+    border-radius: 50%;
+    /*border: 1px solid sandybrown;*/
+    background-color: rgba(0,0,0,.3);
+}
+
+.swiper-slide1{
+    background: linear-gradient(45deg,#D61913,#EDAAA7);
+}
+.swiper-slide1 div img{
+    background: linear-gradient(-45deg,#D61913,#EDAAA7) rgba(255,255,255,.4);
+}
+.swiper-slide2{
+    background: linear-gradient(45deg,#744312,#2D251C);
+}
+.swiper-slide3{
+    background: linear-gradient(45deg,#020031,#6d3353);
+}
+.swiper-slide3 div img{
+    width: 0.8rem;
+    margin: auto;
+}
+.swiper-slide4{
+    background: linear-gradient(45deg,#085078,#85D8CE);
+}
+.swiper-slide5{
+    background: linear-gradient(to left top,#0E1936,#0F539C);
+}
+.swiper-slide6{
+    background: linear-gradient(45deg,#134E5E,#71B280);
+}
+.swiper-slide6 div img{
+    width: 1.1rem;
+    height: 1rem;
+}
+.swiper-slide7{
+    background: linear-gradient(60deg,#1F4260,#D4B2E1);
+}
+.swiper-slide8{
+    background: linear-gradient(45deg,#15191D,#8D969E);
+}
+.swiper-slide9{
+    background: linear-gradient(-45deg,#40220C,#A8A4A1);
+}
+.swiper-slide10{
+    background: linear-gradient(45deg,#1D976C,#93F9B9);
+}
+.swiper-slide10 div img{
+    border-radius: 0;
+}
+
+.swiper-slideStart{
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    background: linear-gradient(#CC95C0,#DBD4B4,#7AA1D2);
+}
+.swiper-slideStart div{
+    font-size: 0.3rem;
+    text-shadow: 0.03rem 0.02rem 0.03rem #7AA1D2;
+}
+.swiper-slideStart ul{
+    align-self: center;
+}
+.swiper-slideStart ul li{
+    font-size: 0.15rem;
+    cursor: pointer;
+    margin-bottom: 0.05rem;
+}
+.swiper-pagination-bullet-active{
+    background: #dbd4b4;
+}

@@ -1,0 +1,20 @@
+body, html {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.father {
+  width: 400px;
+  height: 400px;
+  background-color: salmon;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .father .son {
+    width: 200px;
+    height: 20px;
+    background-color: palegoldenrod; }
+
+/*# sourceMappingURL=SASS.css.map */

@@ -1,0 +1,241 @@
+/*header*/
+header{
+    width: 100%;
+    height: 0.36rem;
+    text-align: center;
+    margin-top: 0.36rem;
+    margin-bottom: 0.74rem;
+}
+header img{
+    position: fixed;
+    top: 0;left: 0;
+    z-index: -1;
+    width: 100%;
+}
+header p{
+    font-size: 0.34rem;
+    color: #ffffff;
+    line-height: 0.36rem;
+}
+/*显示内容 sOne*/
+.sOne{
+    width: 100%;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+}
+.sOne div:nth-child(1){
+    text-align: right;
+}
+.sOne div:nth-child(1) span:nth-child(1){
+    line-height: 0.54rem;
+    color: #fff;
+    font-size: 0.32rem;
+}
+.sOne div:nth-child(1) p:nth-child(2){
+    line-height: 1.45rem;
+    color: #fff;
+    font-size: 1.8rem;
+}
+.sOne div:nth-child(1) div:nth-child(3){
+    line-height: 0.5rem;
+    color: #fff;
+    font-size: 0.32rem;
+}
+.sOne div:nth-child(1) div:nth-child(3) img{
+    width: 0.34rem;
+    margin-left: 0.17rem;
+}
+.sOne div:nth-child(2){
+    line-height: 0.57rem;
+    color: #fff;
+    font-size: 0.24rem;
+    padding-bottom: 0.3rem;
+    /*border-bottom: 1px solid ;*/
+}
+.sOne div:nth-child(2) span:nth-child(1){
+    font-size: 0.34rem;
+    color: #fff;
+    margin-right: 0.4rem;
+}
+/*实时温度 dTem*/
+.dTem{
+    width: 100%;
+    overflow: scroll;
+    border-bottom: 1px solid #6963f1;
+    border-top: 1px solid #6963f1;
+    padding: 0.3rem 0 0.48rem 0.3rem;
+    box-sizing: border-box;
+}
+.dTem ul{
+    width: 160%;
+    display: flex;
+    justify-content: space-around;
+}
+.dTem ul li{
+    float: left;
+    height: 2.47rem;
+    text-align: center;
+}
+.dTem ul li div:nth-child(1){
+    font-size: 0.32rem;
+    color: #fff;
+}
+.dTem ul li img{
+    height: 0.35rem;
+    margin: 0.5rem 0;
+}
+.dTem ul li div:nth-child(3){
+    font-size: 0.36rem;
+    color: #fff;
+}
+/*一周温度*/
+.weekTem{
+    padding: 0.15rem 0.3rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.weekTem ul li{
+    margin: 0.15rem 0;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.weekTem ul li span:nth-child(1){
+    font-size: 0.34rem;
+    color: #ffffff;
+}
+.weekTem ul li img{
+    height: 0.36rem;
+    /*margin: 0 2.43rem 0;*/
+}
+.weekTem ul li div span:nth-child(1){
+    font-size: 0.36rem;
+    margin-right: 0.7rem;
+    color: #ffffff;
+}
+.weekTem ul li div span:nth-child(2){
+    font-size: 0.36rem;
+    color: #adabf3;
+}
+/*生活指数*/
+.indexLink{
+    width: 100%;
+    margin-bottom: 0.6rem;
+    overflow: hidden;
+}
+.indexLink p:nth-child(1){
+    width: 100%;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+.swiper-container {
+    width: 100%;
+    height: 3rem;
+}
+.swiper-slide {
+    text-align: left;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    transition: 300ms;
+    transform: scale(0.8);
+}
+.swiper-slide-active,.swiper-slide-duplicate-active{
+    transform: scale(1);
+}
+.swiper-container .swiper-wrapper .swiper-slide{
+    background: #fff;
+    box-shadow: 0 0.2rem 0.3rem 0
+    rgba(0, 128, 216, 0.3);
+    border-radius: 0.2rem;
+    padding: 0.45rem 0.34rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.swiper-wrapper .swiper-slide img{
+    width: 0.8rem;
+    height: 0.8rem;
+    align-self: center;
+    margin-right: 0.4rem;
+}
+.swiper-slide div:nth-child(2) div:nth-child(1){
+    font-size: 0.32rem;
+    color: #333;
+    margin-bottom: 0.12rem;
+}
+.swiper-slide div:nth-child(2) p:nth-child(2){
+    font-size: 0.26rem;
+    line-height: 0.42rem;
+    color: #b8b8b8;
+}
+
+/*空气质量*/
+footer{
+    width: 100%;
+    padding: 0 0.3rem 0.78rem;
+    box-sizing: border-box;
+}
+footer div:nth-child(1){
+    width: 100%;
+    color: #fff;
+    font-size: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+footer img{
+    width: 0.34rem;
+    margin-bottom: 0.25rem;
+}
+footer ul{
+    width: 100%;
+    overflow: hidden;
+}
+footer ul li{
+    float: left;
+    height: 0.31rem;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 0.2rem;
+    text-align: center;
+    line-height: 0.31rem;
+}
+footer ul li:nth-child(1){
+    width: 0.76rem;
+    background-color: #5acb7b;
+}
+footer ul li:nth-child(2){
+    width: 0.76rem;
+    background-color: #a4d363;
+}
+footer ul li:nth-child(3){
+    width: 0.76rem;
+    background-color: #ffd255;
+}
+footer ul li:nth-child(4){
+    width: 0.76rem;
+    background-color: #fbb464;
+}
+footer ul li:nth-child(5){
+    width: 1.52rem;
+    background-color: #ef8659;
+}
+footer ul li:nth-child(6){
+    width: 2.33rem;
+    background-color: #f06163;
+}

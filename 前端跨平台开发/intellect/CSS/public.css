@@ -1,0 +1,267 @@
+/*兼容ie8*/
+/*.body{*/
+/*    behavior: url(static_resources/PIE.htc);*/
+/*}*/
+
+
+.box{
+    width: 100%;
+}
+.conBox{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*nav*/
+.navBox{
+    width: 100%;
+    padding-bottom: 30px;
+    overflow: hidden;
+    background-color: #F7F7F7;
+}
+.navCon{
+    width: 69%;
+    height: 100%;
+    margin: auto;
+}
+/*nav-left*/
+.navCon-left{
+    float: left;
+    height: 44px;
+    font-size: 34px;
+    line-height: 100px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #1f8fee;
+}
+.navCon-right{
+    float: right;
+    margin-top: 40px;
+    line-height: 100px;
+}
+.navCon-rightPhone{
+    height: 20px;
+    float: left;
+    padding-right: 14px;
+    border-right: 1px solid #E4E4E4;
+    margin-right: 14px;
+}
+.phoneIcon{
+    width: 20px;
+    height: 22px;
+    background: url("../Img/index_phoneIcon.png");
+    float: left;
+    margin-right: 4px;
+}
+.navCon-rightPhone span{
+    float: right;
+    height: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: #8d8d8d;
+}
+.navCon-rightEmail{
+    float: right;
+    height: 20px;
+}
+.EmailIcon{
+    width: 24px;
+    height: 22px;
+    background: url("../Img/index_emailIcon.png");
+    float: left;
+    margin-right: 4px;
+}
+.navCon-rightEmail span{
+    float: right;
+    height: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: #8d8d8d;
+}
+
+/*head*/
+/*head*/
+.headCon-leftList.headCon-leftListActive a{
+    color: #1f8fee;
+}
+.headBox{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    padding: 15px 0;
+    box-sizing: content-box;
+
+}
+.headCon{
+    width: 69%;
+    overflow: hidden;
+    margin: auto;
+}
+.headCon-leftLists{
+    width: 60%;
+    line-height: 50px;
+}
+.headCon-leftList{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.headCon-leftList a{
+    list-style: none;
+    color: #333;
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: relative;
+}
+.headCon-leftList a::after{
+    content: '';
+    width: 1px;height: 100%;
+    background-color: #8d8d8d;
+    position: absolute;
+    right: 0;
+    top: 14px;
+}
+.headCon-input{
+    position: relative;
+    width: 20%;
+    float: right;
+    margin-top: 12px;
+}
+.headCon-input img{
+    width: 100%;
+}
+
+/*banner*/
+.bannerBox{
+    width: 100%;
+    height: 470px;
+    background-color: #F7F7F7;
+}
+.bannerCon{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.bannerCon ul{
+    width: 400%;
+}
+.bannerCon ul li{
+    width: 25%;
+    float: left;
+}
+/*Campus*/
+.CampusBox{
+    width: 100%;
+    /*height: 574px;*/
+    overflow: hidden;
+    padding-bottom: 50px;
+    background-color: #F7F7F7;
+}
+.CampusCon{
+    width: 69%;
+    height: 100%;
+    margin: auto;
+}
+.CampusCon-title{
+    width: 100%;
+    height: 100px;
+    padding: 53px 0 18px 0;
+    box-sizing: content-box;
+}
+.CampusCon-title p{
+    height: 37px;
+    font-size: 28px;
+    line-height: 37px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #4a8fe3;
+}
+.CampusCon-title span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
+    height: 20px;
+    font-size: 14px;
+    color: rgba(0,0,0,.65);
+}
+.CampusCon-title i{
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: 2px;
+    margin-top: 6px;
+    margin-bottom: 21px;
+}
+.CampusCon-title i::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -16px;
+    width: 32px;
+    height: 2px;
+    background-color: #4a8fe3;
+}
+
+
+/*foot*/
+.FootBox{
+    height: 330px;
+    background-color: #2D55A2;
+    position: relative;
+}
+.FootCon-lists{
+    width: 70%;
+    float: left;
+    margin-top:30px;
+}
+.FootCon-list{
+    float: left;
+    margin-right: 48px;
+}
+.FootCon-list p{
+    font-size: 12px;
+    color: #fff;
+    line-height: 30px;
+    font-weight: bold;
+}
+.FootCon-listCon li{
+    font-size: 10px;
+    color: #fff;
+    opacity: .5;
+    line-height: 30px;
+}
+.footImg{
+    width: 20%;
+    float: right;
+    margin-top: 100px;
+}
+.footImg div{
+    float: left;
+    width: 90px;
+    height: 90px;
+}
+.footImg1{
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background: url("../Img/index_footImg1.png") no-repeat center;
+}
+.footImg2{
+    background: url("../Img/index_footImg2.png") no-repeat center;
+}
+.footFont{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #224382;
+    color: #fff;
+    opacity: .4;
+    text-align: center;
+}

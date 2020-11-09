@@ -1,0 +1,132 @@
+/*个人信息inform*/
+.inform{
+    width: 94%;
+    margin: -1.52rem auto 0.24rem;
+    background-color: #fff;
+    box-shadow: 0 0.01rem 0.21rem 0 rgba(118, 118, 118, 0.17);
+    border-radius: 0.1rem;
+    position: relative;
+    padding: 0.39rem 0.5rem 0.4rem;
+    box-sizing: border-box;
+}
+.inform_top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.7rem;
+}
+.inform_top li:first-child div{
+    font-size: 0.26rem;
+    line-height: 0.24rem;
+    letter-spacing: 0.02rem;
+    color: #000;
+}
+.inform_top li:first-child span{
+    font-size: 0.18rem;
+    line-height: 0.24rem;
+    letter-spacing: 0.01rem;
+    color: rgba(0,0,0,.7);
+}
+.icon-huaban-{
+    font-size: 0.26rem;
+    line-height: 0.2rem;
+    color: #ffcb3f;
+}
+.inform_top li:last-child{
+    width: 0.91rem;
+    height: 0.91rem;
+    border-radius: 50%;
+    background-color: #162d76;
+}
+.inform_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.inform_bottom li{
+    text-align: center;
+}
+.inform_bottom li .iconfont{
+    font-size: 0.3rem;
+}
+.inform_bottom li span{
+    display: block;
+    margin-top: 0.18rem;
+    font-size: 0.24rem;
+    line-height: 0.2rem;
+    letter-spacing: 0.01rem;
+    color: #000000;
+}
+/*我的mine*/
+.mine{
+    width: 94%;
+    margin: 0 auto 0.27rem;
+    padding: 0.39rem 0.5rem 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0.01rem 0.21rem 0 rgba(118, 118, 118, 0.17);
+    border-radius: 0.1rem;
+}
+.mine ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.mine ul li{
+    width: 30%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.mine ul li p{
+    font-size: 0.24rem;
+    line-height: 0.2rem;
+    letter-spacing: 0.01rem;
+    color: #000000;
+    margin-top: 0.2rem;
+}
+.mine ul li .iconfont{
+    font-size: 0.4rem;
+}
+/*关于about*/
+.about{
+    width: 94%;
+    margin: auto;
+    padding: 0.39rem 0.5rem 0.4rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0.01rem 0.21rem 0 rgba(118, 118, 118, 0.17);
+    border-radius: 0.1rem;
+}
+.about ul{
+    width: 100%;
+}
+.about ul li{
+    width: 100%;
+    padding-bottom: 0.05rem;
+    border-bottom: 0.01rem solid #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+.about ul li div span{
+    font-size: 0.24rem;
+    line-height: 0.2rem;
+    letter-spacing: 0.01rem;
+    color: #000000;
+}
+.about ul li .iconfont{
+    font-size: 0.24rem;
+
+}
+.about ul li:last-child{
+    margin-bottom: 0;
+}
+/*footer*/
+footer ul li:last-child a{
+    color: #ffcb3f;
+}
+footer ul li:last-child{
+    color: #ffcb3f;
+}
+.icon-wode{
+    font-weight: bold;
+}

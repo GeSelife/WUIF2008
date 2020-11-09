@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object--class</title>
+    <style>
+        .box{
+            width: 100px;
+        }
+        .opts{
+            width: 100%;
+            height: 20px;
+            margin: 10px 0;
+        }
+        .opts div{
+            float: left;
+        }
+        .day{
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<script>
+    /*
+    * Class创建一个类
+    *  继承:class 要继承的类名 extends 被继承的类名{}
+    *   super()  在实例化当前类的时候,自动执行自己的
+    *
+    *
+    *在CSS中用@color:颜色;定义颜色  在样式中用到同种颜色的时候用@color代替就可以  更改大体颜色只需更改@color的颜色就可
+    *
+    * */
+    // class person{
+    //     constroctor (name){    //实例化的时候自动执行的函数叫构造函数
+    //         this.name=name;
+    //         this.age=12;
+    //         // this.
+    //     }
+    //     say(){
+    //         console.log('说话');
+    //     }
+    // }
+    //
+    // class stu extends person(){
+    //     constroctor(){
+    //
+    //     }
+    // }
+    // new person('123')
+    // console.log(new stu());
+
+
+
+    //在ecmascipt中自带的对象
+    /*
+    * 所有的数据类型都是对象
+    *
+    *
+    *
+    *
+    * */
+/*    string的方法
+        length 获取字符串的长度
+        slice(开始位置,结束位置) 字符串的截取 包含开始位置不包含结束位置,结束位置支持负数
+        substr(开始的位置,个数)
+        substring(开始位置,结束位置) 不支持负数
+        charAt() 取某位置的字符,不常用
+        toLowerCase()大写转为小写
+        toUpperCase()小写转大写
+        split("")将字符串转为数组
+        trim() 去字符串中的空格
+        concat()拼接  str.concat(str1);
+        replace("要替换的字符","替换的字符")   正则 /a/g  所有的a
+        repeat("重复的次数")
+        indexOf("要查询的字符",开始位置(可以不写)) 查找特定字符串的索引值  没有则返回-1
+*/
+    //查找每次出现aa的位置
+    // var str="aa浇洒客户给看见回归aa开工个个衣服收到货aa收收哈极多aa就单独的诶急救车";
+    // var num=0;
+    // var str1='';
+    // while ((num=str.indexOf("aa",num))>-1){
+    //     str1+=num+",";
+    //     num++;
+    // }
+    // console.log(str1)
+
+
+
+    /*
+    * 1. 如何在数组的最后加入元素   push
+    * 2. 如何在数组的最前面加入元素 unshift
+    * 3. 如何删除数组的最后一个元素 pop
+    * 4. 如何删除数组的第一个元素  shift
+    * 5. 如何删除数组的任意位置的元素 splice
+    * 6. 如何替换数组中任意的元素   splice
+    * 7. 如何将数组的元素组合成字符串 join
+    * 8. 如何连接多个数组
+    * 9. 如何截取数组
+    * 10. 如何对数组来进行排序
+    * 11. 如何循环数组
+    * 12. 数组转置
+    * 13. 数组过滤
+    * 14. 数组映射
+    * 15. 判断
+    *
+    * 数组对象的方法
+    *   1.push() 在末尾添加并改变数组长度 返回值为新数组的长度 可以是任意数量  会影响原数组
+    *   2.unshift() 在最前面加元素 返回值为新数组的长度 可以是任意数量  会影响原数组
+    *   3.pop()  删除最后一项 返回删除的元素
+    *   4.shift() 删除第一项 返回删除元素的值
+    *   5.splice(删除的开始位置,个数) 删除指定位置的元素 返回删除的元素构成的数组
+    *   6.splice(开始下标,个数,替换值)返回删除的元素构成的数组
+    *   6.1.splice(开始下标,0,添加值) 返回空数组  在任意位置添加值
+    *   7.join() 转为字符串
+    *   8.concat()拼接数组    不会影响原数组
+    *   9.slice(开始位置,结束位置)不包含结束位置 截取数组  不影响原数组
+    *   10.sort() 默认升序 小的在前, 可以接受比较函数作为参数 会对原数组产生影响
+    *   11.forEach(function(i,index){})  遍历数组
+    *   12.reverse()  数组转置
+    *   13.filter(function(val,index){})   数组过滤
+    *   14.map(function(val,index){})  数组映射,对数组中所有元素进行批量处理
+    *   15.some(function(val,index){})  只要数组里面有一个元素返回真,那么这个结果就是真  同||
+    *   15.1.every(function(val,index){})  数组中全部都是真,才会返回真    同&&
+    *
+    * */
+    // new Array();
+    // console.dir(Array);
+    //
+    var arr=[4,8,5,9,2,7,'a','d','f'];
+    // var arr1=[3,4]
+    // // arr.push(123)
+    // // console.log(arr)
+    // // arr.unshift(123)
+    // // console.log(arr);
+    // // console.log(arr.splice(2,0,'a'))
+    // // console.log(arr)
+    // arr.forEach(function(i,index){
+    //     console.log(index+','+i)
+    // })
+    // arr.sort(function (x,y) {
+    //     return y-x;    //大到小
+    // })
+    // console.log(arr)
+
+    // console.log(arr.join('-'))
+    //
+    // console.log(arr.filter(function (i,index) {
+    //     if(typeof i=='string'){
+    //         return i;
+    //     }
+    // }))
+    // console.log(arr);//过滤
+    //
+    // console.log(arr.reverse());//转置
+    // //映射
+    // console.log(arr.map(function (i,index) {
+    //     return i+2;
+    // }))
+
+    /*
+    * 相似数 数学函数
+    *   Math.round(变量名)
+    *   Math.random()    0--1之间的随机值;不包含0和1
+    *   Math.floor()  向下取整
+    *   Math.min()   取最小值
+    *   Math.sin/cos/tan(弧度)  弧度=角度*Math.PI/180
+    *
+    *
+    *
+    * */
+
+
+</script>
+<body>
+
+
+
+<script>
+/*
+    `用于输出复杂的字符串`
+    ${变量值}
+*/
+// 根据num排序
+    var arr=[{day:'星期一',num:20},{day:'星期二',num:30},{day:'星期三',num:22},{day:'星期四',num:10},{day:'星期五',num:15},{day:'星期六',num:18},{day:'星期日',num:15}]
+
+    function order() {
+        arr.sort(function (a,b) {
+            return a.num-b.num;
+        })
+        f();
+    }
+    function reverse() {
+        arr.reverse();
+        f();
+    }
+
+    function f(){
+        var str=`
+            <div class="box">
+            <input type="button" value="排序" onclick="order()">
+            <input type="button" value="倒置" onclick="reverse()">
+        `;
+
+        arr.forEach(function (val,index) {
+            var day=val.day;
+            var num1=val.num+'px';
+            str+=`
+                <div class="opts">
+                    <div class="day">${day}</div>
+                    <div style="width:${num1};height: 20px;background: chartreuse">${val.num}</div>
+                </div>
+            `;
+        })
+        str+='</div>';
+        document.write(str);
+    }
+    f();
+
+</script>
+
+</body>
+</html>

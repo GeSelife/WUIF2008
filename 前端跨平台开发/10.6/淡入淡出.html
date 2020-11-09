@@ -1,0 +1,206 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淡入淡出</title>
+    <script src="../封装/JS/runStyle.js"></script>
+    <style>
+        body,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .windows{
+            width: 500px;height: 150px;
+            position: relative;
+        }
+        .box{
+            width: 100%;height: 100%;
+            top: 0;left: 0;
+        }
+        .box div{
+            width: 100%;height: 100%;
+            position: absolute;
+            top: 0;left: 0;
+        }
+        .one{
+            background-color: blue;
+        }
+        .two{
+            background-color: brown;
+        }
+        .three{
+            background-color: orange;
+        }
+        .four{
+            background-color: pink;
+        }
+        .btn{
+            width: 100px;
+            height: 20px;
+            position: absolute;
+            bottom: 20px;
+            left: 0;right: 0;margin: auto;
+            position: absolute;
+            z-index: 1;
+        }
+        .btn li{
+            width: 10px;height: 10px;margin: 5px;
+            border: 1px solid black;
+            border-radius: 100%;
+            float: left;cursor: pointer;
+        }
+        .left{
+            width: 10px;height: 50px;position: absolute;z-index: 1;
+            top: 0;bottom: 0;margin: auto;
+            color: #fff;
+            text-align: center;line-height: 50px;
+            cursor: pointer;
+        }
+        .right{
+            width: 10px;height: 50px;position: absolute;z-index: 1;
+            top: 0;bottom: 0;margin: auto;right: 0;color: #fff;
+            text-align: center;line-height: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="windows">
+    <div class="box">
+        <div class="one" style="z-index: 1">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+    </div>
+    <ul class="btn">
+        <li style="background-color: #fff"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="left">&lt;</div>
+    <div class="right">&gt;</div>
+</div>
+
+<script>
+    var windows=document.querySelector('.windows');
+    var imgN=document.querySelectorAll('.box div');
+    var btnS=document.querySelectorAll('.btn li');
+    var left=document.getElementsByClassName('left')[0];
+    var right=document.getElementsByClassName('right')[0];
+    var flag=true;
+    var num=0;
+banner(windows,imgN,btnS,left,right)
+function banner(windows,imgN,btnN,left,right){
+
+    right.onclick=function () {
+        if(!flag){
+            return;
+        }
+        flag=false;
+        move();
+    }
+    left.onclick=function () {
+        if(!flag){
+            return;
+        }
+        flag=false;
+        num--;
+        if(num<0){
+            num=btnS.length-1;
+        }
+        for (var i=0;i<imgN.length;i++) {
+            animation(imgN[i], {
+                opacity: 0
+            }, 500, Tween.Linear,function () {
+                flag=true;
+            })
+        }
+        animation(imgN[num],{
+            opacity:1
+        },500,Tween.Linear,function () {
+            flag=true;
+        })
+
+        for(var i=0;i<btnS.length;i++){
+            btnS[i].style.background='none';
+        }
+        btnS[num].style.background='#fff';
+    }
+
+
+    window.onfocus=windows.onmouseout=function () {
+        t=setInterval(move,1000);
+    }
+    window.onblur=windows.onmouseover=function () {
+        clearInterval(t);
+    }
+
+    function move(){
+        num++
+        for (var i=0;i<imgN.length;i++){
+            if(num==imgN.length){
+                num=0
+            }
+            animation(imgN[i],{
+                opacity:0,
+                zIndex:0
+            },500,Tween.Linear,function () {
+                flag=true;
+            })
+        }
+        animation(imgN[num],{
+            opacity:1,
+            zIndex:1
+        },500,Tween.Linear,function () {
+            flag=true;
+        })
+
+        for(var i=0;i<btnS.length;i++){
+            btnS[i].style.background='none';
+        }
+        btnS[num].style.background='#fff';
+
+    }
+
+    for(var i=0;i<btnS.length;i++){
+        btnS[i].index=i;
+        btnS[i].onclick=function () {
+            num=this.index;
+            for (var i=0;i<imgN.length;i++){
+                animation(imgN[i],{
+                    opacity:0,
+                    zIndex:0
+                },500,Tween.Linear,function () {
+                    flag=true;
+                })
+            }
+            animation(imgN[num],{
+                opacity:1,
+                zIndex:1
+            },500,Tween.Linear,function () {
+                flag=true;
+            })
+
+
+            for(var i=0;i<btnS.length;i++){
+                btnS[i].style.background='none';
+            }
+            btnS[num].style.background='#fff';
+        }
+
+    }
+
+
+    var t=setInterval(move,1000);
+
+
+    }
+
+</script>
+</body>
+</html>

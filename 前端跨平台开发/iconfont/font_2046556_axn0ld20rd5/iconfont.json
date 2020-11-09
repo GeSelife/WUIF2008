@@ -1,0 +1,93 @@
+{
+  "id": "2046556",
+  "name": "123",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1191509",
+      "name": "导航栏_模式02",
+      "font_class": "daohanglanmoshi02",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "1319358",
+      "name": "鞋",
+      "font_class": "xie",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "4161752",
+      "name": "鞋",
+      "font_class": "icon-test",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "4166072",
+      "name": "衣服",
+      "font_class": "yifu",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "5104974",
+      "name": "鞋",
+      "font_class": "xie1",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "7812922",
+      "name": "鞋",
+      "font_class": "xie2",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "7846934",
+      "name": "鞋",
+      "font_class": "xie3",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "7848461",
+      "name": "鞋",
+      "font_class": "xie4",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "13366697",
+      "name": "衣服",
+      "font_class": "yifu1",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "13646227",
+      "name": "衣",
+      "font_class": "yi",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1133733",
+      "name": "购物车",
+      "font_class": "icon4",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "14295709",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    }
+  ]
+}

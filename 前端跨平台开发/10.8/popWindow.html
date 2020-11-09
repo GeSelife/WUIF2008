@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广告弹窗</title>
+    <style>
+        body{
+            padding: 0;margin: 0;list-style: none;
+        }
+        .box{
+            width: 300px;height: 200px;position: absolute;top: 0;left: 0;border: 1px solid #000;
+            overflow: hidden;
+        }
+        .top{
+            width: 100%;height: 30px;background-color: #e6e6e6;color: #000;line-height: 30px;text-align: center;position: relative;
+        }
+        .bottom{
+            width: 100%;height: 170px;text-align: center;
+        }
+        .close{
+            background-color: #e6e6e6;color: red;position: absolute;
+            right: 0;top: 0;padding: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top">
+        这是一个广告
+        <div class="close">X</div>
+    </div>
+    <div class="bottom">
+        这是一个广告的内容<br/>
+        这是一个广告的内容<br/>
+        这是一个广告的内容<br/>
+        这是一个广告的内容<br/>
+        这是一个广告的内容<br/>
+        这是一个广告的内容<br/>
+    </div>
+
+</div>
+<script src="../封装/JS/runStyle.js"></script>
+<script>
+    var box=document.querySelector('.box');
+    var top=document.querySelector('.top');
+    var close=document.querySelector('.close');
+    var bottom=document.querySelector('.bottom');
+
+    var stepX=5;
+    var stepY=5;
+
+    function move() {
+        var boxLeft=box.offsetLeft+stepX;
+        var boxTop=box.offsetTop+stepY;
+
+        if(boxLeft<0){
+            stepX=-stepX;
+        }
+        if(boxLeft>document.documentElement.clientWidth-box.offsetWidth){
+            boxLeft=document.documentElement.clientWidth-box.offsetWidth;
+            stepX=-stepX;
+        }
+        if(boxTop<0){
+            stepY=-stepY;
+        }
+        if(boxTop>document.documentElement.clientHeight-box.offsetHeight){
+            boxTop=document.documentElement.clientHeight-box.offsetHeight;
+            stepY=-stepY;
+        }
+
+        box.style.left=boxLeft+'px';
+        box.style.top=boxTop+'px';
+
+    }
+    var t=setInterval(move,50);
+
+
+    //鼠标移入移出事件
+    box.onmouseover=function () {
+        clearInterval(t);
+    }
+    box.onmouseout=function () {
+        t=setInterval(move,50);
+    }
+
+    //点击关闭按钮
+    var flag=true;
+
+    close.onclick=function () {
+        if(flag){
+            close.innerHTML='口';
+            box.onmouseout='null';
+            animation(box,{
+                width:200,
+                height:30,
+                top:document.documentElement.clientHeight-50,
+                left:document.documentElement.clientWidth-220
+            },500,Tween.Linear)
+            flag=false;
+        }else {
+            close.innerHTML='X';
+            animation(box,{
+                width: 300,
+                height: 200,
+                left: 0,
+                top: 0
+            }, 500, Tween.Linear,function () {
+                t=setInterval(move,40);
+                box.onmouseout=function () {
+                    t=setInterval(move,40);
+                }
+            })
+            flag=true;
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

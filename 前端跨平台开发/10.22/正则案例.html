@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>案例</title>
+</head>
+<body>
+<script>
+//toUpperCase()  字母转大写
+
+    //验证手机号
+    // let str=152965894455;
+    // let reg=/^(138|137|134|158|188|182|177)\d{8}/;
+    // console.log(reg.test(str))
+
+    //验证身份证
+    // let str='14275259958456525x';
+    // let reg=/^(14)\d{15}(\d|X)$/g;
+    // console.log(reg.test(str.toUpperCase()));
+
+    //验证变量名
+    // let str='9dg54';
+    // let reg=/^(_|$|[a-z]|[A-Z])[0-9a-zA-Z]*/;
+    // console.log(reg.test(str));
+
+
+    //验证是否是css文件
+    // let str='s.ss';
+    // let reg=/\.css$/;
+    // console.log(reg.test(str));
+
+    //替换所有的数字  replace(被替换的正则,新的内容)
+    // let str='216fsht689afg16h8fn7';
+    // str=str.replace(/\d/g,'*');
+    // console.log(str);
+
+    //返回查询内容的开始下标 search(查询的正则内容)
+    let str='ds2f2168fg56';
+    // console.log(str.search(/\d{2,}/));
+    //按照指定字符分割  返回分割后的数组  split(要分割的节点内容);
+    console.log(str.split(/[f,s]/));
+</script>
+
+</body>
+</html>

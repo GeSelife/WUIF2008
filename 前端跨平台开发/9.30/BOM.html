@@ -1,0 +1,247 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM</title>
+    <script>
+        //acmascript 语法+BOM浏览器对象(把浏览器里面的每一个功能都当做对象去看)模型+DOM==JavaScript
+        //BOM  Browser Object Model  屏蔽
+        //DOM  Document Object Model 更多操作的对象 html+css+js
+        //Model 模型-->组织结构完整、层次逻辑分明
+
+        /*
+        * BOM
+        *   1.浏览器大对象里包含哪些属性和功能(方法)
+        *   2.浏览器大对象中包含哪些子对象
+        *
+        *   浏览器对象:Windows---是JS的顶层对象
+        *
+        *
+        * 顶层对象window自带的方法:
+        *   alert();
+        *   prompt(); //弹出label为()的input;
+        *   confirm();//弹出()
+        *   close(); 关闭浏览器
+        *   open(); 打开新的浏览器
+        * 顶层对象window自带的属性:
+        *   1.1.innerWidth;获取浏览器可视区域的宽
+        *   1.2.innerHeight;获取浏览器可视区域的高
+        *   3.1.screenLeft; 浏览器距离屏幕左边的距离  === screenX
+        *   3.2.screenTop; 浏览器距离屏幕上边的距离   === screenY
+        *   4.1.scrollBy(x轴方向<横向滚动条>,y轴方向<纵向滚动条>);滚动条    相对于当前的位置移动指定的数量
+        *   4.2.scrollTo(x,y);直接运动到指定的地方---相对于初始位置移动指定位置
+        * ***********************方法*******************************
+        *   setInterval(要运行的函数,时间-单位ms);在指定的时间内不断的让某一个函数运行---定时器
+        *       返回值为指针---运行函数是第几秒
+        *   clearInterval();   停掉定时器
+        *   setTimeout(function(){},时间);  在指定的时间后执行一次函数
+        *   clearTimeout();   停止、释放setTimeout所占用的内存
+        *
+        *
+        * 动画 在指定的时间内一个物体的变化状态在你的眼球中留下的影像
+        * 眼球中 动画流畅的条件 1s/21帧
+        *
+        *************************子对象*********************************
+        *子对象
+        *   1.console();----->log(字符串方式打印) / dir(打印细节) / error(错误) / warn(警告)
+         *  2.1.screen.width;获取屏幕分辨率的宽
+        *   2.2.screen.height;获取屏幕分辨率的高
+        *   3.location 子对象 控制地址栏
+        *       属性     protocol 协议
+        *               host 主机+端口
+        *               hostname 主机
+        *               port 端口
+        *               pathname 路径
+        *               search 获取查询字符串
+        *               hash  锚链接
+        *               href  获取地址栏完整的地址   href="跳转地址" 有历史记录
+        *               assign("跳转地址")地址栏跳转 有历史记录
+        *               reload 刷新页面/重载
+        *               replace 进行地址跳转并替换页面  没有历史记录
+        *   4.history 历史记录  将在浏览器里面访问过的信息保存到一个数组里面
+        *       属性   forward()/go(num)  前进(只能前进一个)/可以前进指定步数
+        *             back()/go(-num)    后退(只能后退一个)/可以后退指定步数
+        *             pushState()
+        *   5.document  (Dom)
+        *
+        * 地址栏的构成:  url --- Uniform Resource Locator 统一资源定位器
+        *    协议 http://   https://  tpf://  svn://
+        *   + 主机名(地址) 地址   39.156.69.79-->baidu.com  绑定
+        *   + 路径     /from=844b/
+        *   + 查询字符串 ----> ?      ////   锚链接 -----> #abc
+        *
+        *
+        *
+        * */
+        // confirm(1)
+        // console.log(screen.width)
+        // setInterval(function () {
+        //     console.log(1)
+        // },1000)
+        //双击滚动条滚动在双击停止
+        // var flag=true;
+        // var t;
+        // var n=0;
+        // document.ondblclick=function () {
+        //     if(n%2==0){
+        //         t=setInterval(function () {
+        //             // scrollBy(0,10)
+        //             n+=10;
+        //             scrollTo(0,n);
+        //         },45) //40-50
+        //         // flag=false;
+        //     }else{
+        //         clearInterval(t);
+        //         // flag=true;
+        //     }
+        //     n++;
+        // }
+        //setTimeoue 实现
+        // var t;
+        // var flag=true
+        // function move() {
+        //     scrollBy(0,10)
+        //     t=setTimeout(function () {
+        //         move();
+        //     },50)
+        // }
+        // document.onclick=function () {
+        //     if(flag){
+        //         move()
+        //         flag=false;
+        //     }else {
+        //         clearTimeout(t);
+        //         flag=true;
+        //     }
+        // }
+        // var flag=true;
+        // var t;
+        // function callBack(){
+        //     scrollBy(0,10)
+        //     t=setTimeout(function () {
+        //         callBack();
+        //     },50)
+        // }
+        // document.ondblclick=function () {
+        //     if(flag){
+        //         callBack();
+        //         flag=false;
+        //     }else{
+        //         clearTimeout(t);
+        //         flag=true;
+        //     }
+        //
+        // }
+
+
+
+
+    </script>
+</head>
+<body>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+<div>我是01</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡型事件流的优势</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮">
+<div></div>
+<div></div>
+<script>
+    /*
+    *  获取触发事件的事件源  ev.target
+    * 事件委派:把自己的事件委派给父元素执行
+    *
+    *
+    * contenteditable="true"可编辑状态
+    * 元素.focus()获取焦点
+    *
+    *
+    * dom子对象
+    *       navigator.platform()  查看在什么平台上运行
+    *       navigator.online()    是否联网 联网是true
+    *       navigator.appName()   运行中端
+    *       navigator.language()   当前浏览器默认语言
+    *       navigator.mediaDevices.getUserMedia({
+    *           video:{width:500}
+    *       }.then())   打开摄像头
+    *
+    *
+    * */
+    //点击div改变样式  事件委派
+    //将自己的事件由父元素触发
+    document.body.onclick=function (ev) {
+        if(ev.target.nodeName=="DIV"){
+            ev.target.style.border="10px solid red";
+        }
+    }
+    //点击按钮创建一个div
+    var btn=document.querySelector('input');
+    btn.onclick=function () {
+        var div=document.createElement('div');
+        document.body.appendChild(div);
+    }
+</script>
+</body>
+</html>

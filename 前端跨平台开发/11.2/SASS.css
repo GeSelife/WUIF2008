@@ -1,0 +1,105 @@
+.fatherFirstChild1 {
+  width: 100px;
+  height: 100px;
+  background-color: red; }
+
+body, html {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.father {
+  width: 400px;
+  height: 400px;
+  background-color: salmon;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .father .son {
+    width: 200px;
+    height: 200px;
+    background-color: firebrick; }
+
+.girl {
+  width: 100px;
+  height: 100px;
+  background-color: #00b262; }
+
+li:nth-child(1) {
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background-color: palegreen;
+  border: 1px solid black; }
+
+li:nth-child(2) {
+  list-style: none;
+  width: 40px;
+  height: 20px;
+  background-color: palegreen;
+  border: 2px solid black; }
+
+li:nth-child(3) {
+  list-style: none;
+  width: 60px;
+  height: 20px;
+  background-color: palegreen;
+  border: 3px solid black; }
+
+li:nth-child(4) {
+  list-style: none;
+  width: 80px;
+  height: 20px;
+  background-color: palegreen;
+  border: 4px solid black; }
+
+li:nth-child(5) {
+  list-style: none;
+  width: 100px;
+  height: 20px;
+  background-color: palegreen;
+  border: 5px solid black; }
+
+li:nth-child(6) {
+  list-style: none;
+  width: 120px;
+  height: 20px;
+  background-color: palegreen;
+  border: 6px solid black; }
+
+li:nth-child(7) {
+  list-style: none;
+  width: 140px;
+  height: 20px;
+  background-color: palegreen;
+  border: 7px solid black; }
+
+li:nth-child(8) {
+  list-style: none;
+  width: 160px;
+  height: 20px;
+  background-color: palegreen;
+  border: 8px solid black; }
+
+li:nth-child(9) {
+  list-style: none;
+  width: 180px;
+  height: 20px;
+  background-color: palegreen;
+  border: 9px solid black; }
+
+li:nth-child(10) {
+  list-style: none;
+  width: 200px;
+  height: 20px;
+  background-color: palegreen;
+  border: 10px solid black; }
+
+.girl {
+  width: 100px;
+  height: 200px;
+  background-color: pink; }
+
+/*# sourceMappingURL=SASS.css.map */

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器优先级</title>
+    <style>
+        .boxOne{
+            color: darkorchid;
+        }
+        .boxTwo{
+            background: darkblue;
+        }
+        div .boxTwo{
+            background: darkcyan;
+        }
+        #boxTwo{
+            background: darkorange;
+        }
+        div{
+            background: darkseagreen;
+        }
+        *{
+            background: darkmagenta;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- H
+        行内样式
+        有ID的交叉选择器
+        ID样式
+        后代选择器
+        类选择器
+        标签选择器
+        通用选择器
+        浏览器预定义样式
+        继承样式
+        L
+     -->
+     <div class="boxOne" id="boxOne" >
+        <div class="boxTwo" id="boxTwo" style="background: brown; width: 200px; height: 200px;">
+            123
+        </div>
+        <a href="https://www.2345.com/?k75440224">百度</a>
+     </div>
+</body>
+</html>

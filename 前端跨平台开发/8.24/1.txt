@@ -1,0 +1,14 @@
+1.HTML hyper text markup language 超文本标记语言  承载内容
+  CSS  Cascading Style Sheets     层叠样式表      承载样式
+2.HTML标记：
+     h1标签 标题标签  h1--h6
+     <!----> 注释标签  Ctrl+/
+     pre标签 保存显示文本预编辑状态
+     img标签  引进图片 绝对路径 相对路径 src引进路径  alt图片加载失败的提示  title鼠标悬停时的描述
+3.选中目录cmd 打开黑窗口
+     dir 列出当前目录下所有文件
+     cd  切目录
+     d   切盘
+     cd .  当前
+     cd .. 上一级
+     cd ./目录名  下一级

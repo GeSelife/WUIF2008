@@ -1,0 +1,45 @@
+.middle{
+    width: 502px;height: 580px;
+    position: relative;
+}
+.middleImg{
+    width: 500px;height: 500px;
+    border: 1px solid red;
+}
+.mask{
+    width: 250px;
+    height: 250px;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    left: 0;top: 0;
+    display: none;
+}
+.copy{
+    width: 500px;height: 500px;
+    position: absolute;
+    top: 0;left: 0;
+    cursor: pointer;
+}
+.small{
+    width: 500px;height: 62px;
+    margin-top: 10px;
+}
+.small li{
+    width: 60px;height: 60px;border: 2px solid red;
+    float: left;margin-right: 10px;
+    cursor: pointer;
+}
+.small li img{
+    width: 100%;
+}
+.bigBox{
+    position: absolute;
+    left: 502px;top: 0;
+    width: 500px;height: 500px;
+    overflow: hidden;
+    display: none;
+}
+.bigBox img{
+    width: 1000px;
+    position: absolute;
+}

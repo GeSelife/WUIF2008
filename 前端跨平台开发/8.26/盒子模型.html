@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            width: 300px;
+            height: 300px;
+            background: brown;
+            border-left: rgb(135, 222, 157) solid 10px;
+            padding-left: 20px;
+        }
+        .son{
+            width: 50%;
+            height: 50%;
+            background: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        盒模型大小计算
+            盒子占宽:width+padding-left+padding-right+border-left-width+border-right-width
+            盒子占高:height+padding-top+padding-bottom+border-top-width+border-bottom-width
+        宽高值可写百分比值
+        行内标签和行内共存   行内和行内块可共存  行内与块不共存  
+        行内元素无宽高 margin上下不可设置，左右可，大小由内容决定
+                      padding左右会撑开，上下会重叠
+        改变盒子类型:display
+            值:none 隐藏
+               inline 块变行
+               block  行变块
+               inline-block 同时具备行和块的特性 行内显示且可以设置宽高
+     -->
+     <div class="parent">
+         <div class="son"></div>
+         <div class="son"></div>
+     </div>
+</body>
+</html>

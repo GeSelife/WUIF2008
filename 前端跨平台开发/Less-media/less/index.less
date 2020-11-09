@@ -1,0 +1,86 @@
+//在html中的引入方式
+//<link rel="stylesheet/less" type="text/css" href="less/media.less">
+//<script src="js/less.js" type="text/javascript"></script>
+
+
+.float{
+  float: left;
+}
+
+.container {
+  width: 300px;
+  &-all{
+    width: 100%;
+    .loop(1);
+    @xs: col-xs;
+    .loop (@i) when (@i < 13){
+      .@{xs}-@{i}{
+        width: (1 / 12) * @i * 100% ;
+        .float();
+      }
+      .loop(@i + 1);
+    }
+  }
+}
+
+@media screen and (min-width:700px){
+  .container {
+    width: 700px;
+    &-all{
+      width: 100%;
+      .loop(1);
+      @s: col-s;
+      .loop (@i) when (@i < 13){
+        .@{s}-@{i}{
+          width:  (1 / 12) * @i * 100% ;
+          .float();
+        }
+        .loop(@i + 1);
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width:970px){
+  .container {
+    width: 970px;
+    &-all{
+      width: 100%;
+      .loop(1);
+      @m: col-m;
+      .loop (@i) when (@i < 13){
+        .@{m}-@{i} {
+          width:  (1 / 12) * @i * 100% ;
+          .float();
+        }
+        .loop(@i + 1);
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width:1200px){
+  .container {
+    width: 1200px;
+    &-all{
+      width: 100%;
+      .loop(1);
+      @l: col-l;
+      .loop (@i) when (@i < 13){
+        .@{l}-@{i} {
+          width:  (1 / 12) * @i * 100% ;
+          .float();
+        }
+        .loop(@i + 1);
+      }
+    }
+  }
+
+}
+
+
+
+
+

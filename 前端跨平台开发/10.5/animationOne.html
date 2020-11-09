@@ -1,0 +1,129 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animationOne</title>
+    <style>
+        div{
+            width: 200px;height: 200px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮">
+<div></div>
+<script>
+    /*
+    * 开始值  结束值   速度
+    *
+    *
+    *
+    *
+    * */
+
+    var ipt=document.querySelector('input');
+    var div=document.querySelector('div');
+    var flag=true;
+
+    // ipt.onclick=function () {
+    //     if(!flag){
+    //         return;
+    //     }
+    //     flag=false;
+    //     animation(div,'width',500,10);
+    //     animation(div,'height',500,10,function () {
+    //         animation(div,'width',200,10);
+    //         animation(div,'height',200,10);
+    //     });
+    // }
+
+
+    // function animation(obj,attr,end,step,callback) {
+    //     var start=parseInt(getComputedStyle(obj,null)[attr]);
+    //     var t=setInterval(function () {
+    //         if(start<end) {
+    //             start += step;
+    //             if (start > end) {
+    //                 start = end;
+    //                 clearInterval(t);
+    //                 flag=true;
+    //
+    //                 if (callback) {
+    //                     callback();
+    //                 }
+    //
+    //             }
+    //
+    //         } else {
+    //             start -= step;
+    //             if (start < end) {
+    //                 start = end;
+    //                 clearInterval(t);
+    //                 flag=true;
+    //
+    //                 if (callback) {
+    //                     callback();
+    //                 }
+    //
+    //             }
+    //         }
+    //         obj.style[attr] = start + 'px';
+    //     },50)
+    // }
+    ipt.onclick=function(){
+        if(!flag){
+            return;
+        }
+        animation(div,'height',500,10,function () {
+            animation(div,'height',200,10)
+        });
+        animation(div,'width',500,10,function () {
+            animation(div,'width',200,10)
+        });
+    }
+
+    function animation(obj,attr,end,step,callback) {
+        flag=false;
+        var start=parseInt(getComputedStyle(div,null)[attr]);
+        var t=setInterval(function () {
+            if(start<end){
+                start+=step;
+                if(start>end){
+                    start=end;
+                    clearInterval(t);
+                    flag=true;
+                    if(callback){
+                        callback();
+                    }
+                }
+            }
+            else {
+                start-=step;
+                if(start<end){
+                    start=end;
+                    clearInterval(t);
+                    flag=true;
+                    if(callback){
+                        callback();
+
+                    }
+                }
+            }
+            div.style[attr]=start+'px';
+        },50)
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

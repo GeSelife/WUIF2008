@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>完整的事件驱动</title>
+    <script src="../封装/JS/runStyle.js"></script>
+    <style>
+        body{
+            margin: 0;padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;left: 0;
+            background-color: red;
+            /*transition: background-color 500ms ease-in-out;*/
+        }
+    </style>
+</head>
+<body>
+<div>
+</div>
+<script src="drag.js"></script>
+<script>
+    /*
+    *  弱类型的 解释型的 ,基于对象的,基于事件驱动的,单线程异步机制的 函数式编程语言
+    *
+    *
+    *  默认动作 :  阻止浏览器的默认行为  --- 事件对象里面  ev.preventDefault();
+    *
+    *
+    * 事件驱动
+    *   1.事件源 2.事件 3.事件处理程序 4.事件对象ev:记录了事件发生的时候的一些详细的信息---事件处理程序的第一个参数---只能在事件处理程序中起作用
+    *
+    * 鼠标事件的事件对象:
+    *   1.当鼠标事件发生 鼠标距离电脑屏幕的距离: screenX / screenY
+    *   2.当鼠标事件发生 鼠标相对于浏览器的距离: clientX / clientY
+    *   3.当鼠标事件发生 鼠标相对于事件源的距离: offsetX / offsetY
+    *
+    * 键盘事件的事件对象:
+    *   ev.keyCode  键盘码--AscII    string.fromCharCode(ASCII码)  将ASCII码转换为相应的键
+    *   ev.ctrlKey  范围值时true/false 按下ctrl键 ---- 17
+    *   ev.shiftKey  范围值时true/false 按下shiftKey键 ---- 16
+    *   ev.altKey  范围值时true/false 按下altKey键 ---- 18
+    *   13----回车键的键盘码
+    *   32---- 空格
+    *   37、38、39、40---左、上、右、下
+    *
+    *
+    *
+    * */
+
+    // var div=document.querySelector('.inner');
+    // var r,g,b;
+    //
+    // //on事件
+    // div.onmousedown = function (ev) {
+    //         var startX = ev.offsetLeft;
+    //         var startY = ev.offsetTop;
+    //     document.onmousemove = function (ev) {
+    //         var moveX = ev.clientX;
+    //         var moveY = ev.clientY;
+    //         setInterval(function () {
+    //             r=parseInt(Math.fround(Math.random())*255);
+    //             g=parseInt(Math.fround(Math.random())*255);
+    //             b=parseInt(Math.fround(Math.random())*255);
+    //         },1000)
+    //
+    //         div.style.left = moveX - startX + 'px';
+    //         div.style.top = moveY - startY + 'px';
+    //         div.style.backgroundColor=["rgb("+r+","+g+","+b+")"];
+    //     }
+    //     ev.preventDefault();
+    // }
+    //
+    // document.onmouseup = function () {
+    //     document.onmousemove=null;
+    // }
+
+    //监听事件
+    // function move(ev) {
+    //     moveX=ev.clientX;
+    //     moveY=ev.clientY;
+    //     div.style.left=moveX-startX+'px';
+    //     div.style.top=moveY-startY+'px';
+    // }
+    // div.addEventListener('mousedown',down,false);
+    //
+    // function down(ev) {
+    //     startX=ev.offsetX;
+    //     startY=ev.offsetY;
+    //     document.addEventListener('mousemove',move)
+    //     ev.preventDefault();
+
+    // }
+    //
+    // document.addEventListener('mouseup',function () {
+    //     document.removeEventListener('mousemove',move);
+    //
+    // })
+
+    var dragobj=new drag('div');
+    // dragobj.x=false;
+    dragobj.range.x1=0;
+    dragobj.range.x2=100;
+    dragobj.move();
+
+
+
+</script>
+
+</body>
+</html>

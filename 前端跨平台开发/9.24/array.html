@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+    <script>
+        /*
+            数组Array[]
+            批量的处理和处理相关的信息
+            数组:将**一系列**··相关··的数据存储起来，进行批量的处理
+
+
+            语法:
+                1.创建数组
+                2.从数组中取出对应的值 arr[下标]
+                3.遍历数组    for循环 arr.length
+        
+        
+        */
+
+        // var arr=[1,2,3,4,5,6,7,8,9,7,8,1,5,1,5,1.5,2,'j',function(){console.log()}];
+        // console.log(arr[0]);
+
+
+        // 取最小值或 最大值 封装函数
+        // var arr=[10,3,4,6,5];
+        // minORmax(arr)
+        // function minORmax(arr,type){
+        //     var type=type||'min';
+        //     var val=arr[0];
+        //     for(var i=0;i<arr.length-1;i++){
+        //         if(type=='min'){
+        //             if(val>arr[i]){
+        //                 val=arr[i];
+        //             }
+        //         }
+        //         if(type=='max'){
+        //             if(val<arr[i]){
+        //                 val=arr[i];
+        //             }
+        //         }
+        //     }
+        // }
+
+        // 取最小值
+        // var arr=[10,3,4,6,5];
+        // var min=arr[0];
+        // for(var i=1;i<arr.length;i++){
+        //     if(min>arr[i]){
+        //         min=arr[i];
+        //     }
+        // }
+        // console.log(min);
+
+
+
+
+
+
+        //删除数组里的重复元素
+        //一个函数
+        // var arra=[2,2,5,8,2,61,4,5];
+        // var num=[];
+        // var index=0;
+        // for(var i=1;i<arra.length;i++){
+        //     var flag=true;
+        //     for(var j=i+1;j<arra.length;j++){
+        //         if(arra[i]==arra[j]){
+        //             flag=false;
+        //             break;
+        //         }
+        //     }
+        //     if(flag){
+        //         num[index++]=arra[i];
+        //     }
+            
+        // }
+        // console.log(num);
+
+
+        // var arr=[5,8,456,95,25,25,5,4,7,8,6,2]
+        // var arr1=[];
+        // var index=0;
+        // var len=arr.length;
+        // for(var i=0;i<len;i++){
+        //     var flag=true;
+        //     for(var j=i+1;j<len;j++){
+        //         if(arr[i]==arr[j]){
+        //             flag=false;
+        //             break;
+        //         }
+        //     }
+        //     if(flag){
+        //         arr1[index++]=arr[i];
+        //     }
+        // }
+        // console.log(arr1);
+
+        //两个函数
+        // console.log(del([5,8,456,95,25,25,5,4,7,8,6,2]));
+
+        // function del(arr){
+        //     var newarr=[];
+        //     var index=0;
+        //     for(var i=0;i<arr.length;i++){
+        //         if(check(arr[i],newarr)){
+        //             newarr[index++]=arr[i];
+        //         }
+        //     }
+        //     return newarr;
+        // }
+        // function check(val,arr){
+        //     for(var i=0;i<arr.length;i++){
+        //         if(val==arr[i]){
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        
+        //去重的两种方法
+        //放之前先于自己数组里面的在自己后面的值进行比较
+        // var arr=[1,2,5,3,2,1,8,9];
+        // var num=arr[0];
+        // var newarr=[];
+        // var index=0;
+        // for(var i=0;i<arr.length;i++){
+        //     var flag=true;
+        //     for(var j=i+1;j<arr.length;j++){
+        //         if(arr[i]==arr[j]){
+        //             flag=false;
+        //             break;
+        //         }
+        //     }
+        //     if(flag){
+        //         newarr[index++]=arr[i];
+        //     }
+        // }
+        // console.log(newarr);
+
+        //放进去之前与新数组里的每一个值进行比较
+        // var arr=[1,2,5,3,2,1,8,9];
+        // var arr1=[];
+        // var index=0;
+        // for(var i=0;i<arr.length;i++){
+        //     var flag=true;
+        //     for(var j=0;j<arr1.length;j++){
+        //         if(arr[i]==arr1[j]){
+        //             flag=false;
+        //             break;
+        //         }
+        //     }
+        //     if(flag){
+        //         arr1[index++]=arr[i];
+        //     }
+        // }
+        // console.log(arr1);
+
+
+        
+
+
+
+        // 由大到小排序数组
+        /*
+            排序的方法  
+               1.冒泡排序
+               2.选择排序
+               3.插入排序  
+        
+        */ 
+
+        // 选择排序  
+        var arr=[5,23,8,4,2324,67,231,1];
+
+
+
+        var len=arr.length;
+        var num=arr[0];
+        for(var i=0;i<len;i++){
+            for(var j=i+1;j<len;j++){
+                if(arr[i]>arr[j]){
+                    var temp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=temp;
+                    console.log(arr);
+
+                }
+
+            }
+
+        }
+
+        //冒泡排序
+        // var arr=[23,8,4,2324,67,231,1];
+        // var len=arr.length;
+        // for(var j=0;j<len-1;j++){
+        //     for(var i=0;i<len-1-j;i++){
+        //         if(arr[i]>arr[i+1]){
+        //             var temp=arr[i+1];
+        //             arr[i+1]=arr[i];
+        //             arr[i]=temp;
+        //         }
+        //     }
+        // }
+        // console.log(arr);0
+
+        //插入排序
+        // var arr=[23,8,4,2324,67,231,12];
+        // var newarr=[];
+        // var index=0;
+        // for(var i=0;i<len;i++){
+        //     for(var j=0;j<len;j++){
+        //         for(var x=j+1;x<len;x++){
+        //             if(newarr[j]>newarr[x]){
+        //                 var temp=newarr[x];
+        //                 newarr[x]=newarr[j];
+        //                 newarr[j]=temp;
+        //             }
+        //         }
+        //     }
+        //     newarr[index++]=arr[i];
+        // console.log(newarr);
+            
+        // }
+        // var arr=[23,8,4,2324,67,231,12];
+        // var len=arr.length;
+        // var who,preplace;
+        // for(var i=1;i<len;i++){
+        //     preplace=i-1;
+        //     who=arr[i];
+        //     while(preplace>=0&&arr[preplace]>who){
+        //         arr[preplace+1]=arr[preplace];
+        //         preplace--;
+        //     }
+        //
+        //     arr[preplace+1]=who;
+        // }
+        // console.log(arr);
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

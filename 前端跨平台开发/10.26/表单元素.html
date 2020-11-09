@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单元素</title>
+    <script src="JS/jquery-1.7.1.js"></script>
+</head>
+<body>
+<!--action 表单提交的地址  method 提交方式-->
+<form action=""></form>
+<!--placeholder 提示文字-->
+<!--select--multiple 多选下拉菜单-->
+<!--textarea---
+     resize:horizontal  横向拖拽
+     resize:vertical  纵向拖拽
+     resize:none      不可以拖拽
+     resize:both      两边都拖拽
+
+    -->
+<!--readonly 只读-->
+<!--disabled 禁用-->
+<!--required 必填 提交按钮才显示-->
+<!--maxlength 最大字符-->
+<!--minlength 最小字符-->
+<!--pattern  写正则-->
+
+
+
+<!--action 表单提交的地址  method 提交方式-->
+<form action="" method=""></form>
+<!--
+    readonly 只读
+    disabled 禁用
+    required 必填
+-->
+<!--输入框-->
+<input type="text" placeholder="请输入用户名" readonly>请输入用户名
+<br>
+<!--密码框-->
+<input type="password" placeholder="请输入密码" disabled>请输入密码
+<br>
+<!--单选框-->
+<!--name 相同，只选一个-->
+<!--label的for属性值与表单中的id名对应，点击文字选中-->
+<label for="nan">
+    <input type="radio" name="sex" id="nan">男
+</label>
+
+<label for="nv">
+    <input type="radio" name="sex" id="nv">女
+</label>
+<br>
+<!--复选框 checked-->
+<label for="sh">
+    <input type="checkbox" name="city" id="sh">上海
+</label>
+<label for="bj">
+    <input type="checkbox" name="city" id="bj">北京
+</label>
+<label for="gz">
+    <input type="checkbox" name="city" id="gz">广州
+</label>
+<label for="sz">
+    <input type="checkbox" name="city" id="sz">苏州
+</label>
+<br>
+<!--下拉菜单 单选-->
+<select name="" id="">
+    <option>请选择就业城市</option>
+    <option>上海</option>
+    <option>广州</option>
+    <option>深圳</option>
+</select>
+<hr>
+<!--多选下拉菜单  multiple-->
+<select multiple>
+    <option>请选择就业城市</option>
+    <option>上海</option>
+    <option>广州</option>
+    <option>深圳</option>
+</select>
+<br>
+<!--文本框
+    maxlength  最大输入长度
+    minlength  最小输入长度
+    placeholder 提示文字
+-->
+<textarea maxlength="10" minlength="3" placeholder="请输入地址"></textarea>
+<br>
+<!--
+按钮
+    button 按钮
+    submit 提交按钮
+    reset  重置按钮
+-->
+<input type="button" value="按钮">
+<input type="submit">
+<input type="reset">
+
+<hr>
+<!--日期-->
+<input type="date">
+<br>
+<!--颜色-->
+<input type="color">
+<br>
+<!--进度条-->
+<input type="range">
+<br>
+<!--数字
+    step 设置步数值
+    max  最大值 min 最小值
+-->
+<input type="number" step="2" placeholder="数字" max="10" min="0">
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>停车场运营监控中心</title>
+    <link rel="stylesheet" href="CSS/u-reset.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="JS/echarts.min.js"></script>
+    <script src="JS/china.js"></script>
+    <script src="JS/runStyle.js"></script>
+    <script src="JS/index.js"></script>
+</head>
+<body>
+<!--大容器-->
+<div class="index-box">
+    <!--内容容器-->
+    <div class="index-contentBox">
+        <!--顶部nav start-->
+        <div class="index-nav">
+            <div class="index-navBox">
+                <!--logo-->
+                <div class="index-navLogo">
+                    <img src="Img/index_logo.png" alt="">
+                </div>
+                <!--title-->
+                <div class="index-navTitle">
+                    <p>停车场运营监控中心</p>
+                </div>
+                <!--时间-->
+                <div class="index-navTime">
+
+                </div>
+
+            </div>
+            <div class="index-navBottom"></div>
+        </div>
+        <!--顶部nav end-->
+
+        <!--内容数据部分 start-->
+        <div class="index-content">
+            <!--left-->
+            <div class="index-contentLeft">
+                <!--left-top-->
+                <div class="contentLeft-top">
+                    <div class="contentLeft-topBox">
+                        <span class="lTopTitle">今日收入/元</span>
+                        <div class="lTopCon">
+                            <div class="lTopNum">1,847,832</div>
+                            <div class="lTopBai">
+                                <span>同昨日比(%)</span>
+                                <div class="lTopBaiImg">
+                                    0.94%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--left-center-->
+                <div class="contentLeft-center">
+                    <div class="contentLeft-centerBox">
+                        <div class="centerContent" id="centerContent">
+
+                        </div>
+                    </div>
+                </div>
+                <!--left-bottom-->
+                <div class="contentLeft-bottom">
+                    <div class="contentLeft-bottomBox">
+                        <div class="lBottomContent">
+                            <p>设备警告</p>
+                            <div class="lBottomErrorBox">
+                                <ul class="lBottomError">
+                                    <li class="lBottomError-lists">
+                                        <div class="lists-top">
+                                            <div class="lists-topLeft">
+                                                <div class="lists-topLeft-son">
+                                                    未处理
+                                                </div>
+                                                <span>巡逻人:李白</span>
+                                            </div>
+                                            <div class="lists-topRight">
+                                                19:00
+                                            </div>
+                                        </div>
+                                        <div class="lists-bottom">
+                                            <div class="lists-bottomLeft">
+                                                绿地世纪城
+                                            </div>
+                                            <div class="lists-bottomRight">
+                                                入口门坏了
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="lBottomError-lists">
+                                        <div class="lists-top">
+                                            <div class="lists-topLeft lists-topLeft2">
+                                                <div class="lists-topLeft-son lists-topLeft-son2">
+                                                    未处理
+                                                </div>
+                                                <span>巡逻人:李白</span>
+                                            </div>
+                                            <div class="lists-topRight">
+                                                19:00
+                                            </div>
+                                        </div>
+                                        <div class="lists-bottom">
+                                            <div class="lists-bottomLeft">
+                                                绿地世纪城
+                                            </div>
+                                            <div class="lists-bottomRight">
+                                                入口门坏了
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="lBottomError-lists">
+                                        <div class="lists-top">
+                                            <div class="lists-topLeft">
+                                                <div class="lists-topLeft-son">
+                                                    未处理
+                                                </div>
+                                                <span>巡逻人:李白</span>
+                                            </div>
+                                            <div class="lists-topRight">
+                                                19:00
+                                            </div>
+                                        </div>
+                                        <div class="lists-bottom">
+                                            <div class="lists-bottomLeft">
+                                                绿地世纪城
+                                            </div>
+                                            <div class="lists-bottomRight">
+                                                入口门坏了
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="lBottomError-lists">
+                                        <div class="lists-top">
+                                            <div class="lists-topLeft lists-topLeft2">
+                                                <div class="lists-topLeft-son lists-topLeft-son2">
+                                                    未处理
+                                                </div>
+                                                <span>巡逻人:李白</span>
+                                            </div>
+                                            <div class="lists-topRight">
+                                                19:00
+                                            </div>
+                                        </div>
+                                        <div class="lists-bottom">
+                                            <div class="lists-bottomLeft">
+                                                绿地世纪城
+                                            </div>
+                                            <div class="lists-bottomRight">
+                                                入口门坏了
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="lBottomError-lists">
+                                        <div class="lists-top">
+                                            <div class="lists-topLeft">
+                                                <div class="lists-topLeft-son">
+                                                    未处理
+                                                </div>
+                                                <span>巡逻人:李白</span>
+                                            </div>
+                                            <div class="lists-topRight">
+                                                19:00
+                                            </div>
+                                        </div>
+                                        <div class="lists-bottom">
+                                            <div class="lists-bottomLeft">
+                                                绿地世纪城
+                                            </div>
+                                            <div class="lists-bottomRight">
+                                                入口门坏了
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="lBottomError-lists">
+                                        <div class="lists-top">
+                                            <div class="lists-topLeft lists-topLeft2">
+                                                <div class="lists-topLeft-son lists-topLeft-son2">
+                                                    未处理
+                                                </div>
+                                                <span>巡逻人:李白</span>
+                                            </div>
+                                            <div class="lists-topRight">
+                                                19:00
+                                            </div>
+                                        </div>
+                                        <div class="lists-bottom">
+                                            <div class="lists-bottomLeft">
+                                                绿地世纪城
+                                            </div>
+                                            <div class="lists-bottomRight">
+                                                入口门坏了
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="lBottomError-lists">
+                                        <div class="lists-top">
+                                            <div class="lists-topLeft">
+                                                <div class="lists-topLeft-son">
+                                                    未处理
+                                                </div>
+                                                <span>巡逻人:李白</span>
+                                            </div>
+                                            <div class="lists-topRight">
+                                                19:00
+                                            </div>
+                                        </div>
+                                        <div class="lists-bottom">
+                                            <div class="lists-bottomLeft">
+                                                绿地世纪城
+                                            </div>
+                                            <div class="lists-bottomRight">
+                                                入口门坏了
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="lBottomError-lists">
+                                        <div class="lists-top">
+                                            <div class="lists-topLeft lists-topLeft2">
+                                                <div class="lists-topLeft-son lists-topLeft-son2">
+                                                    未处理
+                                                </div>
+                                                <span>巡逻人:李白</span>
+                                            </div>
+                                            <div class="lists-topRight">
+                                                19:00
+                                            </div>
+                                        </div>
+                                        <div class="lists-bottom">
+                                            <div class="lists-bottomLeft">
+                                                绿地世纪城
+                                            </div>
+                                            <div class="lists-bottomRight">
+                                                入口门坏了
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--center-->
+            <div class="index-contentCenter">
+                <!--center-top-->
+                <div class="contentCenter-top">
+                    <div class="contentCenter-topImg" id="contentCenter-topImg">
+
+                    </div>
+                </div>
+                <!--center-bottom-->
+                <div class="contentCenter-bottom">
+                    <div class="contentCenter-bottomBox">
+                        <div class="bottomContent">
+                            <ul class="bottomContent-car">
+                                <li>
+                                    <div class="bottomContent-top">
+                                        <span>
+                                            2018-5-4
+                                        </span>
+                                        <span>
+                                            18:00
+                                        </span>
+                                    </div>
+                                    <div class="bottomContentImg">
+                                        <img src="Img/index_car.jpg" alt="">
+                                    </div>
+                                    <div class="bottomContent-bottom">
+                                        <p>
+                                            郑州市-千玺广场
+                                        </p>
+                                        <p>
+                                            <span>车牌</span>豫A9XS66
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bottomContent-top">
+                                        <span>
+                                            2018-5-4
+                                        </span>
+                                        <span>
+                                            18:00
+                                        </span>
+                                    </div>
+                                    <div class="bottomContentImg">
+                                        <img src="Img/index_car.jpg" alt="">
+                                    </div>
+                                    <div class="bottomContent-bottom">
+                                        <p>
+                                            郑州市-千玺广场
+                                        </p>
+                                        <p>
+                                            <span>车牌</span>豫A9XS66
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bottomContent-top">
+                                        <span>
+                                            2018-5-4
+                                        </span>
+                                        <span>
+                                            18:00
+                                        </span>
+                                    </div>
+                                    <div class="bottomContentImg">
+                                        <img src="Img/index_car.jpg" alt="">
+                                    </div>
+                                    <div class="bottomContent-bottom">
+                                        <p>
+                                            郑州市-千玺广场
+                                        </p>
+                                        <p>
+                                            <span>车牌</span>豫A9XS66
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bottomContent-top">
+                                        <span>
+                                            2018-5-4
+                                        </span>
+                                        <span>
+                                            18:00
+                                        </span>
+                                    </div>
+                                    <div class="bottomContentImg">
+                                        <img src="Img/index_car.jpg" alt="">
+                                    </div>
+                                    <div class="bottomContent-bottom">
+                                        <p>
+                                            郑州市-千玺广场
+                                        </p>
+                                        <p>
+                                            <span>车牌</span>豫A9XS66
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bottomContent-top">
+                                        <span>
+                                            2018-5-4
+                                        </span>
+                                        <span>
+                                            18:00
+                                        </span>
+                                    </div>
+                                    <div class="bottomContentImg">
+                                        <img src="Img/index_car.jpg" alt="">
+                                    </div>
+                                    <div class="bottomContent-bottom">
+                                        <p>
+                                            郑州市-千玺广场
+                                        </p>
+                                        <p>
+                                            <span>车牌</span>豫A9XS66
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bottomContent-top">
+                                        <span>
+                                            2018-5-4
+                                        </span>
+                                        <span>
+                                            18:00
+                                        </span>
+                                    </div>
+                                    <div class="bottomContentImg">
+                                        <img src="Img/index_car.jpg" alt="">
+                                    </div>
+                                    <div class="bottomContent-bottom">
+                                        <p>
+                                            郑州市-千玺广场
+                                        </p>
+                                        <p>
+                                            <span>车牌</span>豫A9XS66
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="contentCenter-bottomMask"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!--right-->
+            <div class="index-contentRight">
+                <!--right-top-->
+                <div class="contentRight-top">
+                    <ul class="contentRight-topBox">
+                        <li class="contentRight-topImg">
+                            <span>201232</span>
+                            <p>开放泊车位</p>
+                        </li>
+                        <li class="contentRight-topImg">
+                            <span>201232</span>
+                            <p>占用泊位</p>
+                        </li>
+                        <li class="contentRight-topImg">
+                            <span>201232</span>
+                            <p>泊位利用率</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--right-center-->
+                <div class="contentRight-center">
+                    <div class="contentRight-centerBox">
+                        <p>停车收费排行</p>
+                        <div class="centerContent-right">
+                            <div id="rightLeft"></div>
+                            <div id="rightRight"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--right-bottom-->
+                <div class="contentRight-bottom">
+                    <div class="contentRight-bottomBox">
+                        <div class="rBottomContent">
+                            <p>昨日运营情况</p>
+                            <div class="rBottomErrorBox">
+                                <ul class="rBottomError">
+                                    <li class="rBottomError-lists">
+                                        <div class="rLists-top">
+                                            郑州市-千玺广场
+                                        </div>
+                                        <div class="rLists-bottom">
+                                            <div class="rLists-bottomLeft">
+                                                进出车辆7343
+                                            </div>
+                                            <div class="rLists-bottomRight">
+                                                总收入￥3432345.00
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="rBottomError-lists">
+                                        <div class="rLists-top">
+                                            郑州市-千玺广场
+                                        </div>
+                                        <div class="rLists-bottom">
+                                            <div class="rLists-bottomLeft">
+                                                进出车辆7343
+                                            </div>
+                                            <div class="rLists-bottomRight">
+                                                总收入￥3432345.00
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="rBottomError-lists">
+                                        <div class="rLists-top">
+                                            郑州市-千玺广场
+                                        </div>
+                                        <div class="rLists-bottom">
+                                            <div class="rLists-bottomLeft">
+                                                进出车辆7343
+                                            </div>
+                                            <div class="rLists-bottomRight">
+                                                总收入￥3432345.00
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="rBottomError-lists">
+                                        <div class="rLists-top">
+                                            郑州市-千玺广场
+                                        </div>
+                                        <div class="rLists-bottom">
+                                            <div class="rLists-bottomLeft">
+                                                进出车辆7343
+                                            </div>
+                                            <div class="rLists-bottomRight">
+                                                总收入￥3432345.00
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="rBottomError-lists">
+                                        <div class="rLists-top">
+                                            郑州市-千玺广场
+                                        </div>
+                                        <div class="rLists-bottom">
+                                            <div class="rLists-bottomLeft">
+                                                进出车辆7343
+                                            </div>
+                                            <div class="rLists-bottomRight">
+                                                总收入￥3432345.00
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--内容数据部分 end-->
+
+
+    </div>
+</div>
+
+</body>
+</html>

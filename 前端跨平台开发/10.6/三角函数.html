@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三角函数</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #55a532;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<!--弧度=角度*Math.PI/180-->
+
+<script>
+    var div=document.querySelector('div');
+    var radg=0;   //角度
+    var radius=50;//半径
+    var radius1=100;//半径
+    setInterval(function () {
+        radg+=10;
+        var x=radius*Math.cos(radg*Math.PI/180)-radius1*Math.sin(radg*Math.PI/180);
+        var y=radius*Math.sin(radg*Math.PI/180)-radius1*Math.cos(radg*Math.PI/180);
+        // div.style.marginLeft=100+x+'px';
+        // div.style.top=100+x+'px';
+        // var x=Math.sin(radg*Math.PI/180)*radius;
+        // var y=Math.cos(radg*Math.PI/180)*radius;
+        // div.style.left=100+y+'px';
+        div.style.top=100+x+'px';
+    },40)
+</script>
+</body>
+</html>

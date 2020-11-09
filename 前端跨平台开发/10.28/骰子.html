@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>骰子</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .cnen{
+            width: 100px; height: 100px;
+            /* 透视 */
+            perspective: 1000px;
+            position: absolute;
+            left: 0;right: 0;top: 0;bottom: 0;
+            margin: auto;
+        }
+        .cnenBox{
+            width: 100px; height: 100px; position: absolute;
+            transform-style:preserve-3d;
+            transition:1s linear;
+            /*transform: rotateY(360deg);*/
+            animation: 400ms ease-in-out;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            border-radius:20px;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            left: 0; top: 0;
+        }
+        .item{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        /*第一个*/
+        .box1{
+            justify-content: center;
+            align-items: center;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+        /*第二个*/
+        .box2{
+            justify-content: space-around;
+            align-items: center;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+        }
+        /*第三个*/
+        .box3{
+            justify-content: space-between;
+        }
+        /*第四个*/
+        .box4{
+            flex-wrap: wrap;
+            align-content: space-around;
+            transform-origin: right;
+            transform: rotateY(90deg);
+        }
+        .itemBox{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        /*第五个*/
+        .box5{
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+        }
+         /*第六个*/
+        .box6{
+            transform: translateZ(100px);
+        }
+        /*.cnenBox:hover{*/
+        /*    transform: rotateY(360deg);*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="cnen">
+    <div class="cnenBox">
+        <!--第一个骰子-->
+        <div class="box box1">
+            <div class="item"></div>
+        </div>
+        <!--第二个骰子-->
+        <div class="box box2">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <!--第三个-->
+        <div class="box box3" >
+            <div class="item" style="align-self: flex-start"></div>
+            <div class="item" style="align-self: center"></div>
+            <div class="item" style="align-self: flex-end"></div>
+        </div>
+        <!--第四个-->
+        <div class="box box4" >
+            <div class="itemBox">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="itemBox">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+        <!--第五个-->
+        <div class="box box4 box5" >
+            <div class="itemBox">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="item"></div>
+            <div class="itemBox">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+        <!--第六个-->
+        <div class="box box4 box6" >
+            <div class="itemBox">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="itemBox">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="itemBox">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
